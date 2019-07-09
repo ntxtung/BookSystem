@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace BookSystem.Entities
 {
-    public partial class UserRequestsBook
+    public partial class UserRequestBook
     {
         public int UserId { get; set; }
         public int BookId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual Users User { get; set; }
     }
 }

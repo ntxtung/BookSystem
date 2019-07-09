@@ -66,14 +66,15 @@
           <e p="yarn.lock" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="BookController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
-          <e p="Book.cs" t="Include" />
+          <e p="Books.cs" t="Include" />
           <e p="BookSystemContext.cs" t="Include" />
           <e p="RentLog.cs" t="Include" />
-          <e p="User.cs" t="Include" />
-          <e p="UserRequestsBook.cs" t="Include" />
+          <e p="UserRequestBook.cs" t="Include" />
+          <e p="Users.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

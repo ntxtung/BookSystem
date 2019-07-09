@@ -10,21 +10,21 @@ namespace BookSystem.Controllers {
     [Route("api/users")]
     public class UserController : Controller {
         private readonly BookSystemContext _context;
-        private readonly DbSet<User> _userContext;
+        private readonly DbSet<Users> _usersContext;
 
         public UserController() {
             _context = new BookSystemContext();
-            _userContext = _context.User;
+            _usersContext = _context.Users;
         }
 
         [HttpGet]
-        public List<User> GetAll() {
-            return _userContext.ToList();
+        public List<Users> GetAll() {
+            return _usersContext.ToList();
         }
 
         [HttpPost]
-        public ActionResult RegisterNewUser([FromBody] User userData) {
-            _userContext.Add(userData);
+        public ActionResult RegisterNewUser([FromBody] Users userData) {
+            _usersContext.Add(userData);
             try {
                 if (_context.SaveChanges() > 0) {
                     var hiddenUserData = userData;
@@ -35,7 +35,7 @@ namespace BookSystem.Controllers {
                     });
                 }
             }
-            catch (DbUpdateException dbe) {
+            catch (DbUpdateException) {
                 return Json(new {
                     message = "Register Unsuccessfully - Database Update Exception"
                 });
@@ -47,10 +47,16 @@ namespace BookSystem.Controllers {
 
 
         [HttpGet("{id}")]
-        public User GetUserById(int id) {
-            var hiddenUsers = _userContext.Find(id);
-            hiddenUsers.Password = null;
-            return hiddenUsers;
+        public Users GetUserById(int id) {
+            try {
+                var hiddenUsers = _usersContext.Find(id);
+                hiddenUsers.Password = null;
+                return hiddenUsers;
+            }
+            catch (NullReferenceException) {
+                return null;
+            }
+            
         }
     }
 }

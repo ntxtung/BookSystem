@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace BookSystem.Entities
 {
-    public partial class User
+    public partial class Users
     {
-        public User()
+        public Users()
         {
-            BookUserFunder = new HashSet<Book>();
-            BookUserRent = new HashSet<Book>();
+            BooksUserFunder = new HashSet<Books>();
+            BooksUserRent = new HashSet<Books>();
             RentLog = new HashSet<RentLog>();
-            UserRequestsBook = new HashSet<UserRequestsBook>();
+            UserRequestBook = new HashSet<UserRequestBook>();
         }
 
         public int Id { get; set; }
@@ -21,9 +21,9 @@ namespace BookSystem.Entities
         public string Password { get; set; }
         public string Token { get; set; }
 
-        public virtual ICollection<Book> BookUserFunder { get; set; }
-        public virtual ICollection<Book> BookUserRent { get; set; }
+        public virtual ICollection<Books> BooksUserFunder { get; set; }
+        public virtual ICollection<Books> BooksUserRent { get; set; }
         public virtual ICollection<RentLog> RentLog { get; set; }
-        public virtual ICollection<UserRequestsBook> UserRequestsBook { get; set; }
+        public virtual ICollection<UserRequestBook> UserRequestBook { get; set; }
     }
 }
