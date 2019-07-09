@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BookSystem.Entities;
+using BookSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
@@ -9,54 +10,48 @@ using MySql.Data.MySqlClient;
 namespace BookSystem.Controllers {
     [Route("api/users")]
     public class UserController : Controller {
-        private readonly BookSystemContext _context;
-        private readonly DbSet<Users> _usersContext;
+        private readonly IUserServices _userService;
 
-        public UserController() {
-            _context = new BookSystemContext();
-            _usersContext = _context.Users;
+        public UserController(IUserServices userServices) {
+            _userService = userServices;
         }
 
         [HttpGet]
         public List<Users> GetAll() {
-            return _usersContext.ToList();
+            return _userService.GetAllUsers();
+        }
+
+        [HttpGet("{id}")]
+        public Users GetUserById(int id) {
+            return _userService.GetUserById(id);
         }
 
         [HttpPost]
         public ActionResult RegisterNewUser([FromBody] Users userData) {
-            _usersContext.Add(userData);
-            try {
-                if (_context.SaveChanges() > 0) {
-                    var hiddenUserData = userData;
-                    hiddenUserData.Password = null;
-                    return Json(new {
-                        message = "Register Successfully",
-                        data = hiddenUserData
-                    });
-                }
-            }
-            catch (DbUpdateException) {
+            var result = _userService.RegisterNewUser(userData);
+            if (result > 0) {
                 return Json(new {
-                    message = "Register Unsuccessfully - Database Update Exception"
+                    message = "Create User Successfully"
                 });
             }
+
             return Json(new {
-                message = "Register Unsuccessfully - Unknown Exception"
+                message = "Create User Unsuccessfully"
             });
         }
 
+        [HttpPut("{id}")]
+        public ActionResult UpdateUser([FromRoute] int id, [FromBody] Users userData) {
+            var result = _userService.UpdateUser(id, userData);
+            if (result > 0) {
+                return Json(new {
+                    message = "Update User Successfully"
+                });
+            }
 
-        [HttpGet("{id}")]
-        public Users GetUserById(int id) {
-            try {
-                var hiddenUsers = _usersContext.Find(id);
-                hiddenUsers.Password = null;
-                return hiddenUsers;
-            }
-            catch (NullReferenceException) {
-                return null;
-            }
-            
+            return Json(new {
+                message = "Update User Unsuccessfully"
+            });
         }
     }
 }

@@ -35,23 +35,16 @@ namespace BookSystem.Entities
 
             modelBuilder.Entity<Books>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.UserFunderId });
-
                 entity.ToTable("Books", "BookSystem");
 
-                entity.HasIndex(e => e.UserFunderId)
-                    .HasName("fk_Book_User_FundId");
+                entity.HasIndex(e => e.UsersFundId)
+                    .HasName("fk_Books_Users_FundId");
 
-                entity.HasIndex(e => e.UserRentId)
-                    .HasName("fk_Book_User_RentId");
+                entity.HasIndex(e => e.UsersRentId)
+                    .HasName("fk_Books_Users_RentId");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .HasColumnType("int(11)")
-                    .ValueGeneratedOnAdd();
-
-                entity.Property(e => e.UserFunderId)
-                    .HasColumnName("user_funder_id")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.Image)
@@ -65,20 +58,24 @@ namespace BookSystem.Entities
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
-                entity.Property(e => e.UserRentId)
-                    .HasColumnName("user_rent_id")
+                entity.Property(e => e.UsersFundId)
+                    .HasColumnName("Users_fundId")
                     .HasColumnType("int(11)");
 
-                entity.HasOne(d => d.UserFunder)
-                    .WithMany(p => p.BooksUserFunder)
-                    .HasForeignKey(d => d.UserFunderId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_Book_User_Fund");
+                entity.Property(e => e.UsersRentId)
+                    .HasColumnName("Users_rentId")
+                    .HasColumnType("int(11)");
 
-                entity.HasOne(d => d.UserRent)
-                    .WithMany(p => p.BooksUserRent)
-                    .HasForeignKey(d => d.UserRentId)
-                    .HasConstraintName("fk_Book_User_Rent");
+                entity.HasOne(d => d.UsersFund)
+                    .WithMany(p => p.BooksUsersFund)
+                    .HasForeignKey(d => d.UsersFundId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Books_Users_Fund");
+
+                entity.HasOne(d => d.UsersRent)
+                    .WithMany(p => p.BooksUsersRent)
+                    .HasForeignKey(d => d.UsersRentId)
+                    .HasConstraintName("fk_Books_Users_Rent");
             });
 
             modelBuilder.Entity<RentLog>(entity =>
@@ -111,6 +108,12 @@ namespace BookSystem.Entities
                     .HasColumnName("rent_startTime")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
+                entity.HasOne(d => d.Book)
+                    .WithMany(p => p.RentLog)
+                    .HasForeignKey(d => d.BookId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_RentHistory_Book1");
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.RentLog)
                     .HasForeignKey(d => d.UserId)
@@ -137,6 +140,12 @@ namespace BookSystem.Entities
                 entity.Property(e => e.BookId)
                     .HasColumnName("book_id")
                     .HasColumnType("int(11)");
+
+                entity.HasOne(d => d.Book)
+                    .WithMany(p => p.UserRequestBook)
+                    .HasForeignKey(d => d.BookId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_User_has_Book_Book1");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserRequestBook)

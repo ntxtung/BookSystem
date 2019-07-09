@@ -7,8 +7,8 @@ namespace BookSystem.Entities
     {
         public Users()
         {
-            BooksUserFunder = new HashSet<Books>();
-            BooksUserRent = new HashSet<Books>();
+            BooksUsersFund = new HashSet<Books>();
+            BooksUsersRent = new HashSet<Books>();
             RentLog = new HashSet<RentLog>();
             UserRequestBook = new HashSet<UserRequestBook>();
         }
@@ -21,8 +21,8 @@ namespace BookSystem.Entities
         public string Password { get; set; }
         public string Token { get; set; }
 
-        public virtual ICollection<Books> BooksUserFunder { get; set; }
-        public virtual ICollection<Books> BooksUserRent { get; set; }
+        public virtual ICollection<Books> BooksUsersFund { get; set; }
+        public virtual ICollection<Books> BooksUsersRent { get; set; }
         public virtual ICollection<RentLog> RentLog { get; set; }
         public virtual ICollection<UserRequestBook> UserRequestBook { get; set; }
     }

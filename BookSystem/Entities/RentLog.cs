@@ -11,6 +11,7 @@ namespace BookSystem.Entities
         public DateTimeOffset RentStartTime { get; set; }
         public DateTimeOffset RentEndTime { get; set; }
 
+        public virtual Books Book { get; set; }
         public virtual Users User { get; set; }
     }
 }

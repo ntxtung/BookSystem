@@ -8,6 +8,7 @@ namespace BookSystem.Entities
         public int UserId { get; set; }
         public int BookId { get; set; }
 
+        public virtual Books Book { get; set; }
         public virtual Users User { get; set; }
     }
 }

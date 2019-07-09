@@ -18,19 +18,18 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public List<Books> GetAll() {
-            return _booksContext.ToList();
+        public IEnumerable<Books> GetAll() {
+            return null;
         }
 
         [HttpPost]
-        public ActionResult RegisterNewUser([FromBody] Books userData) {
+        public ActionResult RegisterNewBook([FromBody] Books userData) {
             return null;
         }
 
-
         [HttpGet("{id}")]
-        public Users GetUserById(int id) {
-            return null;
+        public Books GetUserById(int id) {
+            return _booksContext.Find(id);
         }
     }
 }
