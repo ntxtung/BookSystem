@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using BookSystem.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -15,22 +15,40 @@ namespace BookSystem.Services {
             _userContext = _context.Users;
         }
 
-        /// <summary>
-        ///     Get User by finding its Id
-        /// </summary>
-        /// <param name="id">Id of User</param>
-        /// <returns>User object</returns>
-        public Users GetUserById(int id) {
-            return _userContext.Find(id);
+        private IQueryable<Object> GetUserView() {
+            return _userContext.Select(user => new {
+                user.Id,
+                user.Username,
+                user.Firstname,
+                user.Lastname,
+                user.Email,
+                user.Token
+            });
         }
 
-        /// <summary>
-        ///     Return List of all users
-        /// </summary>
-        /// <returns>List object that contains all users</returns>
-        public List<Users> GetAllUsers() {
+        public Object GetUserById(int id) {
+            return _userContext.Select(user => new {
+                user.Id,
+                user.Username,
+                user.Firstname,
+                user.Lastname,
+                user.Email,
+                user.Token
+            }).Single(user => user.Id == id);
+        }
+
+        public IList GetAllUsers() {
             try {
-                return _userContext.ToList();
+                return _userContext
+                    .Select(user => new {
+                        user.Id,
+                        user.Username,
+                        user.Firstname,
+                        user.Lastname,
+                        user.Email,
+                        user.Token
+                    })
+                    .ToList();
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -38,14 +56,26 @@ namespace BookSystem.Services {
             }
         }
 
-        /// <summary>
-        ///     Create new user and save to database
-        /// </summary>
-        /// <param name="user">User object that want to save to DB</param>
-        /// <returns>0 when update failed</returns>
-        /// <returns>1 or larger when update success</returns>
-        /// <exception cref="DuplicationEntryException">Duplicate Entry</exception>
-        /// <exception cref="Exception">For unhandled exception</exception>
+        public IList GetFundedBookOfUser(int id) {
+            return _context.Books
+                .Where(book => book.UsersFundId == id)
+                .Select(book => new {
+                    book.Id,
+                    book.Image,
+                    book.Title
+                }).ToList();
+        }
+
+        public IList GetRentedBookOfUser(int id) {
+            return _context.Books
+                .Where(book => book.UsersRentId == id)
+                .Select(book => new {
+                    book.Id,
+                    book.Image,
+                    book.Title
+                }).ToList();
+        }
+
         public int RegisterNewUser(Users user) {
             try {
                 _userContext.Add(user);
@@ -53,24 +83,16 @@ namespace BookSystem.Services {
             }
             catch (DbUpdateException dbe) {
                 var mysqlEx = dbe.InnerException as MySqlException;
-                if (mysqlEx != null)
-                    switch (mysqlEx.Number) {
-                        case 1062:
-                            throw new DuplicationEntryException();
-                        default:
-                            throw new Exception();
-                    }
+                if (mysqlEx == null) return 0;
+                switch (mysqlEx.Number) {
+                    case 1062:
+                        throw new DuplicationEntryException();
+                    default:
+                        throw new Exception();
+                }
             }
-
-            return 0;
         }
 
-        /// <summary>
-        ///     Update user (Find by id) then update it to object newUser
-        /// </summary>
-        /// <param name="id">Id of User want to update</param>
-        /// <param name="newUser">New User properties</param>
-        /// <returns>Nah?</returns>
         public int UpdateUser(int id, Users newUser) {
             throw new NotImplementedException();
         }

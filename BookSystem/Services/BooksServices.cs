@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using BookSystem.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -15,12 +15,32 @@ namespace BookSystem.Services {
             _bookContext = _context.Books;
         }
 
-        public Books GetBookById(int id) {
-            return _bookContext.Find(id);
+        public Object GetBookById(int id) {
+            return _bookContext.Select(book => new {
+                book.Id,
+                book.Image,
+                book.Title
+            }).Where(book => book.Id == id);
         }
 
-        public List<Books> GetAllBooks() {
-            return _bookContext.ToList();
+        public IList GetAllBooks() {
+            return _bookContext.Select(book => new {
+                book.Id,
+                book.Image,
+                book.Title
+            }).ToList();
+        }
+
+        public Object GetRentedUser(int id) {
+            var bookObj = _bookContext.Single(book => book.Id == id);
+            return _context.Users.Select(user => new {
+                user.Id,
+                user.Username,
+                user.Firstname,
+                user.Lastname,
+                user.Email,
+                user.Token
+            }).Single(user => user.Id == bookObj.UsersRentId);
         }
 
         public int RegisterNewBook(Books book) {
@@ -37,7 +57,6 @@ namespace BookSystem.Services {
                             throw new Exception();
                     }
             }
-
             return 0;
         }
 

@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -14,12 +14,22 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public List<Users> GetAll() {
+        public IList GetAll() {
             return _userService.GetAllUsers();
         }
 
+        [HttpGet("{id}/fundedBook")]
+        public IList GetFundedBookOfUser([FromRoute]int id) {
+            return _userService.GetFundedBookOfUser(id);
+        }
+        
+        [HttpGet("{id}/rentedBook")]
+        public IList GetRentedBookOfUser([FromRoute]int id) {
+            return _userService.GetRentedBookOfUser(id);
+        }
+
         [HttpGet("{id}")]
-        public Users GetUserById(int id) {
+        public Object GetUserById(int id) {
             return _userService.GetUserById(id);
         }
 

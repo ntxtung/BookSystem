@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using BookSystem.Entities;
 using BookSystem.Services;
@@ -15,7 +16,7 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public IEnumerable<Books> GetAll() {
+        public IList GetAll() {
             return _booksServices.GetAllBooks();
         }
 
@@ -38,15 +39,20 @@ namespace BookSystem.Controllers {
                     message = "Unhandled Exception"
                 });
             }
-            
+
             return Json(new {
                 message = "Register Unsuccessfully"
             });
         }
 
         [HttpGet("{id}")]
-            public Books GetUserById(int id) {
-                return _booksServices.GetBookById(id);
-            }
+        public Object GetBookById([FromRoute]int id) {
+            return _booksServices.GetBookById(id);
+        }
+
+        [HttpGet("{id}/rentUser")]
+        public Object GetRentedUser([FromRoute] int id) {
+            return _booksServices.GetRentedUser(id);
+        }
     }
 }

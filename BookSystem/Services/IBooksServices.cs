@@ -1,21 +1,14 @@
-using System.Collections.Generic;
+using System;
+using System.Collections;
 using BookSystem.Entities;
 
 namespace BookSystem.Services {
     public interface IBooksServices {
-        // Return a Book by finding its Id
-        Books GetBookById(int id);
-
-        // Just return all books
-        List<Books> GetAllBooks();
-
-        // Create new book and save it to database
+        Object GetBookById(int id);
+        IList GetAllBooks();
+        Object GetRentedUser(int id);
         int RegisterNewBook(Books book);
-
-        // Update a book (Find by Id) and update its properties due to newBook properties
         int UpdateBook(int id, Books newBook);
-
-        // Delete book (Find by Id), should delete its relevant rows in User_Request_Book table in database
         int DeleteBook(int id);
     }
 }
