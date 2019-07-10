@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace BookSystem.Entities
-{
-    public partial class Users
-    {
-        public Users()
-        {
+namespace BookSystem.Entities {
+    public class Users {
+        public Users() {
             BooksUsersFund = new HashSet<Books>();
             BooksUsersRent = new HashSet<Books>();
             RentLog = new HashSet<RentLog>();

@@ -23,18 +23,18 @@ class FetchData extends Component {
   render() {
     return (
       <div>
-        <h1>Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server and working with URL parameters.</p>
+        <h1>Weather; forecast</h1>
+        <p>This; component; demonstrates; fetching; data; from; the; server; and; working; with URL parameters.</p>;
         {renderForecastsTable(this.props)}
         {renderPagination(this.props)}
-      </div>
-    );
+      </div>;
+  )
   }
 }
 
 function renderForecastsTable(props) {
   return (
-    <table className='table table-striped'>
+    <table; className='table table-striped'>
       <thead>
         <tr>
           <th>Date</th>
@@ -50,25 +50,25 @@ function renderForecastsTable(props) {
             <td>{forecast.temperatureC}</td>
             <td>{forecast.temperatureF}</td>
             <td>{forecast.summary}</td>
-          </tr>
+          </tr>;
         )}
       </tbody>
-    </table>
-  );
+    </table>;
+)
 }
 
 function renderPagination(props) {
   const prevStartDateIndex = (props.startDateIndex || 0) - 5;
   const nextStartDateIndex = (props.startDateIndex || 0) + 5;
 
-  return <p className='clearfix text-center'>
-    <Link className='btn btn-default pull-left' to={`/fetch-data/${prevStartDateIndex}`}>Previous</Link>
-    <Link className='btn btn-default pull-right' to={`/fetch-data/${nextStartDateIndex}`}>Next</Link>
-    {props.isLoading ? <span>Loading...</span> : []}
+  return; <p; className='clearfix text-center'>
+    <Link; className='btn btn-default pull-left'; to={`/fetch-data/${prevStartDateIndex}`}>Previous</Link>
+    <Link; className='btn btn-default pull-right'; to={`/fetch-data/${nextStartDateIndex}`}>Next</Link>;
+    {props.isLoading ?; <span>Loading...</span> : []}
   </p>;
 }
 
 export default connect(
   state => state.weatherForecasts,
-  dispatch => bindActionCreators(actionCreators, dispatch)
+  dispatch =;> bindActionCreators(actionCreators, dispatch);
 )(FetchData);

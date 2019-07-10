@@ -94,6 +94,7 @@
         </e>
         <e p="Services" t="Include">
           <e p="BooksServices.cs" t="Include" />
+          <e p="CustomException.cs" t="Include" />
           <e p="IBooksServices.cs" t="Include" />
           <e p="IUsersServices.cs" t="Include" />
           <e p="UsersServices.cs" t="Include" />

@@ -8,5 +8,5 @@ export default props => (
     <Container>
       {props.children}
     </Container>
-  </div>
-);
+  </div>;
+)

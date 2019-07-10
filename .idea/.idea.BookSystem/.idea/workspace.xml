@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookSystem/Services/CustomException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookSystem/BookSystem.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/BookSystem.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/Counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/FetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/FetchData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/NavMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/components/NavMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/registerServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/registerServiceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/store/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/store/Counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/store/WeatherForecasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/store/WeatherForecasts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/ClientApp/src/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/ClientApp/src/store/configureStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Entities/BookSystemContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Entities/BookSystemContext.cs" afterDir="false" />
@@ -16,9 +24,15 @@
       <change beforePath="$PROJECT_DIR$/BookSystem/Entities/RentLog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Entities/RentLog.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Entities/UserRequestBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Entities/UserRequestBook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Entities/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Entities/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/Model.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Model.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/Model.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Model.mwb.bak" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,70 +41,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Services/UsersServices.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="71" column="57" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="57" />
-              <folding>
-                <marker date="1562669421333" expanded="true" signature="6:188" ph="..." />
-                <marker date="1562669421333" expanded="true" signature="220:3028" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="269:3026" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="408:510" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="520:686" ph="/// Get User by finding its Id ... " />
-                <marker date="1562669421333" expanded="true" signature="728:811" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="821:961" ph="/// Return List of all users ... " />
-                <marker date="1562669421333" expanded="true" signature="1003:1207" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1021:1082" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1115:1197" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1217:1492" ph="/// Create new user and save to database ... " />
-                <marker date="1562669421333" expanded="true" signature="1540:1962" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1558:1660" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1715:1807" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1850:1929" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="1972:2239" ph="/// Update user (Find by id) then update it to object newUser ... " />
-                <marker date="1562669421333" expanded="true" signature="2293:2905" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="2311:2665" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="2708:2786" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="2819:2872" ph="{...}" />
-                <marker date="1562669421333" expanded="true" signature="2953:3020" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/UserController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="43" column="87" selection-start-line="43" selection-start-column="87" selection-end-line="43" selection-end-column="87" />
-              <folding>
-                <marker date="1562668894441" expanded="true" signature="6:219" ph="..." />
-                <marker date="1562668894441" expanded="true" signature="254:1614" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="326:1612" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="440:492" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="548:606" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="675:735" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="827:1160" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="922:1048" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="956:1032" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="1078:1148" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="1274:1606" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="1368:1494" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="1402:1478" ph="{...}" />
-                <marker date="1562668894441" expanded="true" signature="1524:1594" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/BookSystem/Services/CustomException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Pages/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,14 +66,15 @@
       <list>
         <option value="$PROJECT_DIR$/BookSystem/Controllers/UsersController.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Entities/BookSystemContext.cs" />
-        <option value="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/IUserServices.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" />
-        <option value="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Startup.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" />
-        <option value="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Services/CustomException.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" />
       </list>
     </option>
   </component>
@@ -155,12 +113,6 @@
               <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
               <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Entities" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
@@ -245,7 +197,8 @@
       <option name="presentableId" value="Default" />
       <updated>1562572282601</updated>
       <workItem from="1562572284260" duration="9891000" />
-      <workItem from="1562641791436" duration="15161000" />
+      <workItem from="1562641791436" duration="15765000" />
+      <workItem from="1562725348140" duration="4872000" />
     </task>
     <task id="LOCAL-00001" summary="Init Project">
       <created>1562576812137</created>
@@ -258,7 +211,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25052000" />
+    <option name="totallyTimeSpent" value="30528000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -271,12 +224,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25253063" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25519446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.3297062" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.3297062" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -292,8 +243,9 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Unit Tests" order="13" weight="0.3297062" />
       <window_info anchor="bottom" id="REST Client" order="14" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="15" visible="true" weight="0.36670294" />
+      <window_info anchor="bottom" id="Terminal" order="15" visible="true" weight="0.2796518" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.3297062" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -327,69 +279,21 @@
         <state relative-caret-position="-4774" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/User.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <marker date="1562577130849" expanded="false" signature="6:47" ph="..." />
-            <marker date="1562577130849" expanded="true" signature="76:423" ph="{...}" />
-            <marker date="1562577130849" expanded="true" signature="108:421" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/SampleDataController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/User.cs" />
+    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/SampleDataController.cs" />
     <entry file="file://$PROJECT_DIR$/BookSystem/Entities/RentLog.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding>
-            <marker date="1562662676097" expanded="false" signature="6:47" ph="..." />
-            <marker date="1562662676097" expanded="true" signature="78:458" ph="{...}" />
-            <marker date="1562662676097" expanded="true" signature="113:456" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/UserRequestsBook.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Book.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/UserRequestsBook.cs" />
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Book.cs" />
     <entry file="file://$PROJECT_DIR$/BookSystem/Entities/BookSystemContext.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <marker date="1562662676095" expanded="false" signature="6:96" ph="..." />
-            <marker date="1562662676095" expanded="true" signature="127:7611" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="184:7609" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="225:245" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="352:372" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="706:1140" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="762:1130" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="7575:7603" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="1371:3200" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="3267:4564" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="4628:6289" ph="{...}" />
-            <marker date="1562662676095" expanded="true" signature="7575:7591" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -400,10 +304,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="22" column="105" lean-forward="true" selection-start-line="22" selection-start-column="105" selection-end-line="22" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding>
-            <marker date="1562572280889" expanded="true" signature="24:61" ph="@..." />
-            <marker date="1562572280889" expanded="true" signature="178:291" ph="@..." />
-            <marker date="1562572280889" expanded="true" signature="203:291" ph="{...}" />
+            <marker date="1562729679644" expanded="false" signature="6:61" ph="..." />
+            <marker date="1562729679644" expanded="true" signature="92:663" ph="{...}" />
+            <marker date="1562729679644" expanded="true" signature="129:661" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/CustomException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
+          <folding>
+            <marker date="1562728890801" expanded="true" signature="45:111" ph="{...}" />
+            <marker date="1562728890801" expanded="true" signature="102:109" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -415,145 +358,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="22" column="105" lean-forward="true" selection-start-line="22" selection-start-column="105" selection-end-line="22" selection-end-column="105" />
-          <folding>
-            <marker date="1562664712129" expanded="true" signature="6:323" ph="..." />
-            <marker date="1562664712129" expanded="true" signature="346:2279" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="373:2277" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="428:482" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="706:1172" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="1361:2271" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="1400:1464" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="1464:1723" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="1869:2023" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="2057:2259" ph="{...}" />
-            <marker date="1562664712129" expanded="true" signature="2155:2245" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding>
-            <marker date="1562664125628" expanded="true" signature="6:60" ph="..." />
-            <marker date="1562664125628" expanded="true" signature="92:690" ph="{...}" />
-            <marker date="1562664125628" expanded="true" signature="130:688" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <marker date="1562572302199" expanded="false" signature="6:255" ph="..." />
-            <marker date="1562572302199" expanded="true" signature="278:592" ph="{...}" />
-            <marker date="1562572302199" expanded="true" signature="305:590" ph="{...}" />
-            <marker date="1562572302199" expanded="true" signature="354:419" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Services/BooksServices.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="55" />
+        <state relative-caret-position="1">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding>
-            <marker date="1562664685087" expanded="true" signature="6:60" ph="..." />
-            <marker date="1562664685087" expanded="true" signature="92:715" ph="{...}" />
-            <marker date="1562664685087" expanded="true" signature="142:713" ph="{...}" />
-            <marker date="1562664685087" expanded="true" signature="185:252" ph="{...}" />
-            <marker date="1562664685087" expanded="true" signature="295:362" ph="{...}" />
-            <marker date="1562664685087" expanded="true" signature="411:478" ph="{...}" />
-            <marker date="1562664685087" expanded="true" signature="533:600" ph="{...}" />
-            <marker date="1562664685087" expanded="true" signature="640:707" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <marker date="1562663232228" expanded="false" signature="6:192" ph="..." />
-            <marker date="1562663232228" expanded="true" signature="227:901" ph="{...}" />
-            <marker date="1562663232228" expanded="true" signature="299:899" ph="{...}" />
-            <marker date="1562663232228" expanded="true" signature="440:543" ph="{...}" />
-            <marker date="1562663232228" expanded="true" signature="606:642" ph="{...}" />
-            <marker date="1562663232228" expanded="true" signature="734:770" ph="{...}" />
-            <marker date="1562663232228" expanded="true" signature="839:893" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding>
-            <marker date="1562665939987" expanded="false" signature="6:92" ph="..." />
-            <marker date="1562665939987" expanded="true" signature="124:727" ph="{...}" />
-            <marker date="1562665939987" expanded="true" signature="161:725" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/UserController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="43" column="87" selection-start-line="43" selection-start-column="87" selection-end-line="43" selection-end-column="87" />
-          <folding>
-            <marker date="1562668894441" expanded="true" signature="6:219" ph="..." />
-            <marker date="1562668894441" expanded="true" signature="254:1614" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="326:1612" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="440:492" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="548:606" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="675:735" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="827:1160" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="922:1048" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="956:1032" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="1078:1148" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="1274:1606" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="1368:1494" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="1402:1478" ph="{...}" />
-            <marker date="1562668894441" expanded="true" signature="1524:1594" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="6:160" ph="..." />
+            <marker date="1562729703668" expanded="true" signature="192:1478" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="242:1476" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="381:483" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="526:579" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="622:675" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="724:1255" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="742:844" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="887:1222" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="999:1208" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="1310:1370" ph="{...}" />
+            <marker date="1562729703668" expanded="true" signature="1410:1470" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Services/UsersServices.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="71" column="57" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="57" />
+        <state relative-caret-position="1057">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
           <folding>
-            <marker date="1562669421333" expanded="true" signature="6:188" ph="..." />
-            <marker date="1562669421333" expanded="true" signature="220:3028" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="269:3026" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="408:510" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="520:686" ph="/// Get User by finding its Id ... " />
-            <marker date="1562669421333" expanded="true" signature="728:811" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="821:961" ph="/// Return List of all users ... " />
-            <marker date="1562669421333" expanded="true" signature="1003:1207" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1021:1082" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1115:1197" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1217:1492" ph="/// Create new user and save to database ... " />
-            <marker date="1562669421333" expanded="true" signature="1540:1962" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1558:1660" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1715:1807" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1850:1929" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="1972:2239" ph="/// Update user (Find by id) then update it to object newUser ... " />
-            <marker date="1562669421333" expanded="true" signature="2293:2905" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="2311:2665" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="2708:2786" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="2819:2872" ph="{...}" />
-            <marker date="1562669421333" expanded="true" signature="2953:3020" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="6:160" ph="..." />
+            <marker date="1562729703695" expanded="true" signature="192:2727" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="241:2725" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="380:482" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="492:662" ph="///     Get User by finding its Id ... " />
+            <marker date="1562729703695" expanded="true" signature="704:757" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="767:911" ph="///     Return List of all users ... " />
+            <marker date="1562729703695" expanded="true" signature="953:1157" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="971:1032" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="1065:1147" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="1167:1606" ph="///     Create new user and save to database ... " />
+            <marker date="1562729703695" expanded="true" signature="1654:2224" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="1672:1774" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="1817:2191" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="1968:2177" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="2234:2505" ph="///     Update user (Find by id) then update it to object newUser ... " />
+            <marker date="1562729703695" expanded="true" signature="2559:2619" ph="{...}" />
+            <marker date="1562729703695" expanded="true" signature="2659:2719" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/UserController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="47" selection-end-column="15" />
+          <folding>
+            <marker date="1562729679721" expanded="true" signature="6:133" ph="..." />
+            <marker date="1562729679721" expanded="true" signature="168:1429" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="240:1427" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="354:406" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="462:520" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="589:649" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="741:1421" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="759:995" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="898:979" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="1042:1160" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="1076:1144" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="1191:1312" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="1225:1296" ph="{...}" />
+            <marker date="1562729679721" expanded="true" signature="1342:1409" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <folding>
+            <marker date="1562729942461" expanded="true" signature="6:170" ph="..." />
+            <marker date="1562729942461" expanded="true" signature="205:1511" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="277:1509" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="396:451" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="514:574" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="666:1360" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="684:922" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="825:906" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="969:1087" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="1003:1071" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="1118:1239" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="1152:1223" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="1281:1348" ph="{...}" />
+            <marker date="1562729942461" expanded="true" signature="1433:1503" ph="{...}" />
           </folding>
         </state>
       </provider>

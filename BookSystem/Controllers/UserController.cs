@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MySql.Data.MySqlClient;
 
 namespace BookSystem.Controllers {
     [Route("api/users")]
@@ -28,29 +25,26 @@ namespace BookSystem.Controllers {
 
         [HttpPost]
         public ActionResult RegisterNewUser([FromBody] Users userData) {
-            var result = _userService.RegisterNewUser(userData);
-            if (result > 0) {
+            try {
+                var result = _userService.RegisterNewUser(userData);
+                if (result > 0)
+                    return Json(new {
+                        message = "Register Successfully"
+                    });
+            }
+            catch (DuplicationEntryException) {
                 return Json(new {
-                    message = "Create User Successfully"
+                    message = "Duplicated Entry"
+                });
+            }
+            catch (Exception) {
+                return Json(new {
+                    message = "Unhandled Exception"
                 });
             }
 
             return Json(new {
-                message = "Create User Unsuccessfully"
-            });
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult UpdateUser([FromRoute] int id, [FromBody] Users userData) {
-            var result = _userService.UpdateUser(id, userData);
-            if (result > 0) {
-                return Json(new {
-                    message = "Update User Successfully"
-                });
-            }
-
-            return Json(new {
-                message = "Update User Unsuccessfully"
+                message = "Register Unsuccessfully"
             });
         }
     }
