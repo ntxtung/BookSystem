@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Net;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -14,46 +15,51 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public IList GetAll() {
-            return _userService.GetAllUsers();
+        public ActionResult GetAll() {
+            return Ok(_userService.GetAllUsers());
+        }
+        [HttpGet("{id}")]
+        public ActionResult GetUserById(int id) {
+            try {
+                return Ok(_userService.GetUserById(id));
+            }
+            catch (Exception e) {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpGet("{id}/fundedBook")]
-        public IList GetFundedBookOfUser([FromRoute]int id) {
-            return _userService.GetFundedBookOfUser(id);
+        public ActionResult GetFundedBookOfUser([FromRoute]int id) {
+            return Ok(_userService.GetFundedBookOfUser(id));
         }
         
         [HttpGet("{id}/rentedBook")]
-        public IList GetRentedBookOfUser([FromRoute]int id) {
-            return _userService.GetRentedBookOfUser(id);
+        public ActionResult GetRentedBookOfUser([FromRoute]int id) {
+            return Ok(_userService.GetRentedBookOfUser(id));
         }
 
-        [HttpGet("{id}")]
-        public Object GetUserById(int id) {
-            return _userService.GetUserById(id);
-        }
 
         [HttpPost]
         public ActionResult RegisterNewUser([FromBody] Users userData) {
             try {
                 var result = _userService.RegisterNewUser(userData);
-                if (result > 0)
-                    return Json(new {
-                        message = "Register Successfully"
-                    });
+                if (result > 0) {
+                    var loggedUser = _userService.Authenticate(userData.Username, userData.Password);
+                    return Accepted(loggedUser);
+                }
             }
             catch (DuplicationEntryException) {
-                return Json(new {
+                return Ok(new {
                     message = "Duplicated Entry"
                 });
             }
             catch (Exception) {
-                return Json(new {
+                return Ok(new {
                     message = "Unhandled Exception"
                 });
             }
 
-            return Json(new {
+            return Ok(new {
                 message = "Register Unsuccessfully"
             });
         }

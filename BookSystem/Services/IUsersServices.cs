@@ -10,6 +10,7 @@ namespace BookSystem.Services {
         IList GetAllUsers();
         IList GetFundedBookOfUser(int id);
         IList GetRentedBookOfUser(int id);
+        Object Authenticate(string username, string password);
         int RegisterNewUser(Users user);
         int UpdateUser(int id, Users newUser);
         int DeleteUser(int id);

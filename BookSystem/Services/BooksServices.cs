@@ -16,11 +16,17 @@ namespace BookSystem.Services {
         }
 
         public Object GetBookById(int id) {
-            return _bookContext.Select(book => new {
-                book.Id,
-                book.Image,
-                book.Title
-            }).Where(book => book.Id == id);
+            try {
+                return _bookContext.Select(book => new {
+                    book.Id,
+                    book.Image,
+                    book.Title
+                }).Single(book => book.Id == id);
+
+            }
+            catch (InvalidOperationException e) {
+                throw new Exception(e.Message);
+            }
         }
 
         public IList GetAllBooks() {
@@ -40,7 +46,7 @@ namespace BookSystem.Services {
                 user.Lastname,
                 user.Email,
                 user.Token
-            }).Single(user => user.Id == bookObj.UsersRentId);
+            }).Where(user => user.Id == bookObj.UsersRentId);
         }
 
         public int RegisterNewBook(Books book) {

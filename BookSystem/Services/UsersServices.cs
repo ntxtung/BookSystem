@@ -27,14 +27,19 @@ namespace BookSystem.Services {
         }
 
         public Object GetUserById(int id) {
-            return _userContext.Select(user => new {
-                user.Id,
-                user.Username,
-                user.Firstname,
-                user.Lastname,
-                user.Email,
-                user.Token
-            }).Single(user => user.Id == id);
+            try {
+                return _userContext.Select(user => new {
+                    user.Id,
+                    user.Username,
+                    user.Firstname,
+                    user.Lastname,
+                    user.Email,
+                    user.Token
+                }).Single(user => user.Id == id);
+            }
+            catch (InvalidOperationException) {
+                throw new Exception("No element found");
+            }
         }
 
         public IList GetAllUsers() {
@@ -74,6 +79,25 @@ namespace BookSystem.Services {
                     book.Image,
                     book.Title
                 }).ToList();
+        }
+
+        public Object Authenticate(string username, string password) {
+            try {
+                return _userContext
+                    .Select(user => new {
+                        user.Id,
+                        user.Username,
+                        user.Firstname,
+                        user.Lastname,
+                        user.Email,
+                        user.Password,
+                        user.Token
+                    })
+                    .Single(user => user.Username == username && user.Password == password);
+            }
+            catch (InvalidOperationException) {
+                return null;
+            }
         }
 
         public int RegisterNewUser(Users user) {

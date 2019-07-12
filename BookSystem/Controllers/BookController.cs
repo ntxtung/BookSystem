@@ -16,8 +16,8 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public IList GetAll() {
-            return _booksServices.GetAllBooks();
+        public ActionResult GetAll() {
+            return Ok(_booksServices.GetAllBooks());
         }
 
         [HttpPost]
@@ -25,34 +25,38 @@ namespace BookSystem.Controllers {
             try {
                 var result = _booksServices.RegisterNewBook(bookData);
                 if (result > 0)
-                    return Json(new {
+                    return Ok(new {
                         message = "Register Successfully"
                     });
             }
             catch (DuplicationEntryException) {
-                return Json(new {
+                return BadRequest(new {
                     message = "Duplicated Entry"
                 });
             }
             catch (Exception) {
-                return Json(new {
+                return BadRequest(new {
                     message = "Unhandled Exception"
                 });
             }
-
-            return Json(new {
+            return BadRequest(new {
                 message = "Register Unsuccessfully"
             });
         }
 
         [HttpGet("{id}")]
-        public Object GetBookById([FromRoute]int id) {
-            return _booksServices.GetBookById(id);
+        public ActionResult GetBookById([FromRoute]int id) {
+            try {
+                return Ok(_booksServices.GetBookById(id));
+            }
+            catch (Exception e) {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpGet("{id}/rentUser")]
-        public Object GetRentedUser([FromRoute] int id) {
-            return _booksServices.GetRentedUser(id);
+        public ActionResult GetRentedUser([FromRoute] int id) {
+            return Ok(_booksServices.GetRentedUser(id));
         }
     }
 }
