@@ -31,3 +31,10 @@ export const doUserRegister = (userData) => async dispatch => {
   })
   dispatch({type: 'USER_REGISTER', payload: response.data})
 }
+
+export const doLogOut = () => {
+  return {
+    type: 'AUTH_LOGOUT',
+    payload: true
+  }
+}

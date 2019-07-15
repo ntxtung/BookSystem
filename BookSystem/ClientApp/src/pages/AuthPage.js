@@ -32,7 +32,7 @@ class AuthPage extends React.Component {
           style={{
             height: '100vh',
             paddingTop: '10vh',
-            backgroundImage: "url(" + process.env.PUBLIC_URL + "authBackground2.jpg" + ")",
+            backgroundImage: `url(${process.env.PUBLIC_URL}/authBackground2.jpg)`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
