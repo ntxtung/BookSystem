@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Net;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Mvc;

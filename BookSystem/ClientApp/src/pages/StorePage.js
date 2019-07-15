@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import localhost5000 from '../apis/localhost5000'
 
 import BookCard from '../components/BookCard'
-import { Card, CardGroup } from 'semantic-ui-react';
+import { Header, CardGroup } from 'semantic-ui-react';
 
 class StorePage extends React.Component {
   constructor(props) {
@@ -17,20 +17,27 @@ class StorePage extends React.Component {
   componentDidMount = async () => {
     let response = await localhost5000({
       method: "GET",
-      url: '/books'
+      url: './books'
     })
-    this.setState({books: response.data})
+    this.setState({ books: response.data })
   }
   render() {
     const mapBook = this.state.books.map((book) => {
       return (
-        <BookCard book={book}/>
+        <BookCard key={book.id} book={book} />
       )
     })
     return (
-      <CardGroup doubling itemsPerRow={5}> 
-        {mapBook}
-      </CardGroup>
+      <div>
+        <Header as='h2' icon textAlign='center'>
+          <Header.Content>You can rent other's books here</Header.Content>
+        </Header>
+        <CardGroup doubling itemsPerRow={5}>
+          {mapBook}
+        </CardGroup>
+        
+      </div>
+
     )
   }
 }

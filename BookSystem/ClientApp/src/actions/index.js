@@ -19,7 +19,7 @@ export const doAuthLogin = (userData) => async dispatch => {
 export const doUserRegister = (userData) => async dispatch => {
   const response = await connectedHost({
     method: "POST",
-    url: '/users',
+    url: './users',
     headers: {},
     data: {
       username: userData.username,

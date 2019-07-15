@@ -40,7 +40,7 @@ class AuthPage extends React.Component {
           verticalAlign='top'>
           <Grid.Column style={{ maxWidth: 450 }}>
 
-            <Image size="small" centered src={process.env.PUBLIC_URL + '/Logo-full.png'} />
+            {/* <Image size="small" centered src={process.env.PUBLIC_URL + '/Logo-full.png'} /> */}
             <Header as='h2' color='orange' textAlign='center'>
               Book Rent System
           </Header>
