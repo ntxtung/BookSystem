@@ -5,7 +5,7 @@ const connectedHost = localhost5000
 export const doAuthLogin = (userData) => async dispatch => {
   const response = await connectedHost({
     method: "POST",
-    url: '/auth/login',
+    url: './auth/login',
     headers: {},
     params: {
       username: userData.username,
