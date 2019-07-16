@@ -14,24 +14,6 @@
         <e p="BookSystem.csproj" t="IncludeRecursive" />
         <e p="ClientApp" t="Include">
           <e p=".gitignore" t="Include" />
-          <e p="build" t="Include">
-            <e p="asset-manifest.json" t="Include" />
-            <e p="authBackground.jpg" t="Include" />
-            <e p="authBackground2.jpg" t="Include" />
-            <e p="book-default-cover.jpg" t="Include" />
-            <e p="favicon.ico" t="Include" />
-            <e p="index.html" t="Include" />
-            <e p="Logo-full.png" t="Include" />
-            <e p="manifest.json" t="Include" />
-            <e p="placeholder-book-cover-default.png" t="Include" />
-            <e p="service-worker.js" t="Include" />
-            <e p="static" t="Include">
-              <e p="js" t="Include">
-                <e p="main.6297f13d.js" t="Include" />
-                <e p="main.6297f13d.js.map" t="Include" />
-              </e>
-            </e>
-          </e>
           <e p="node_modules\@material-ui\core" t="IncludeRecursive" />
           <e p="node_modules\@material-ui\icons" t="IncludeRecursive" />
           <e p="node_modules\@types" t="IncludeRecursive">
@@ -142,6 +124,8 @@
           <e p="IRentServices.cs" t="Include" />
           <e p="IRequestBookServices.cs" t="Include" />
           <e p="IUsersServices.cs" t="Include" />
+          <e p="RentServices.cs" t="Include" />
+          <e p="RequestBookServices.cs" t="Include" />
           <e p="UsersServices.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />

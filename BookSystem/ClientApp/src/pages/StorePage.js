@@ -29,8 +29,8 @@ class StorePage extends React.Component {
     })
     return (
       <div>
-        <Header as='h2' icon textAlign='center'>
-          <Header.Content>You can rent other's books here</Header.Content>
+        <Header as='h2' textAlign='center'>
+          <Header.Content>You can rent others' books here</Header.Content>
         </Header>
         <CardGroup doubling itemsPerRow={5}>
           {mapBook}

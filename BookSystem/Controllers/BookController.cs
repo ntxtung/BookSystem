@@ -54,6 +54,11 @@ namespace BookSystem.Controllers {
             }
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBookById([FromRoute] int id) {
+            return Ok(_booksServices.DeleteBook(id));
+        }
+
         [HttpGet("{id}/rentUser")]
         public ActionResult GetRentedUser([FromRoute] int id) {
             return Ok(_booksServices.GetRentedUser(id));

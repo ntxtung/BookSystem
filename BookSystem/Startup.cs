@@ -25,6 +25,8 @@ namespace BookSystem {
             // Dependency Injection
             services.AddScoped<IUserServices, UsersServices>();
             services.AddScoped<IBooksServices, BooksServices>();
+            services.AddScoped<IRequestBookServices, RequestBookServices>();
+            services.AddScoped<IRentServices, RentServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,11 +48,7 @@ namespace BookSystem {
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseMvc(routes => {
-                routes.MapRoute(
-                    "default",
-                    "/{controller}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
 
             app.UseSpa(spa => {
                 spa.Options.SourcePath = "ClientApp";

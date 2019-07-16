@@ -9,7 +9,7 @@ namespace BookSystem.Services {
     public class UsersServices : IUserServices {
         private readonly BookSystemContext _context;
         private readonly DbSet<Users> _userContext;
-
+        
         public UsersServices() {
             _context = new BookSystemContext();
             _userContext = _context.Users;
