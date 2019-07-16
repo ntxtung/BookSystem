@@ -1,31 +1,41 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BookSystem.Entities {
-    public class BookSystemContext : DbContext {
-        public BookSystemContext() {
+namespace BookSystem.Entities
+{
+    public partial class BookSystemContext : DbContext
+    {
+        public BookSystemContext()
+        {
         }
 
         public BookSystemContext(DbContextOptions<BookSystemContext> options)
-            : base(options) {
+            : base(options)
+        {
         }
 
         public virtual DbSet<Books> Books { get; set; }
         public virtual DbSet<RentLog> RentLog { get; set; }
         public virtual DbSet<UserRequestBook> UserRequestBook { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UsersReviewsBooks> UsersReviewsBooks { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            if (!optionsBuilder.IsConfigured) {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySQL(
-                    "server=206.189.40.187;port=3307;user=root;password=xuantung98;database=BookSystem");
+                optionsBuilder.UseMySQL("server=206.189.40.187;port=3307;user=root;password=xuantung98;database=BookSystem");
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
-            modelBuilder.Entity<Books>(entity => {
+            modelBuilder.Entity<Books>(entity =>
+            {
                 entity.ToTable("Books", "BookSystem");
 
                 entity.HasIndex(e => e.UsersFundId)
@@ -37,6 +47,12 @@ namespace BookSystem.Entities {
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
+
+                entity.Property(e => e.Author)
+                    .IsRequired()
+                    .HasColumnName("author")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Image)
                     .HasColumnName("image")
@@ -69,8 +85,9 @@ namespace BookSystem.Entities {
                     .HasConstraintName("fk_Books_Users_Rent");
             });
 
-            modelBuilder.Entity<RentLog>(entity => {
-                entity.HasKey(e => new {e.RentId, e.UserId, e.BookId});
+            modelBuilder.Entity<RentLog>(entity =>
+            {
+                entity.HasKey(e => new { e.RentId, e.UserId, e.BookId });
 
                 entity.ToTable("Rent_Log", "BookSystem");
 
@@ -111,8 +128,9 @@ namespace BookSystem.Entities {
                     .HasConstraintName("fk_RentHistory_User1");
             });
 
-            modelBuilder.Entity<UserRequestBook>(entity => {
-                entity.HasKey(e => new {e.UserId, e.BookId});
+            modelBuilder.Entity<UserRequestBook>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.BookId });
 
                 entity.ToTable("User_Request_Book", "BookSystem");
 
@@ -143,7 +161,8 @@ namespace BookSystem.Entities {
                     .HasConstraintName("fk_User_has_Book_User1");
             });
 
-            modelBuilder.Entity<Users>(entity => {
+            modelBuilder.Entity<Users>(entity =>
+            {
                 entity.ToTable("Users", "BookSystem");
 
                 entity.HasIndex(e => e.Email)
@@ -157,6 +176,11 @@ namespace BookSystem.Entities {
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
+
+                entity.Property(e => e.Avatar)
+                    .HasColumnName("avatar")
+                    .HasMaxLength(55)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -192,6 +216,48 @@ namespace BookSystem.Entities {
                     .HasColumnName("username")
                     .HasMaxLength(45)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<UsersReviewsBooks>(entity =>
+            {
+                entity.HasKey(e => new { e.UsersId, e.BooksId });
+
+                entity.ToTable("Users_Reviews_Books", "BookSystem");
+
+                entity.HasIndex(e => e.BooksId)
+                    .HasName("fk_Users_has_Books_Books1_idx");
+
+                entity.HasIndex(e => e.UsersId)
+                    .HasName("fk_Users_has_Books_Users1_idx");
+
+                entity.Property(e => e.UsersId)
+                    .HasColumnName("Users_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.BooksId)
+                    .HasColumnName("Books_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.ReviewDetails)
+                    .HasColumnName("Review_details")
+                    .HasMaxLength(300)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ReviewScore)
+                    .HasColumnName("Review_score")
+                    .HasColumnType("int(10)");
+
+                entity.HasOne(d => d.Books)
+                    .WithMany(p => p.UsersReviewsBooks)
+                    .HasForeignKey(d => d.BooksId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Users_has_Books_Books1");
+
+                entity.HasOne(d => d.Users)
+                    .WithMany(p => p.UsersReviewsBooks)
+                    .HasForeignKey(d => d.UsersId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Users_has_Books_Users1");
             });
         }
     }
