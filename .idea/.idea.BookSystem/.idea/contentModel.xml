@@ -1,12 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\xuant\.Rider2019.1\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
-    <e p="E:\BigIn\BookSystem" t="IncludeFlat">
+    <e p="C:\Users\Admin\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-105955551.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Admin\Documents\GitHub\BookSystem" t="IncludeFlat">
       <e p="BookSystem" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
+        <e p="AngularClientApp" t="Include">
+          <e p=".editorconfig" t="Include" />
+          <e p=".gitignore" t="Include" />
+          <e p="angular.json" t="Include" />
+          <e p="browserslist" t="Include" />
+          <e p="e2e" t="Include">
+            <e p="protractor.conf.js" t="Include" />
+            <e p="src" t="Include">
+              <e p="app.e2e-spec.ts" t="Include" />
+              <e p="app.po.ts" t="Include" />
+            </e>
+            <e p="tsconfig.json" t="Include" />
+          </e>
+          <e p="karma.conf.js" t="Include" />
+          <e p="node_modules\@angular\animations" t="IncludeRecursive" />
+          <e p="node_modules\@angular\cli" t="IncludeRecursive" />
+          <e p="node_modules\@angular\common" t="IncludeRecursive" />
+          <e p="node_modules\@angular\compiler" t="IncludeRecursive" />
+          <e p="node_modules\@angular\compiler-cli" t="IncludeRecursive" />
+          <e p="node_modules\@angular\core" t="IncludeRecursive" />
+          <e p="node_modules\@angular\forms" t="IncludeRecursive" />
+          <e p="node_modules\@angular\platform-browser" t="IncludeRecursive" />
+          <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
+          <e p="node_modules\@angular\router" t="IncludeRecursive" />
+          <e p="node_modules\@angular-devkit\build-angular" t="IncludeRecursive" />
+          <e p="node_modules\@types" t="IncludeRecursive">
+            <e p="events" t="IncludeRecursive" />
+            <e p="jasmine" t="IncludeRecursive" />
+            <e p="jasminewd2" t="IncludeRecursive" />
+            <e p="minimatch" t="IncludeRecursive" />
+            <e p="node" t="IncludeRecursive" />
+            <e p="source-list-map" t="IncludeRecursive" />
+          </e>
+          <e p="node_modules\codelyzer" t="IncludeRecursive" />
+          <e p="node_modules\jasmine-core" t="IncludeRecursive" />
+          <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
+          <e p="node_modules\karma" t="IncludeRecursive" />
+          <e p="node_modules\karma-chrome-launcher" t="IncludeRecursive" />
+          <e p="node_modules\karma-coverage-istanbul-reporter" t="IncludeRecursive" />
+          <e p="node_modules\karma-jasmine" t="IncludeRecursive" />
+          <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
+          <e p="node_modules\protractor" t="IncludeRecursive" />
+          <e p="node_modules\rxjs" t="IncludeRecursive" />
+          <e p="node_modules\source-map" t="IncludeRecursive" />
+          <e p="node_modules\ts-node" t="IncludeRecursive" />
+          <e p="node_modules\tslib" t="IncludeRecursive" />
+          <e p="node_modules\tslint" t="IncludeRecursive" />
+          <e p="node_modules\zone.js" t="IncludeRecursive" />
+          <e p="package.json" t="Include" />
+          <e p="README.md" t="Include" />
+          <e p="src" t="Include">
+            <e p="app" t="Include">
+              <e p="app.component.css" t="Include" />
+              <e p="app.component.html" t="Include" />
+              <e p="app.component.spec.ts" t="Include" />
+              <e p="app.component.ts" t="Include" />
+              <e p="app.module.ts" t="Include" />
+            </e>
+            <e p="assets" t="Include">
+              <e p=".gitkeep" t="Include" />
+            </e>
+            <e p="environments" t="Include">
+              <e p="environment.prod.ts" t="Include" />
+              <e p="environment.ts" t="Include" />
+            </e>
+            <e p="favicon.ico" t="Include" />
+            <e p="index.html" t="Include" />
+            <e p="main.ts" t="Include" />
+            <e p="polyfills.ts" t="Include" />
+            <e p="styles.css" t="Include" />
+            <e p="test.ts" t="Include" />
+          </e>
+          <e p="tsconfig.app.json" t="Include" />
+          <e p="tsconfig.json" t="Include" />
+          <e p="tsconfig.spec.json" t="Include" />
+          <e p="tslint.json" t="Include" />
+          <e p="yarn.lock" t="Include" />
+        </e>
         <e p="app.config" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -129,6 +206,7 @@
           <e p="UsersServices.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="yarn.lock" t="Include" />
       </e>
       <e p="BookSystem.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

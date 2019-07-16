@@ -2,6 +2,7 @@ using BookSystem.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,8 @@ namespace BookSystem {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
+//            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
+            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "AngularClientApp/dist"; });
 
             // Dependency Injection
             services.AddScoped<IUserServices, UsersServices>();
@@ -51,9 +53,19 @@ namespace BookSystem {
             app.UseMvc();
 
             app.UseSpa(spa => {
-                spa.Options.SourcePath = "ClientApp";
+//                spa.Options.SourcePath = "ClientApp";
+//
+//                if (env.IsDevelopment())
+//                {
+//                    spa.UseReactDevelopmentServer("start");
+//                }
+                
+                spa.Options.SourcePath = "AngularClientApp";
 
-                if (env.IsDevelopment()) spa.UseReactDevelopmentServer("start");
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer("start");
+                }
             });
         }
     }
