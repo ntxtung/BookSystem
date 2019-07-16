@@ -22,7 +22,8 @@ namespace BookSystem.Services {
                 user.Firstname,
                 user.Lastname,
                 user.Email,
-                user.Token
+                user.Token,
+                user.Avatar
             });
         }
 
@@ -34,7 +35,8 @@ namespace BookSystem.Services {
                     user.Firstname,
                     user.Lastname,
                     user.Email,
-                    user.Token
+                    user.Token,
+                    user.Avatar
                 }).Single(user => user.Id == id);
             }
             catch (InvalidOperationException) {
@@ -51,7 +53,8 @@ namespace BookSystem.Services {
                         user.Firstname,
                         user.Lastname,
                         user.Email,
-                        user.Token
+                        user.Token,
+                        user.Avatar
                     })
                     .ToList();
             }
@@ -91,7 +94,8 @@ namespace BookSystem.Services {
                         user.Lastname,
                         user.Email,
                         user.Password,
-                        user.Token
+                        user.Token,
+                        user.Avatar
                     })
                     .Single(user => user.Username == username && user.Password == password);
             }

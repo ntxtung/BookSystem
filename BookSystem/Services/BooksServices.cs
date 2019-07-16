@@ -45,7 +45,8 @@ namespace BookSystem.Services {
                 user.Firstname,
                 user.Lastname,
                 user.Email,
-                user.Token
+                user.Token,
+                user.Avatar
             }).Where(user => user.Id == bookObj.UsersRentId);
         }
 
