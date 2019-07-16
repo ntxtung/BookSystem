@@ -49,6 +49,7 @@
           <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
           <e p="node_modules\protractor" t="IncludeRecursive" />
           <e p="node_modules\rxjs" t="IncludeRecursive" />
+          <e p="node_modules\semantic-ui-css" t="IncludeRecursive" />
           <e p="node_modules\source-map" t="IncludeRecursive" />
           <e p="node_modules\ts-node" t="IncludeRecursive" />
           <e p="node_modules\tslib" t="IncludeRecursive" />
@@ -66,6 +67,19 @@
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
+            </e>
+            <e p="BookSystem" t="Include">
+              <e p="booksystem.module.ts" t="Include" />
+              <e p="homepage" t="Include">
+                <e p="homepage.component.css" t="Include" />
+                <e p="homepage.component.html" t="Include" />
+                <e p="homepage.component.ts" t="Include" />
+              </e>
+              <e p="login" t="Include">
+                <e p="login.component.css" t="Include" />
+                <e p="login.component.html" t="Include" />
+                <e p="login.component.ts" t="Include" />
+              </e>
             </e>
             <e p="environments" t="Include">
               <e p="environment.prod.ts" t="Include" />

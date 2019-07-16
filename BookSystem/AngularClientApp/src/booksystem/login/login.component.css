@@ -1,0 +1,13 @@
+.login-content > #login-table {
+    width: 45%;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.login-content > .login-button {
+    display: block;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
