@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BookSystem/Entities/BooksDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookSystem/Entities/UsersDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/BasicUsersDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookSystem/Services/Interface/IBooksServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Entities/BooksDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullBooksDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Entities/UsersDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullUsersDTO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/CustomException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/Exception/CustomException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/IRentServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/Interface/IRentServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/IRequestBookServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/Interface/IRequestBookServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/Interface/IUsersServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookSystem/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Startup.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,96 +40,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Services/UsersServices.cs">
+        <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="107" column="49" lean-forward="true" selection-start-line="107" selection-start-column="49" selection-end-line="107" selection-end-column="49" />
+            <state relative-caret-position="266">
+              <caret line="72" column="36" lean-forward="true" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
               <folding>
-                <marker date="1563333841114" expanded="true" signature="6:152" ph="..." />
-                <marker date="1563333841114" expanded="true" signature="184:4683" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="233:4681" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="380:482" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="533:816" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="586:804" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="860:1360" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="878:1231" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="935:1185" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="1278:1350" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="1397:1946" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="1415:1821" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="1493:1775" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="1854:1936" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="1997:2256" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="2124:2235" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="2307:2566" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="2434:2545" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="2637:3878" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="2655:3777" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="2657:3188" ph="/* return _userContext ... */" />
-                <marker date="1563333841114" expanded="true" signature="3273:3669" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="3824:3868" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="3927:4460" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="3945:4047" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="4090:4450" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="4247:4436" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="4515:4575" ph="{...}" />
-                <marker date="1563333841114" expanded="true" signature="4615:4675" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Entities/BooksDTO.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-              <folding>
-                <marker date="1563333712159" expanded="true" signature="30:230" ph="{...}" />
-                <marker date="1563333712159" expanded="true" signature="58:228" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Entities/UsersDTO.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-              <folding>
-                <marker date="1563333712146" expanded="true" signature="30:411" ph="{...}" />
-                <marker date="1563333712146" expanded="true" signature="58:409" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Users.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-262">
-              <caret line="17" selection-start-line="17" selection-end-line="23" selection-end-column="42" />
-              <folding>
-                <marker date="1563267632131" expanded="false" signature="6:47" ph="..." />
-                <marker date="1563267632131" expanded="true" signature="78:1166" ph="{...}" />
-                <marker date="1563267632131" expanded="true" signature="111:1164" ph="{...}" />
-                <marker date="1563267632131" expanded="true" signature="140:436" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Books.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-94">
-              <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="41" />
-              <folding>
-                <marker date="1563267887439" expanded="false" signature="6:47" ph="..." />
-                <marker date="1563267887439" expanded="true" signature="79:926" ph="{...}" />
-                <marker date="1563267887439" expanded="true" signature="112:924" ph="{...}" />
-                <marker date="1563267887439" expanded="true" signature="137:322" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="6:118" ph="..." />
+                <marker date="1563338059206" expanded="true" signature="153:2486" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="225:2484" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="344:399" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="456:513" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="599:1614" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="617:1173" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="887:1157" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1220:1342" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1258:1326" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1373:1500" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1413:1484" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1535:1602" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1721:1971" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1739:1813" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1846:1961" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="1886:1945" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="2066:2132" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="2232:2300" ph="{...}" />
+                <marker date="1563338059206" expanded="true" signature="2410:2478" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -135,29 +76,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/BookSystem/Services/IRequestBookServices.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Services/IRentServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IRequestBookServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IRentServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Entities/UsersReviewsBooks.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Services/CustomException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Pages/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Entities/RentLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/UsersDTO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/Books.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/BooksDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullUsersDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullBooksDTO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/Users.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/UserRequestBook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Entities/BookSystemContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IBooksServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IUsersServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Services/RequestBookServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Services/RentServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Services/Exception/CustomException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/Books.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/Users.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/UserRequestBook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/BasicUsersDTO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookSystem/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -168,10 +110,8 @@
         <option value="$PROJECT_DIR$/BookSystem/Services/CustomException.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Entities/UsersView.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Entities/BookView.cs" />
-        <option value="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Properties/launchSettings.json" />
-        <option value="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Controllers/AuthController.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/IRequestBookServices.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/IRentServices.cs" />
@@ -181,10 +121,16 @@
         <option value="$PROJECT_DIR$/BookSystem/Entities/Books.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Startup.cs" />
-        <option value="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Entities/UsersDTO.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Entities/BooksDTO.cs" />
         <option value="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullBooksDTO.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullUsersDTO.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/BasicUsersDTO.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Controllers/BookController.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Services/Interface/IBooksServices.cs" />
+        <option value="$PROJECT_DIR$/BookSystem/Services/BooksServices.cs" />
       </list>
     </option>
   </component>
@@ -217,13 +163,40 @@
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
               <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Entities" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
               <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Entities" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DataTranferObject" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Services" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Services" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Exception" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BookSystem" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Services" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Interface" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -245,6 +218,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -312,7 +286,7 @@
       <workItem from="1563243598710" duration="5575000" />
       <workItem from="1563264622285" duration="3103000" />
       <workItem from="1563272268380" duration="1547000" />
-      <workItem from="1563332437136" duration="1402000" />
+      <workItem from="1563332437136" duration="5778000" />
     </task>
     <task id="LOCAL-00001" summary="Init Project">
       <created>1562576812137</created>
@@ -325,7 +299,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97106000" />
+    <option name="totallyTimeSpent" value="101482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,7 +314,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5166163" visible="true" weight="0.23388386" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5166163" visible="true" weight="0.23388386" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.3297062" />
       <window_info anchor="bottom" id="Message" order="1" />
@@ -357,7 +331,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Unit Tests" order="13" weight="0.3297062" />
       <window_info anchor="bottom" id="REST Client" order="14" />
-      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.49866807" visible="true" weight="0.27856365" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="15" sideWeight="0.49866807" visible="true" weight="0.27856365" />
       <window_info anchor="bottom" id="Event Log" order="16" sideWeight="0.5013319" side_tool="true" weight="0.2796518" />
       <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.3297062" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -366,7 +340,7 @@
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32978156" />
       <window_info anchor="right" id="Database" order="4" weight="0.32978156" />
       <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.32978156" />
-      <window_info anchor="right" id="Structure" order="6" sideWeight="0.4833837" weight="0.37621358" />
+      <window_info anchor="right" id="Structure" order="6" sideWeight="0.4833837" visible="true" weight="0.23708045" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +423,7 @@
     <entry file="file://$PROJECT_DIR$/BookSystem/appsettings.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IRequestBookServices.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IRequestBookServices.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
@@ -460,7 +434,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IUsersServices.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IUsersServices.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="13" column="11" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="11" />
@@ -472,7 +446,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IRentServices.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IRentServices.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
@@ -494,7 +468,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/CustomException.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/Exception/CustomException.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
@@ -542,45 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="68" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="68" />
-          <folding>
-            <marker date="1563177133574" expanded="true" signature="6:196" ph="..." />
-            <marker date="1563177133574" expanded="true" signature="231:2005" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="303:2003" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="422:477" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="534:598" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="690:1387" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="708:944" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="847:928" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="991:1115" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1031:1099" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1146:1273" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1186:1257" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1308:1375" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1474:1670" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1492:1566" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1599:1660" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1765:1830" ph="{...}" />
-            <marker date="1563177133574" expanded="true" signature="1929:1997" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/IBooksServices.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <marker date="1562752195730" expanded="true" signature="6:66" ph="..." />
-            <marker date="1562752195730" expanded="true" signature="98:368" ph="{...}" />
-            <marker date="1562752195730" expanded="true" signature="136:366" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Entities/BookSystemContext.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -599,33 +534,6 @@
             <marker date="1563267873579" expanded="true" signature="5051:6242" ph="{...}" />
             <marker date="1563267873579" expanded="true" signature="6295:8127" ph="{...}" />
             <marker date="1563267873579" expanded="true" signature="8192:9750" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/BooksServices.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <marker date="1563273818955" expanded="true" signature="6:152" ph="..." />
-            <marker date="1563273818955" expanded="true" signature="184:2417" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="234:2415" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="373:475" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="519:874" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="537:752" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="594:705" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="801:864" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="911:1080" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="964:1059" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="1126:1527" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="1251:1469" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="1576:2123" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="1594:1713" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="1756:2091" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="1868:2077" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="2178:2238" ph="{...}" />
-            <marker date="1563273818955" expanded="true" signature="2278:2409" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -687,7 +595,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Startup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="528">
           <caret line="29" column="76" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
           <folding>
             <marker date="1563272358859" expanded="false" signature="6:334" ph="..." />
@@ -706,6 +614,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullBooksDTO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding>
+            <marker date="1563335968605" expanded="true" signature="30:234" ph="{...}" />
+            <marker date="1563335968605" expanded="true" signature="62:232" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/FullUsersDTO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="9" selection-end-column="42" />
+          <folding>
+            <marker date="1563335975670" expanded="true" signature="30:415" ph="{...}" />
+            <marker date="1563335975670" expanded="true" signature="62:413" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/DataTranferObject/BasicUsersDTO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding>
+            <marker date="1563337476754" expanded="true" signature="30:287" ph="{...}" />
+            <marker date="1563337476754" expanded="true" signature="63:285" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Books.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding>
+            <marker date="1563267887439" expanded="false" signature="6:47" ph="..." />
+            <marker date="1563267887439" expanded="true" signature="79:926" ph="{...}" />
+            <marker date="1563267887439" expanded="true" signature="112:924" ph="{...}" />
+            <marker date="1563267887439" expanded="true" signature="137:322" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/UsersServices.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="107" column="49" lean-forward="true" selection-start-line="107" selection-start-column="49" selection-end-line="107" selection-end-column="49" />
+          <folding>
+            <marker date="1563335975649" expanded="true" signature="6:152" ph="..." />
+            <marker date="1563335975649" expanded="true" signature="184:4687" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="233:4685" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="380:482" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="533:816" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="586:804" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="860:1360" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="878:1231" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="935:1185" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="1278:1350" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="1397:1946" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="1415:1821" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="1493:1775" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="1854:1936" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="1997:2256" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="2124:2235" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="2307:2566" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="2434:2545" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="2637:3882" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="2655:3781" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="2657:3188" ph="/* return _userContext ... */" />
+            <marker date="1563335975649" expanded="true" signature="3277:3673" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="3828:3872" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="3931:4464" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="3949:4051" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="4094:4454" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="4251:4440" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="4519:4579" ph="{...}" />
+            <marker date="1563335975649" expanded="true" signature="4619:4679" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Users.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-262">
@@ -719,75 +711,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Books.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/Interface/IBooksServices.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94">
-          <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="146">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding>
-            <marker date="1563267887439" expanded="false" signature="6:47" ph="..." />
-            <marker date="1563267887439" expanded="true" signature="79:926" ph="{...}" />
-            <marker date="1563267887439" expanded="true" signature="112:924" ph="{...}" />
-            <marker date="1563267887439" expanded="true" signature="137:322" ph="{...}" />
+            <marker date="1563338059190" expanded="true" signature="6:85" ph="..." />
+            <marker date="1563338059190" expanded="true" signature="117:440" ph="{...}" />
+            <marker date="1563338059190" expanded="true" signature="155:438" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/BooksDTO.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Services/BooksServices.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        <state relative-caret-position="320">
+          <caret line="58" column="60" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
           <folding>
-            <marker date="1563333712159" expanded="true" signature="30:230" ph="{...}" />
-            <marker date="1563333712159" expanded="true" signature="58:228" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="6:126" ph="..." />
+            <marker date="1563338134071" expanded="true" signature="158:2985" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="208:2983" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="347:449" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="496:733" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="563:721" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="783:1172" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="801:1050" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="871:1003" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="1099:1162" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="1225:1633" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="1364:1574" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="1694:2102" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="1833:2043" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="2145:2692" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="2163:2282" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="2325:2660" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="2437:2646" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="2745:2805" ph="{...}" />
+            <marker date="1563338134071" expanded="true" signature="2846:2977" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Entities/UsersDTO.cs">
+    <entry file="file://$PROJECT_DIR$/BookSystem/Controllers/BookController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        <state relative-caret-position="266">
+          <caret line="72" column="36" lean-forward="true" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
           <folding>
-            <marker date="1563333712146" expanded="true" signature="30:411" ph="{...}" />
-            <marker date="1563333712146" expanded="true" signature="58:409" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookSystem/Services/UsersServices.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="107" column="49" lean-forward="true" selection-start-line="107" selection-start-column="49" selection-end-line="107" selection-end-column="49" />
-          <folding>
-            <marker date="1563333841114" expanded="true" signature="6:152" ph="..." />
-            <marker date="1563333841114" expanded="true" signature="184:4683" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="233:4681" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="380:482" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="533:816" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="586:804" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="860:1360" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="878:1231" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="935:1185" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="1278:1350" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="1397:1946" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="1415:1821" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="1493:1775" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="1854:1936" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="1997:2256" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="2124:2235" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="2307:2566" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="2434:2545" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="2637:3878" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="2655:3777" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="2657:3188" ph="/* return _userContext ... */" />
-            <marker date="1563333841114" expanded="true" signature="3273:3669" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="3824:3868" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="3927:4460" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="3945:4047" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="4090:4450" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="4247:4436" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="4515:4575" ph="{...}" />
-            <marker date="1563333841114" expanded="true" signature="4615:4675" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="6:118" ph="..." />
+            <marker date="1563338059206" expanded="true" signature="153:2486" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="225:2484" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="344:399" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="456:513" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="599:1614" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="617:1173" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="887:1157" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1220:1342" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1258:1326" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1373:1500" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1413:1484" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1535:1602" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1721:1971" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1739:1813" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1846:1961" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="1886:1945" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="2066:2132" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="2232:2300" ph="{...}" />
+            <marker date="1563338059206" expanded="true" signature="2410:2478" ph="{...}" />
           </folding>
         </state>
       </provider>
