@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BookSystem.Controllers {
     [Route("api/books")]
@@ -16,21 +14,27 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public ActionResult GetAll() {
-            return Ok(_booksServices.GetAllBooks());
+        public IQueryable GetBooks() {
+            return _booksServices.GetBooks();
         }
 
         [HttpPost]
-        public ActionResult RegisterNewBook([FromBody] Books bookData) {
+        public IActionResult PostBook([FromBody] Books bookData) {
             try {
-                var result = _booksServices.RegisterNewBook(bookData);
+                var result = _booksServices.PostBooks(bookData);
                 if (result > 0)
-                    return Ok(new {
-                        message = "Register Successfully"
-                    });
+                    return CreatedAtRoute(
+                        "BookLink",
+                        new { id = bookData.Id }, 
+                        new FullBooksDTO {
+                                    Id = bookData.Id,
+                                    Title = bookData.Title,
+                                    Author = bookData.Author,
+                                    Image = bookData.Image
+                                });
             }
             catch (DuplicationEntryException) {
-                return BadRequest(new {
+                return Conflict(new {
                     message = "Duplicated Entry"
                 });
             }
@@ -44,24 +48,31 @@ namespace BookSystem.Controllers {
             });
         }
 
-        [HttpGet("{id}")]
-        public ActionResult GetBookById([FromRoute]int id) {
+        [HttpGet("{id}", Name = "BookLink")]
+        public IActionResult GetBookById([FromRoute]int id) {
             try {
                 return Ok(_booksServices.GetBookById(id));
             }
             catch (Exception e) {
-                return BadRequest(e.Message);
+                return BadRequest(new {
+                    message = e.Message
+                });
             }
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBookById([FromRoute] int id) {
-            return Ok(_booksServices.DeleteBook(id));
+            return Ok(_booksServices.DeleteBooks(id));
         }
 
         [HttpGet("{id}/rentUser")]
-        public ActionResult GetRentedUser([FromRoute] int id) {
+        public IActionResult GetRentedUser([FromRoute] int id) {
             return Ok(_booksServices.GetRentedUser(id));
+        }
+        
+        [HttpGet("{id}/fundedUser")]
+        public IActionResult GetFundedUser([FromRoute] int id) {
+            return Ok(_booksServices.GetFundedUser(id));
         }
     }
 }

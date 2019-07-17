@@ -1,5 +1,5 @@
 namespace BookSystem.Entities {
-    public class UsersDTO {
+    public class FullUsersDTO {
         public int Id { get; set; }
         public string Username { get; set; }
         public string Firstname { get; set; }

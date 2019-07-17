@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Linq;
 using BookSystem.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -14,13 +13,22 @@ namespace BookSystem.Services {
             _context = new BookSystemContext();
             _bookContext = _context.Books;
         }
+        
+        public IQueryable GetBooks() {
+            return _bookContext.Select(books => new FullBooksDTO {
+                Id = books.Id,
+                Title = books.Title,
+                Author = books.Author,
+                Image = books.Image
+            });
+        }
 
-        public Object GetBookById(int id) {
+        public FullBooksDTO GetBookById(int id) {
             try {
-                return _bookContext.Select(book => new {
-                    book.Id,
-                    book.Image,
-                    book.Title
+                return _bookContext.Select(book => new FullBooksDTO {
+                    Id = book.Id,
+                    Image = book.Image,
+                    Title = book.Title
                 }).Single(book => book.Id == id);
 
             }
@@ -29,28 +37,29 @@ namespace BookSystem.Services {
             }
         }
 
-        public IList GetAllBooks() {
-            return _bookContext.Select(book => new {
-                book.Id,
-                book.Image,
-                book.Title
-            }).ToList();
-        }
-
-        public Object GetRentedUser(int id) {
+        public BasicUsersDTO GetRentedUser(int id) {
             var bookObj = _bookContext.Single(book => book.Id == id);
-            return _context.Users.Select(user => new {
-                user.Id,
-                user.Username,
-                user.Firstname,
-                user.Lastname,
-                user.Email,
-                user.Token,
-                user.Avatar
-            }).Where(user => user.Id == bookObj.UsersRentId);
+            return _context.Users.Select(user => new BasicUsersDTO {
+                Id = user.Id,
+                Username = user.Username,
+                Firstname = user.Firstname,
+                Lastname = user.Lastname,
+                Avatar = user.Avatar
+            }).Single(user => user.Id == bookObj.UsersRentId);
+        }
+        
+        public BasicUsersDTO GetFundedUser(int id) {
+            var bookObj = _bookContext.Single(book => book.Id == id);
+            return _context.Users.Select(user => new BasicUsersDTO {
+                Id = user.Id,
+                Username = user.Username,
+                Firstname = user.Firstname,
+                Lastname = user.Lastname,
+                Avatar = user.Avatar
+            }).Single(user => user.Id == bookObj.UsersFundId);
         }
 
-        public int RegisterNewBook(Books book) {
+        public int PostBooks(Books book) {
             try {
                 
                 _bookContext.Add(book);
@@ -68,11 +77,11 @@ namespace BookSystem.Services {
             return 0;
         }
 
-        public int UpdateBook(int id, Books newBook) {
+        public int PutBooks(int id, Books newBook) {
             throw new NotImplementedException();
         }
 
-        public int DeleteBook(int id) {
+        public int DeleteBooks(int id) {
             _bookContext.Remove(_bookContext.Single(book => book.Id == id));
             return _context.SaveChanges();
         }

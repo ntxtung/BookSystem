@@ -174,12 +174,15 @@
         </e>
         <e p="Entities" t="Include">
           <e p="Books.cs" t="Include" />
-          <e p="BooksDTO.cs" t="Include" />
           <e p="BookSystemContext.cs" t="Include" />
+          <e p="DataTranferObject" t="Include">
+            <e p="BasicUsersDTO.cs" t="Include" />
+            <e p="FullBooksDTO.cs" t="Include" />
+            <e p="FullUsersDTO.cs" t="Include" />
+          </e>
           <e p="RentLog.cs" t="Include" />
           <e p="UserRequestBook.cs" t="Include" />
           <e p="Users.cs" t="Include" />
-          <e p="UsersDTO.cs" t="Include" />
           <e p="UsersReviewsBooks.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -200,11 +203,15 @@
         </e>
         <e p="Services" t="Include">
           <e p="BooksServices.cs" t="Include" />
-          <e p="CustomException.cs" t="Include" />
-          <e p="IBooksServices.cs" t="Include" />
-          <e p="IRentServices.cs" t="Include" />
-          <e p="IRequestBookServices.cs" t="Include" />
-          <e p="IUsersServices.cs" t="Include" />
+          <e p="Exception" t="Include">
+            <e p="CustomException.cs" t="Include" />
+          </e>
+          <e p="Interface" t="Include">
+            <e p="IBooksServices.cs" t="Include" />
+            <e p="IRentServices.cs" t="Include" />
+            <e p="IRequestBookServices.cs" t="Include" />
+            <e p="IUsersServices.cs" t="Include" />
+          </e>
           <e p="RentServices.cs" t="Include" />
           <e p="RequestBookServices.cs" t="Include" />
           <e p="UsersServices.cs" t="Include" />

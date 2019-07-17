@@ -99,7 +99,7 @@ namespace BookSystem.Services {
 //                    })
 //                    .Single(user => user.Username == username && user.Password == password);                
                 return _userContext
-                    .Select(user => new UsersDTO{
+                    .Select(user => new FullUsersDTO{
                         Id = user.Id,
                         Username = user.Username,
                         Firstname = user.Firstname,
