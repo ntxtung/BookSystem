@@ -15,28 +15,14 @@ namespace BookSystem.Services {
             _userContext = _context.Users;
         }
 
-        private IQueryable<Object> GetUserView() {
-            return _userContext.Select(user => new {
-                user.Id,
-                user.Username,
-                user.Firstname,
-                user.Lastname,
-                user.Email,
-                user.Token,
-                user.Avatar
-            });
-        }
-
-        public Object GetUserById(int id) {
+        public BasicUsersDTO GetUserById(int id) {
             try {
-                return _userContext.Select(user => new {
-                    user.Id,
-                    user.Username,
-                    user.Firstname,
-                    user.Lastname,
-                    user.Email,
-                    user.Token,
-                    user.Avatar
+                return _userContext.Select(user => new BasicUsersDTO {
+                    Id = user.Id,
+                    Username = user.Username,
+                    Firstname = user.Firstname,
+                    Lastname = user.Lastname,
+                    Avatar = user.Avatar
                 }).Single(user => user.Id == id);
             }
             catch (InvalidOperationException) {
@@ -44,19 +30,19 @@ namespace BookSystem.Services {
             }
         }
 
-        public IList GetAllUsers() {
+        public IQueryable GetUsers() {
             try {
                 return _userContext
-                    .Select(user => new {
-                        user.Id,
-                        user.Username,
-                        user.Firstname,
-                        user.Lastname,
-                        user.Email,
-                        user.Token,
-                        user.Avatar
-                    })
-                    .ToList();
+                    .Select(user => new FullUsersDTO {
+                        Id = user.Id,
+                        Username = user.Username,
+                        Firstname = user.Firstname,
+                        Lastname = user.Lastname,
+                        Email = user.Email,
+                        Password = null,
+                        Token = user.Token,
+                        Avatar = user.Avatar
+                    });
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -64,40 +50,30 @@ namespace BookSystem.Services {
             }
         }
 
-        public IList GetFundedBookOfUser(int id) {
+        public IQueryable GetFundedBookOfUser(int id) {
             return _context.Books
                 .Where(book => book.UsersFundId == id)
-                .Select(book => new {
-                    book.Id,
-                    book.Image,
-                    book.Title
-                }).ToList();
+                .Select(book => new FullBooksDTO {
+                    Id = book.Id,
+                    Title = book.Title,
+                    Author = book.Author,
+                    Image = book.Image
+                });
         }
 
-        public IList GetRentedBookOfUser(int id) {
+        public IQueryable GetRentedBookOfUser(int id) {
             return _context.Books
                 .Where(book => book.UsersRentId == id)
-                .Select(book => new {
-                    book.Id,
-                    book.Image,
-                    book.Title
-                }).ToList();
+                .Select(book => new FullBooksDTO {
+                    Id = book.Id,
+                    Title = book.Title,
+                    Author = book.Author,
+                    Image = book.Image
+                });
         }
 
-        public Object Authenticate(string username, string password) {
-            try {
-//                return _userContext
-//                    .Select(user => new {
-//                        user.Id,
-//                        user.Username,
-//                        user.Firstname,
-//                        user.Lastname,
-//                        user.Email,
-//                        user.Password,
-//                        user.Token,
-//                        user.Avatar
-//                    })
-//                    .Single(user => user.Username == username && user.Password == password);                
+        public FullUsersDTO Authenticate(string username, string password) {
+            try {               
                 return _userContext
                     .Select(user => new FullUsersDTO{
                         Id = user.Id,
@@ -116,7 +92,7 @@ namespace BookSystem.Services {
             }
         }
 
-        public int RegisterNewUser(Users user) {
+        public int PostUser(Users user) {
             try {
                 _userContext.Add(user);
                 return _context.SaveChanges();
@@ -133,7 +109,7 @@ namespace BookSystem.Services {
             }
         }
 
-        public int UpdateUser(int id, Users newUser) {
+        public int PutUser(int id, Users newUser) {
             throw new NotImplementedException();
         }
 

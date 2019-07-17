@@ -18,10 +18,10 @@ namespace BookSystem.Controllers {
         }
 
         [HttpGet]
-        public IActionResult GetAll() {
-            return Ok(_userService.GetAllUsers());
+        public IActionResult GetUsers() {
+            return Ok(_userService.GetUsers());
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "UserLink")]
         public IActionResult GetUserById(int id) {
             try {
                 return Ok(_userService.GetUserById(id));
@@ -44,10 +44,24 @@ namespace BookSystem.Controllers {
         [HttpPost]
         public IActionResult RegisterNewUser([FromBody] Users userData) {
             try {
-                var result = _userService.RegisterNewUser(userData);
+                var result = _userService.PostUser(userData);
                 if (result > 0) {
                     var loggedUser = _userService.Authenticate(userData.Username, userData.Password);
-                    return CreatedAtAction(nameof(RegisterNewUser), loggedUser);
+                    return CreatedAtRoute(
+                        "UserLink", 
+                        new {id = userData.Id}, 
+                        new FullUsersDTO {
+                            Id = loggedUser.Id,
+                            Username = loggedUser.Username,
+                            Firstname = loggedUser.Firstname,
+                            Lastname = loggedUser.Lastname,
+                            Email = loggedUser.Email,
+                            Avatar = loggedUser.Avatar,
+                            #warning Change this after apply JWT
+                            Password = null,
+                            Token = loggedUser.Token
+                        }
+                    );
                 }
             }
             catch (DuplicationEntryException) {
