@@ -52,6 +52,7 @@ namespace BookSystem.Services {
 
         public int RegisterNewBook(Books book) {
             try {
+                
                 _bookContext.Add(book);
                 return _context.SaveChanges();
             }

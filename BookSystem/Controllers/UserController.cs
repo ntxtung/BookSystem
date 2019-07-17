@@ -66,6 +66,11 @@ namespace BookSystem.Controllers {
             });
         }
 
+        [HttpPost("{userId}/review/{bookId}")]
+        public IActionResult ReviewBook([FromBody] UsersReviewsBooks reviewData) {
+            throw new NotImplementedException();
+        }
+
         [HttpPost("{userId}/request/{bookId}")]
         public IActionResult RequestBook([FromRoute] int userId, [FromRoute] int bookId) {
             return Ok(_requestBookServices.DoRequest(userId, bookId));

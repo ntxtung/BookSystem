@@ -86,16 +86,28 @@ namespace BookSystem.Services {
 
         public Object Authenticate(string username, string password) {
             try {
+//                return _userContext
+//                    .Select(user => new {
+//                        user.Id,
+//                        user.Username,
+//                        user.Firstname,
+//                        user.Lastname,
+//                        user.Email,
+//                        user.Password,
+//                        user.Token,
+//                        user.Avatar
+//                    })
+//                    .Single(user => user.Username == username && user.Password == password);                
                 return _userContext
-                    .Select(user => new {
-                        user.Id,
-                        user.Username,
-                        user.Firstname,
-                        user.Lastname,
-                        user.Email,
-                        user.Password,
-                        user.Token,
-                        user.Avatar
+                    .Select(user => new UsersDTO{
+                        Id = user.Id,
+                        Username = user.Username,
+                        Firstname = user.Firstname,
+                        Lastname = user.Lastname,
+                        Email = user.Email,
+                        Password = user.Password,
+                        Token = user.Token,
+                        Avatar = user.Avatar
                     })
                     .Single(user => user.Username == username && user.Password == password);
             }
