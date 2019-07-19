@@ -12,6 +12,8 @@ import { TemplateModule } from './template/template.module';
 import { UserApiService } from './services/user-services/user-api-service.service';
 import { BookApiService } from './services/book-services/book-api-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routes';
 
 @NgModule({
     declarations: [
@@ -23,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
         AdminModule,
         BookModule,
         TemplateModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes, {useHash: true})
     ],
     providers: [
         UserApiService,

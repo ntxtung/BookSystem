@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { adminRoutes } from './admin.routes';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
     declarations: [
-        DashboardComponent
+        DashboardComponent,
+        UsersListComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule.forChild(adminRoutes)
     ],
     exports: [
         DashboardComponent
