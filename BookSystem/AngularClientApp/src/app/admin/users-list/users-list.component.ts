@@ -12,7 +12,10 @@ export class UsersListComponent implements OnInit {
     constructor(private userApiService : UserApiService) { }
 
     ngOnInit() {
-        this.users = this.userApiService.getUsers();
+        this.userApiService.getUsers().subscribe(data => {
+            console.log(data)
+            this.users = data
+        })
     }
 
 }

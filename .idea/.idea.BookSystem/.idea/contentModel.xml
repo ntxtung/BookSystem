@@ -61,12 +61,24 @@
             <e p="app" t="Include">
               <e p="Admin" t="Include">
                 <e p="admin.module.ts" t="Include" />
+                <e p="admin.routes.ts" t="Include" />
+                <e p="dashboard" t="Include">
+                  <e p="dashboard.component.css" t="Include" />
+                  <e p="dashboard.component.html" t="Include" />
+                  <e p="dashboard.component.ts" t="Include" />
+                </e>
+                <e p="users-list" t="Include">
+                  <e p="users-list.component.css" t="Include" />
+                  <e p="users-list.component.html" t="Include" />
+                  <e p="users-list.component.ts" t="Include" />
+                </e>
               </e>
               <e p="app.component.css" t="Include" />
               <e p="app.component.html" t="Include" />
               <e p="app.component.spec.ts" t="Include" />
               <e p="app.component.ts" t="Include" />
               <e p="app.module.ts" t="Include" />
+              <e p="app.routes.ts" t="Include" />
               <e p="book" t="Include">
                 <e p="book.module.ts" t="Include" />
                 <e p="books-list" t="Include">
