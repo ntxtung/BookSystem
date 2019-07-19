@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/services/book-services/book-api-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/services/book-services/book-api-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/services/user-services/user-api-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/src/app/services/user-services/user-api-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookSystem/AngularClientApp/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/AngularClientApp/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +32,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,9 +86,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
+    <option name="x" value="-10" />
     <option name="width" value="975" />
-    <option name="height" value="1049" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -89,6 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
@@ -107,7 +115,6 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,6 +196,7 @@
       <workItem from="1563243598710" duration="5575000" />
       <workItem from="1563261092324" duration="5547000" />
       <workItem from="1563503962356" duration="698000" />
+      <workItem from="1563510325406" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="Init Project">
       <created>1562576812137</created>
@@ -201,7 +209,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97249000" />
+    <option name="totallyTimeSpent" value="99054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -213,9 +221,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5166163" visible="true" weight="0.19786096" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5166163" visible="true" weight="0.19986631" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -235,7 +243,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Unit Tests" order="13" weight="0.3297062" />
       <window_info anchor="bottom" id="REST Client" order="14" />
-      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.49866807" visible="true" weight="0.15677966" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="15" sideWeight="0.49866807" visible="true" weight="0.31355932" />
       <window_info anchor="bottom" id="Event Log" order="16" sideWeight="0.5013319" side_tool="true" weight="0.2796518" />
       <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.3297062" />
       <window_info anchor="bottom" id="Azure Activity Log" order="18" />
