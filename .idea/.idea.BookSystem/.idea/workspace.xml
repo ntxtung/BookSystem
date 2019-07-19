@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookSystem/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +94,7 @@
     </navigator>
     <panes>
       <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -189,6 +194,11 @@
       <workItem from="1563243598710" duration="5575000" />
       <workItem from="1563261092324" duration="5547000" />
       <workItem from="1563503962356" duration="698000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1563510325406" duration="1805000" />
+      <workItem from="1563515149025" duration="270000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Init Project">
       <created>1562576812137</created>
@@ -201,7 +211,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="97249000" />
+=======
+    <option name="totallyTimeSpent" value="99324000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -215,7 +229,11 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1550" height="838" extended-state="6" />
     <layout>
+<<<<<<< Updated upstream
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5166163" visible="true" weight="0.19786096" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5166163" visible="true" weight="0.20187166" />
+>>>>>>> Stashed changes
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -235,7 +253,11 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Unit Tests" order="13" weight="0.3297062" />
       <window_info anchor="bottom" id="REST Client" order="14" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.49866807" visible="true" weight="0.15677966" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.49866807" visible="true" weight="0.31355932" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Event Log" order="16" sideWeight="0.5013319" side_tool="true" weight="0.2796518" />
       <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.3297062" />
       <window_info anchor="bottom" id="Azure Activity Log" order="18" />
