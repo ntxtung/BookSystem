@@ -11,6 +11,7 @@ import { TemplateModule } from './template/template.module';
 
 import { UserApiService } from './services/user-services/user-api-service.service';
 import { BookApiService } from './services/book-services/book-api-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { BookApiService } from './services/book-services/book-api-service.servic
         UserModule,
         AdminModule,
         BookModule,
-        TemplateModule
+        TemplateModule,
+        HttpClientModule
     ],
     providers: [
         UserApiService,
