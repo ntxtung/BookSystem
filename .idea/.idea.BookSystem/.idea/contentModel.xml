@@ -59,27 +59,49 @@
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
             <e p="app" t="Include">
+              <e p="Admin" t="Include">
+                <e p="admin.module.ts" t="Include" />
+              </e>
               <e p="app.component.css" t="Include" />
               <e p="app.component.html" t="Include" />
               <e p="app.component.spec.ts" t="Include" />
               <e p="app.component.ts" t="Include" />
               <e p="app.module.ts" t="Include" />
+              <e p="book" t="Include">
+                <e p="book.module.ts" t="Include" />
+                <e p="books-list" t="Include">
+                  <e p="books-list.component.css" t="Include" />
+                  <e p="books-list.component.html" t="Include" />
+                  <e p="books-list.component.ts" t="Include" />
+                </e>
+                <e p="detail" t="Include">
+                  <e p="detail.component.css" t="Include" />
+                  <e p="detail.component.html" t="Include" />
+                  <e p="detail.component.ts" t="Include" />
+                </e>
+              </e>
+              <e p="Services" t="Include">
+                <e p="book-services" t="Include">
+                  <e p="book-api-service.service.ts" t="Include" />
+                </e>
+                <e p="user-services" t="Include">
+                  <e p="user-api-service.service.ts" t="Include" />
+                </e>
+              </e>
+              <e p="template" t="Include">
+                <e p="template.module.ts" t="Include" />
+              </e>
+              <e p="user" t="Include">
+                <e p="login" t="Include">
+                  <e p="login.component.css" t="Include" />
+                  <e p="login.component.html" t="Include" />
+                  <e p="login.component.ts" t="Include" />
+                </e>
+                <e p="user.module.ts" t="Include" />
+              </e>
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
-            </e>
-            <e p="BookSystem" t="Include">
-              <e p="booksystem.module.ts" t="Include" />
-              <e p="homepage" t="Include">
-                <e p="homepage.component.css" t="Include" />
-                <e p="homepage.component.html" t="Include" />
-                <e p="homepage.component.ts" t="Include" />
-              </e>
-              <e p="login" t="Include">
-                <e p="login.component.css" t="Include" />
-                <e p="login.component.html" t="Include" />
-                <e p="login.component.ts" t="Include" />
-              </e>
             </e>
             <e p="environments" t="Include">
               <e p="environment.prod.ts" t="Include" />
