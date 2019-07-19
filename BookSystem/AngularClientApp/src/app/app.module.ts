@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
-import { HttpClientModule } from "@angular/common/http"
 
 import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
@@ -22,8 +21,7 @@ import { BookApiService } from './services/book-services/book-api-service.servic
         UserModule,
         AdminModule,
         BookModule,
-        TemplateModule,
-        HttpClientModule
+        TemplateModule
     ],
     providers: [
         UserApiService,
