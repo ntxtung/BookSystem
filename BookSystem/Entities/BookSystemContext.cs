@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BookSystem.Entities {
-    public class BookSystemContext : DbContext {
+    public partial class BookSystemContext : DbContext {
         public BookSystemContext() {
         }
 
@@ -13,21 +15,18 @@ namespace BookSystem.Entities {
         public virtual DbSet<RentLog> RentLog { get; set; }
         public virtual DbSet<UserRequestBook> UserRequestBook { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UsersReviewsBooks> UsersReviewsBooks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             if (!optionsBuilder.IsConfigured) {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySQL(
+                optionsBuilder.UseMySql(
                     "server=206.189.40.187;port=3307;user=root;password=xuantung98;database=BookSystem");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
-
             modelBuilder.Entity<Books>(entity => {
-                entity.ToTable("Books", "BookSystem");
-
                 entity.HasIndex(e => e.UsersFundId)
                     .HasName("fk_Books_Users_FundId");
 
@@ -38,16 +37,19 @@ namespace BookSystem.Entities {
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.Author)
+                    .IsRequired()
+                    .HasColumnName("author")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Image)
                     .HasColumnName("image")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasColumnName("title")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.UsersFundId)
                     .HasColumnName("Users_fundId")
@@ -70,9 +72,10 @@ namespace BookSystem.Entities {
             });
 
             modelBuilder.Entity<RentLog>(entity => {
-                entity.HasKey(e => new {e.RentId, e.UserId, e.BookId});
+                entity.HasKey(e => new {e.RentId, e.UserId, e.BookId})
+                    .HasName("PRIMARY");
 
-                entity.ToTable("Rent_Log", "BookSystem");
+                entity.ToTable("Rent_Log");
 
                 entity.HasIndex(e => e.BookId)
                     .HasName("fk_RentHistory_Book1_idx");
@@ -92,11 +95,14 @@ namespace BookSystem.Entities {
                     .HasColumnName("book_id")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.RentEndTime).HasColumnName("rent_endTime");
+                entity.Property(e => e.RentEndTime)
+                    .HasColumnName("rent_endTime")
+                    .HasColumnType("timestamp");
 
                 entity.Property(e => e.RentStartTime)
                     .HasColumnName("rent_startTime")
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                    .HasColumnType("timestamp")
+                    .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
                 entity.HasOne(d => d.Book)
                     .WithMany(p => p.RentLog)
@@ -112,9 +118,10 @@ namespace BookSystem.Entities {
             });
 
             modelBuilder.Entity<UserRequestBook>(entity => {
-                entity.HasKey(e => new {e.UserId, e.BookId});
+                entity.HasKey(e => new {e.UserId, e.BookId})
+                    .HasName("PRIMARY");
 
-                entity.ToTable("User_Request_Book", "BookSystem");
+                entity.ToTable("User_Request_Book");
 
                 entity.HasIndex(e => e.BookId)
                     .HasName("fk_User_has_Book_Book1_idx");
@@ -144,8 +151,6 @@ namespace BookSystem.Entities {
             });
 
             modelBuilder.Entity<Users>(entity => {
-                entity.ToTable("Users", "BookSystem");
-
                 entity.HasIndex(e => e.Email)
                     .HasName("email_UNIQUE")
                     .IsUnique();
@@ -158,40 +163,79 @@ namespace BookSystem.Entities {
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.Avatar)
+                    .HasColumnName("avatar")
+                    .HasColumnType("varchar(55)");
+
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasColumnName("email")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Firstname)
                     .IsRequired()
                     .HasColumnName("firstname")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Lastname)
                     .IsRequired()
                     .HasColumnName("lastname")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasColumnName("password")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Token)
                     .HasColumnName("token")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Username)
                     .IsRequired()
                     .HasColumnName("username")
-                    .HasMaxLength(45)
-                    .IsUnicode(false);
+                    .HasColumnType("varchar(45)");
+            });
+
+            modelBuilder.Entity<UsersReviewsBooks>(entity => {
+                entity.HasKey(e => new {e.UsersId, e.BooksId})
+                    .HasName("PRIMARY");
+
+                entity.ToTable("Users_Reviews_Books");
+
+                entity.HasIndex(e => e.BooksId)
+                    .HasName("fk_Users_has_Books_Books1_idx");
+
+                entity.HasIndex(e => e.UsersId)
+                    .HasName("fk_Users_has_Books_Users1_idx");
+
+                entity.Property(e => e.UsersId)
+                    .HasColumnName("Users_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.BooksId)
+                    .HasColumnName("Books_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.ReviewDetails)
+                    .HasColumnName("Review_details")
+                    .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.ReviewScore)
+                    .HasColumnName("Review_score")
+                    .HasColumnType("int(10)");
+
+                entity.HasOne(d => d.Books)
+                    .WithMany(p => p.UsersReviewsBooks)
+                    .HasForeignKey(d => d.BooksId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Users_has_Books_Books1");
+
+                entity.HasOne(d => d.Users)
+                    .WithMany(p => p.UsersReviewsBooks)
+                    .HasForeignKey(d => d.UsersId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Users_has_Books_Users1");
             });
         }
     }

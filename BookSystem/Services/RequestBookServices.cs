@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using BookSystem.Entities;
 
 namespace BookSystem.Services {
@@ -25,8 +26,28 @@ namespace BookSystem.Services {
             throw new NotImplementedException(); 
         }
 
-        public IList GetAllRequester(int bookId) {
+        public int DoNotApprove(int userId, int bookId) {
             throw new NotImplementedException();
+        }
+
+        public IQueryable GetAllBooksUserDidRequest(int userId) {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable GetAllUsersWhoRequestBook(int bookId) {
+            return _context.UserRequestBook
+                .Where(book => book.BookId == bookId)
+                .Select(request =>
+                    _context.Users
+                        .Where(user => user.Id == request.UserId)
+                        .Select(user => new BasicUsersDTO {
+                            Id = user.Id,
+                            Username = user.Username,
+                            Firstname = user.Firstname,
+                            Lastname = user.Lastname,
+                            Avatar = user.Avatar
+                        })
+                );
         }
     }
 }
