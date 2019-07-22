@@ -107,6 +107,7 @@ namespace BookSystem.Services {
                         throw new Exception();
                 }
             }
+            return 0;
         }
 
         public int PutUser(int id, Users newUser) {
