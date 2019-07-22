@@ -170,6 +170,7 @@
         <e p="Controllers" t="Include">
           <e p="AuthController.cs" t="Include" />
           <e p="BookController.cs" t="Include" />
+          <e p="DoResearchController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
@@ -203,11 +204,13 @@
         </e>
         <e p="Services" t="Include">
           <e p="BooksServices.cs" t="Include" />
+          <e p="DoResearchServices.cs" t="Include" />
           <e p="Exception" t="Include">
             <e p="CustomException.cs" t="Include" />
           </e>
           <e p="Interface" t="Include">
             <e p="IBooksServices.cs" t="Include" />
+            <e p="IDoResearchServices.cs" t="Include" />
             <e p="IRentServices.cs" t="Include" />
             <e p="IRequestBookServices.cs" t="Include" />
             <e p="IUsersServices.cs" t="Include" />

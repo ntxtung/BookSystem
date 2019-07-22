@@ -8,9 +8,11 @@ namespace BookSystem.Controllers {
     [Route("api/books")]
     public class BookController : Controller {
         private readonly IBooksServices _booksServices;
+        private readonly IRequestBookServices _requestBookServices;
 
-        public BookController(IBooksServices booksServices) {
+        public BookController(IBooksServices booksServices, IRequestBookServices requestBookServices) {
             _booksServices = booksServices;
+            _requestBookServices = requestBookServices;
         }
 
         [HttpGet]
@@ -73,6 +75,11 @@ namespace BookSystem.Controllers {
         [HttpGet("{id}/fundedUser")]
         public IActionResult GetFundedUser([FromRoute] int id) {
             return Ok(_booksServices.GetFundedUser(id));
+        }
+
+        [HttpGet("{bookId}/request")]
+        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId) {
+            return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId));
         }
     }
 }
