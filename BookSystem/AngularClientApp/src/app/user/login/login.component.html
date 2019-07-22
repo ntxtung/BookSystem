@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div>
+    <form>
+        <div class="ui raised card login-form">
+            <div class="content">
+                <div class="header">Login</div>
+                <div class="ui form">
+                    <table align="center">
+                        <tr>
+                            <td>Email</td>
+                            <td><input [(ngModel)]="loginUserData.email" type="text" name="email" id=""></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input [(ngModel)]="loginUserData.password" type="password" name="password" id=""></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="extra content">
+                <button (click)="login()" type="submit" class="ui primary button login-button">Sign in</button>
+            </div>
+        </div>
+    </form>
+</div>

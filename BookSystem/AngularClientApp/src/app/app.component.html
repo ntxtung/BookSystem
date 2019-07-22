@@ -1,2 +1,10 @@
 <p>app works!</p>
-<admin-dashboard></admin-dashboard>
+<div>
+    <ul>
+        <li><a [routerLink]="['/login']">Login</a></li>
+        <li><a [routerLink]="['/register']">Sign up</a></li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
+

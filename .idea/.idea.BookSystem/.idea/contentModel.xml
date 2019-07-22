@@ -109,7 +109,13 @@
                   <e p="login.component.html" t="Include" />
                   <e p="login.component.ts" t="Include" />
                 </e>
+                <e p="register" t="Include">
+                  <e p="register.component.css" t="Include" />
+                  <e p="register.component.html" t="Include" />
+                  <e p="register.component.ts" t="Include" />
+                </e>
                 <e p="user.module.ts" t="Include" />
+                <e p="user.routes.ts" t="Include" />
               </e>
             </e>
             <e p="assets" t="Include">
