@@ -15,6 +15,7 @@ import { BookApiService } from './services/book-services/book-api-service.servic
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { UserAuthenticationService } from './services/user-services/user-authentication.service';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { appRoutes } from './app.routes';
     ],
     providers: [
         UserApiService,
-        BookApiService
+        BookApiService,
+        UserAuthenticationService
     ],
     bootstrap: [AppComponent]
 })
