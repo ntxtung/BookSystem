@@ -13,8 +13,12 @@ namespace BookSystem.Controllers {
         }
 
         [HttpPost("login")]
-        public IActionResult Authenticate(string username, string password) {
-            return Ok(_userServices.Authenticate(username, password));
+        public IActionResult Authenticate([FromBody] string username, [FromBody] string password) {
+            
+            return Ok(new {
+                username, password
+            });
+//            return Ok(_userServices.Authenticate(username, password));
         }
     }
 }

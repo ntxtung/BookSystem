@@ -10,8 +10,7 @@ namespace BookSystem.Controllers {
         private readonly IRequestBookServices _requestBookServices;
         private readonly IRentServices _rentServices;
         
-        public UserController(IUserServices userServices, IRequestBookServices requestBookServices, 
-                                IRentServices rentServices) {
+        public UserController(IUserServices userServices, IRequestBookServices requestBookServices, IRentServices rentServices) {
             _userService = userServices;
             _requestBookServices = requestBookServices;
             _rentServices = rentServices;
@@ -21,6 +20,7 @@ namespace BookSystem.Controllers {
         public IActionResult GetUsers() {
             return Ok(_userService.GetUsers());
         }
+        
         [HttpGet("{id}", Name = "UserLink")]
         public IActionResult GetUserById(int id) {
             try {
@@ -87,7 +87,19 @@ namespace BookSystem.Controllers {
 
         [HttpPost("{userId}/request/{bookId}")]
         public IActionResult RequestBook([FromRoute] int userId, [FromRoute] int bookId) {
-            return Ok(_requestBookServices.DoRequest(userId, bookId));
+            try {
+                return Ok(_requestBookServices.DoRequest(userId, bookId));
+            }
+            catch (DuplicationEntryException) {
+                return BadRequest(new {
+                    message = "Duplicated Entry"
+                });
+            }
+            catch (Exception) {
+                return BadRequest(new {
+                    message = "Unknown Error"
+                });
+            }
         }
 
         [HttpPost("{funderId}/approve/{renterId}/{bookId}")]
@@ -95,6 +107,11 @@ namespace BookSystem.Controllers {
             return Ok(new {
                 funderId, renterId, bookId
             });
+        }
+
+        [HttpGet("{userId}/request")]
+        public IActionResult GetAllBooksUserDidRequest([FromRoute] int userId) {
+            return Ok(_requestBookServices.GetAllBooksUserDidRequest(userId));
         }
     }
 }
