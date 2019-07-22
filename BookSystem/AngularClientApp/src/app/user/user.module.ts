@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,6 +18,7 @@ import { userRoutes } from './user.routes';
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         RouterModule.forChild(userRoutes)
     ]
 })
