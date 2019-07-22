@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Admin\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Admin\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-105955551.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Admin\Documents\GitHub\BookSystem" t="IncludeFlat">
+    <e p="C:\Users\xuant\.Rider2019.1\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
+    <e p="E:\BigIn\BookSystem" t="IncludeFlat">
       <e p="BookSystem" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="AngularClientApp" t="Include">
@@ -217,14 +218,21 @@
         <e p="Controllers" t="Include">
           <e p="AuthController.cs" t="Include" />
           <e p="BookController.cs" t="Include" />
+          <e p="DoResearchController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
           <e p="Books.cs" t="Include" />
           <e p="BookSystemContext.cs" t="Include" />
+          <e p="DataTranferObject" t="Include">
+            <e p="BasicUsersDTO.cs" t="Include" />
+            <e p="FullBooksDTO.cs" t="Include" />
+            <e p="FullUsersDTO.cs" t="Include" />
+          </e>
           <e p="RentLog.cs" t="Include" />
           <e p="UserRequestBook.cs" t="Include" />
           <e p="Users.cs" t="Include" />
+          <e p="UsersReviewsBooks.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -244,11 +252,17 @@
         </e>
         <e p="Services" t="Include">
           <e p="BooksServices.cs" t="Include" />
-          <e p="CustomException.cs" t="Include" />
-          <e p="IBooksServices.cs" t="Include" />
-          <e p="IRentServices.cs" t="Include" />
-          <e p="IRequestBookServices.cs" t="Include" />
-          <e p="IUsersServices.cs" t="Include" />
+          <e p="DoResearchServices.cs" t="Include" />
+          <e p="Exception" t="Include">
+            <e p="CustomException.cs" t="Include" />
+          </e>
+          <e p="Interface" t="Include">
+            <e p="IBooksServices.cs" t="Include" />
+            <e p="IDoResearchServices.cs" t="Include" />
+            <e p="IRentServices.cs" t="Include" />
+            <e p="IRequestBookServices.cs" t="Include" />
+            <e p="IUsersServices.cs" t="Include" />
+          </e>
           <e p="RentServices.cs" t="Include" />
           <e p="RequestBookServices.cs" t="Include" />
           <e p="UsersServices.cs" t="Include" />
