@@ -180,6 +180,7 @@
             <e p="BasicUsersDTO.cs" t="Include" />
             <e p="FullBooksDTO.cs" t="Include" />
             <e p="FullUsersDTO.cs" t="Include" />
+            <e p="LoginDto.cs" t="Include" />
           </e>
           <e p="RentLog.cs" t="Include" />
           <e p="UserRequestBook.cs" t="Include" />

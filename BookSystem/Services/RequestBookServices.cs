@@ -19,7 +19,7 @@ namespace BookSystem.Services {
                     UserId = userId,
                     BookId = bookId
                 });
-                _context.SaveChanges();
+                return _context.SaveChanges();
             }
             catch (DbUpdateException dbe) {
                 var mysqlEx = dbe.InnerException as MySqlException;
@@ -31,7 +31,6 @@ namespace BookSystem.Services {
                         throw new Exception();
                 }
             }
-            return 0;
         }
 
         public int DoApprove(int userId, int bookId) {
