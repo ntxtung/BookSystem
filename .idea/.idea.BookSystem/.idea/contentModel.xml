@@ -31,6 +31,8 @@
           <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
           <e p="node_modules\@angular\router" t="IncludeRecursive" />
           <e p="node_modules\@angular-devkit\build-angular" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\effects" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\store" t="IncludeRecursive" />
           <e p="node_modules\@types" t="IncludeRecursive">
             <e p="events" t="IncludeRecursive" />
             <e p="jasmine" t="IncludeRecursive" />
@@ -96,6 +98,9 @@
                   <e p="detail.component.ts" t="Include" />
                 </e>
               </e>
+              <e p="models" t="Include">
+                <e p="user.ts" t="Include" />
+              </e>
               <e p="Services" t="Include">
                 <e p="book-services" t="Include">
                   <e p="book-api-service.service.ts" t="Include" />
@@ -103,6 +108,15 @@
                 <e p="user-services" t="Include">
                   <e p="user-api-service.service.ts" t="Include" />
                   <e p="user-authentication.service.ts" t="Include" />
+                </e>
+              </e>
+              <e p="store" t="Include">
+                <e p="app.states.ts" t="Include" />
+                <e p="effects" t="Include">
+                  <e p="auth.effects.ts" t="Include" />
+                </e>
+                <e p="reducers" t="Include">
+                  <e p="auth.reducer.ts" t="Include" />
                 </e>
               </e>
               <e p="template" t="Include">

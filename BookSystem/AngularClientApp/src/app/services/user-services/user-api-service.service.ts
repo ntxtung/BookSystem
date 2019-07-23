@@ -5,10 +5,11 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class UserApiService {
+    private BASE_URL = "http://localhost:5000"
     users : any
     constructor(private httpClient : HttpClient) { }
 
     getUsers(){
-        return this.httpClient.get("http://localhost:5000/api/users")
+        return this.httpClient.get(`${this.BASE_URL}/api/users`)
     }
 }

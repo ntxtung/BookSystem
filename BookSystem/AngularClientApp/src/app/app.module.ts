@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { UserAuthenticationService } from './services/user-services/user-authentication.service';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './store/effects/auth.effects';
 
 @NgModule({
     declarations: [
@@ -29,6 +31,7 @@ import { UserAuthenticationService } from './services/user-services/user-authent
         TemplateModule,
         HttpClientModule,
         FormsModule,
+        EffectsModule.forRoot([AuthEffects]),
         RouterModule.forRoot(appRoutes, {useHash: true})
     ],
     providers: [
