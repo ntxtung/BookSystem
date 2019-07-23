@@ -12,22 +12,26 @@ namespace BookSystem.Controllers {
         private readonly IUserServices _userService;
         private readonly IRequestBookServices _requestBookServices;
         private readonly IRentServices _rentServices;
+        private readonly IAuthenticationServices _authenticationServices;
 
         public UserController(IUserServices userServices, IRequestBookServices requestBookServices,
-            IRentServices rentServices) {
+            IRentServices rentServices, IAuthenticationServices authenticationServices) {
             _userService = userServices;
             _requestBookServices = requestBookServices;
             _rentServices = rentServices;
+            _authenticationServices = authenticationServices;
         }
         
         [Authorize]
         [HttpGet]
         public IActionResult GetUsers() {
-            var currentUser = HttpContext.User;
-            Console.WriteLine(currentUser.FindFirst("Id")?.Value);
+            var currentUserId = _authenticationServices.GetCurrentUserId(HttpContext);
+            if (currentUserId != 1)
+                return Forbid();
             return Ok(_userService.GetUsers());
         }
-
+        
+        [Authorize]
         [HttpGet("{id}", Name = "UserLink")]
         public IActionResult GetUserById(int id) {
             try {
@@ -57,7 +61,7 @@ namespace BookSystem.Controllers {
                     return CreatedAtRoute(
                         "UserLink",
                         new {id = userData.Id},
-                        new FullUsersDTO {
+                        new FullUsersDto {
                             Id = loggedUser.Id,
                             Username = loggedUser.Username,
                             Firstname = loggedUser.Firstname,

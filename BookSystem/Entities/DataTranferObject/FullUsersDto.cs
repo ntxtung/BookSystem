@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace BookSystem.Entities {
-    public class FullUsersDTO {
+    public class FullUsersDto {
         [Required]
         public int Id { get; set; }
         [Required]
