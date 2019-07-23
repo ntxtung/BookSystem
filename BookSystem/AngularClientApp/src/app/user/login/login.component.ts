@@ -11,6 +11,7 @@ declare let toastr
 export class LoginComponent implements OnInit {
 
     loginUserData = {}
+    isLogged = false;
     constructor(private userAuthenticationService : UserAuthenticationService) { }
 
     ngOnInit() {
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
             res => {
                 if(res){
                     toastr.success("login success as "+res.firstname+" "+res.lastname)
+                    this.isLogged = true;
                 }else{
                     toastr.error("invalid username or password")
                 }

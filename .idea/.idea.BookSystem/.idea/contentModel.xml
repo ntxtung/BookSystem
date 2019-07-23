@@ -39,18 +39,22 @@
             <e p="node" t="IncludeRecursive" />
             <e p="source-list-map" t="IncludeRecursive" />
           </e>
+          <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
           <e p="node_modules\jasmine-core" t="IncludeRecursive" />
           <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
+          <e p="node_modules\jquery" t="IncludeRecursive" />
           <e p="node_modules\karma" t="IncludeRecursive" />
           <e p="node_modules\karma-chrome-launcher" t="IncludeRecursive" />
           <e p="node_modules\karma-coverage-istanbul-reporter" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
+          <e p="node_modules\popper.js" t="IncludeRecursive" />
           <e p="node_modules\protractor" t="IncludeRecursive" />
           <e p="node_modules\rxjs" t="IncludeRecursive" />
           <e p="node_modules\semantic-ui-css" t="IncludeRecursive" />
           <e p="node_modules\source-map" t="IncludeRecursive" />
+          <e p="node_modules\toastr" t="IncludeRecursive" />
           <e p="node_modules\ts-node" t="IncludeRecursive" />
           <e p="node_modules\tslib" t="IncludeRecursive" />
           <e p="node_modules\tslint" t="IncludeRecursive" />
@@ -102,7 +106,17 @@
                 </e>
               </e>
               <e p="template" t="Include">
+                <e p="menu" t="Include">
+                  <e p="menu.component.css" t="Include" />
+                  <e p="menu.component.html" t="Include" />
+                  <e p="menu.component.ts" t="Include" />
+                </e>
                 <e p="template.module.ts" t="Include" />
+                <e p="welcome" t="Include">
+                  <e p="welcome.component.css" t="Include" />
+                  <e p="welcome.component.html" t="Include" />
+                  <e p="welcome.component.ts" t="Include" />
+                </e>
               </e>
               <e p="user" t="Include">
                 <e p="login" t="Include">
@@ -121,6 +135,10 @@
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
+              <e p="images" t="Include">
+                <e p="bigin-logo-1.png" t="Include" />
+                <e p="bigin-logo.png" t="Include" />
+              </e>
             </e>
             <e p="environments" t="Include">
               <e p="environment.prod.ts" t="Include" />
