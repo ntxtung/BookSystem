@@ -1,7 +1,10 @@
 using System;
+using System.Linq;
 using BookSystem.Entities;
 using BookSystem.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace BookSystem.Controllers {
     [Route("api/users")]
@@ -16,9 +19,12 @@ namespace BookSystem.Controllers {
             _requestBookServices = requestBookServices;
             _rentServices = rentServices;
         }
-
+        
+        [Authorize]
         [HttpGet]
         public IActionResult GetUsers() {
+            var currentUser = HttpContext.User;
+            Console.WriteLine(currentUser.FindFirst("Id")?.Value);
             return Ok(_userService.GetUsers());
         }
 
