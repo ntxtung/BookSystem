@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     }
 
     login(){
-        this.userAuthenticationService.loginUserWithParameters(this.loginUserData).subscribe(
+        this.userAuthenticationService.loginUserWithBody(this.loginUserData).subscribe(
             res => {
                 if(res){
                     toastr.success("login success as "+res.firstname+" "+res.lastname)
@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
                     this.loggedUser.id = res.id
                     this.loggedUser.token = res.token
                     console.log(this.loggedUser)
+                    localStorage.setItem('token', res.token)
                 }else{
                     toastr.error("invalid username or password")
                 }
