@@ -9,31 +9,37 @@ using Microsoft.IdentityModel.JsonWebTokens;
 namespace BookSystem.Controllers {
     [Route("api/users")]
     public class UserController : Controller {
+        #region Properties
+
         private readonly IUserServices _userService;
         private readonly IRequestBookServices _requestBookServices;
         private readonly IRentServices _rentServices;
         private readonly IAuthenticationServices _authenticationServices;
 
+        #endregion
+
         public UserController(IUserServices userServices, IRequestBookServices requestBookServices,
             IRentServices rentServices, IAuthenticationServices authenticationServices) {
+            
             _userService = userServices;
             _requestBookServices = requestBookServices;
             _rentServices = rentServices;
             _authenticationServices = authenticationServices;
         }
-        
-        [Authorize]
+
+        #region API Declaration
+
+        #region Fundamental
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetUsers() {
-            var currentUserId = _authenticationServices.GetCurrentUserId(HttpContext);
-            if (currentUserId != 1)
-                return Forbid();
             return Ok(_userService.GetUsers());
         }
         
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         [HttpGet("{id}", Name = "UserLink")]
-        public IActionResult GetUserById(int id) {
+        public IActionResult GetBasicUserById(int id) {
             try {
                 return Ok(_userService.GetUserById(id));
             }
@@ -41,17 +47,21 @@ namespace BookSystem.Controllers {
                 return BadRequest(e.Message);
             }
         }
-
+        
+        [Authorize(Roles = "Admin, User")]
         [HttpGet("{id}/fundedBook")]
         public IActionResult GetFundedBookOfUser([FromRoute] int id) {
             return Ok(_userService.GetFundedBookOfUser(id));
         }
-
+        
+        [Authorize(Roles = "Admin, User")]
         [HttpGet("{id}/rentedBook")]
         public IActionResult GetRentedBookOfUser([FromRoute] int id) {
             return Ok(_userService.GetRentedBookOfUser(id));
         }
-
+        
+//        [Authorize(Roles = "Admin, User")]
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult RegisterNewUser([FromBody] Users userData) {
             try {
@@ -91,11 +101,11 @@ namespace BookSystem.Controllers {
             });
         }
 
-        [HttpPost("{userId}/review/{bookId}")]
-        public IActionResult ReviewBook([FromBody] UsersReviewsBooks reviewData) {
-            throw new NotImplementedException();
-        }
+        #endregion
 
+        #region Request
+        
+        [Authorize(Roles = "Admin, User")]
         [HttpPost("{userId}/request/{bookId}")]
         public IActionResult RequestBook([FromRoute] int userId, [FromRoute] int bookId) {
             try {
@@ -112,7 +122,8 @@ namespace BookSystem.Controllers {
 
             return BadRequest(new {message = "Request Failed"});
         }
-
+        
+        [Authorize(Roles = "Admin, User")]
         [HttpPost("{funderId}/approve/{renterId}/{bookId}")]
         public IActionResult ApproveRequest([FromRoute] int fundUserId, [FromRoute] int requestUserId,
             [FromRoute] int bookId) {
@@ -121,10 +132,25 @@ namespace BookSystem.Controllers {
 //            });
             throw new NotImplementedException();
         }
-
+        
+        [Authorize(Roles = "Admin, User")]
         [HttpGet("{userId}/request")]
         public IActionResult GetAllBooksUserDidRequest([FromRoute] int userId) {
             return Ok(_requestBookServices.GetAllBooksUserDidRequest(userId));
         }
+
+        #endregion
+
+        #region Review
+        
+        [Authorize(Roles = "Admin, User")]
+        [HttpPost("{userId}/review/{bookId}")]
+        public IActionResult ReviewBook([FromBody] UsersReviewsBooks reviewData) {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #endregion
     }
 }

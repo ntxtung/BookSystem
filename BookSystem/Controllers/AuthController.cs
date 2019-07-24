@@ -8,16 +8,22 @@ using Microsoft.Extensions.Configuration;
 namespace BookSystem.Controllers {
     [Route("api/auth")]
     public class AuthController : Controller {
+        #region Properties
+
         private readonly IConfiguration _configuration;
         private readonly IUserServices _userServices;
         private readonly IAuthenticationServices _authenticationServices;
+
+        #endregion
 
         public AuthController(IAuthenticationServices authenticationServices, IConfiguration configuration, IUserServices userServices) {
             _configuration = configuration;
             _userServices = userServices;
             _authenticationServices = authenticationServices;
         }
-        
+
+        #region API Declaration
+
         [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] LoginDto loginData) {
@@ -31,5 +37,13 @@ namespace BookSystem.Controllers {
 
             return response;
         }
+        
+        [Authorize(Roles = "Admin, User")]
+        [HttpPost("logout")]
+        public IActionResult Logout() {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

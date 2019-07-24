@@ -26,15 +26,17 @@ namespace BookSystem.Services {
         public string GenerateJsonWebToken(FullUsersDto userInfo)  
         {  
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));  
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);  
-            
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            Console.WriteLine("HELLO DEBUG: " + userInfo.Role);
             var claims = new[] {  
                 new Claim("Id", userInfo.Id.ToString()),
                 new Claim("Username", userInfo.Username),  
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())  
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, userInfo.Role == 0 ? "Admin" : "User")
             };  
             
-            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],  
+            var token = new JwtSecurityToken(
+                _configuration["Jwt:Issuer"],  
                 _configuration["Jwt:Issuer"],  
                 claims,
                 expires: DateTime.Now.AddMinutes(120),  
@@ -55,7 +57,8 @@ namespace BookSystem.Services {
                 Email = loginUser.Email,
                 Password = null,
                 Token = null,
-                Avatar = loginUser.Avatar
+                Avatar = loginUser.Avatar,
+                Role = loginUser.Role
             };
         }
     }
