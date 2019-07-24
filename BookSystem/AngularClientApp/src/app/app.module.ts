@@ -31,7 +31,7 @@ import { AuthEffects } from './store/effects/auth.effects';
         TemplateModule,
         HttpClientModule,
         FormsModule,
-        EffectsModule.forRoot([AuthEffects]),
+        // EffectsModule.forRoot([AuthEffects]),
         RouterModule.forRoot(appRoutes, {useHash: true})
     ],
     providers: [
