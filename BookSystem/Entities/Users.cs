@@ -22,6 +22,7 @@ namespace BookSystem.Entities
         public string Password { get; set; }
         public string Token { get; set; }
         public string Avatar { get; set; }
+        public int Role { get; set; }
 
         public virtual ICollection<Books> BooksUsersFund { get; set; }
         public virtual ICollection<Books> BooksUsersRent { get; set; }

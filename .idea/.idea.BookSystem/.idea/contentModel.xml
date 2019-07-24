@@ -266,6 +266,7 @@
             <e p="BasicUsersDTO.cs" t="Include" />
             <e p="FullBooksDTO.cs" t="Include" />
             <e p="FullUsersDTO.cs" t="Include" />
+            <e p="LoginDto.cs" t="Include" />
           </e>
           <e p="RentLog.cs" t="Include" />
           <e p="UserRequestBook.cs" t="Include" />
@@ -289,12 +290,14 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Services" t="Include">
+          <e p="AuthenticationServices.cs" t="Include" />
           <e p="BooksServices.cs" t="Include" />
           <e p="DoResearchServices.cs" t="Include" />
           <e p="Exception" t="Include">
             <e p="CustomException.cs" t="Include" />
           </e>
           <e p="Interface" t="Include">
+            <e p="IAuthenticationServices.cs" t="Include" />
             <e p="IBooksServices.cs" t="Include" />
             <e p="IDoResearchServices.cs" t="Include" />
             <e p="IRentServices.cs" t="Include" />

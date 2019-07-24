@@ -9,7 +9,7 @@ namespace BookSystem.Services {
         IQueryable GetUsers();
         IQueryable GetFundedBookOfUser(int id);
         IQueryable GetRentedBookOfUser(int id);
-        FullUsersDTO Authenticate(string username, string password);
+        FullUsersDto Authenticate(string username, string password);
         int PostUser(Users user);
         int PutUser(int id, Users newUser);
         int DeleteUser(int id);
