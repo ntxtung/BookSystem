@@ -1,0 +1,7 @@
+#user-table{
+    table-layout: fixed;
+}
+
+.user-row:hover {
+    background-color: #E7E7E7;
+}

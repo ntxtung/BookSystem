@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\xuant\.Rider2019.1\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
-    <e p="E:\BigIn\BookSystem" t="IncludeFlat">
+    <e p="C:\Users\Admin\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-105955551.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Admin\Documents\GitHub\BookSystem" t="IncludeFlat">
       <e p="BookSystem" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="AngularClientApp" t="Include">
@@ -32,6 +31,8 @@
           <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
           <e p="node_modules\@angular\router" t="IncludeRecursive" />
           <e p="node_modules\@angular-devkit\build-angular" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\effects" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\store" t="IncludeRecursive" />
           <e p="node_modules\@types" t="IncludeRecursive">
             <e p="events" t="IncludeRecursive" />
             <e p="jasmine" t="IncludeRecursive" />
@@ -40,17 +41,22 @@
             <e p="node" t="IncludeRecursive" />
             <e p="source-list-map" t="IncludeRecursive" />
           </e>
+          <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
           <e p="node_modules\jasmine-core" t="IncludeRecursive" />
           <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
+          <e p="node_modules\jquery" t="IncludeRecursive" />
           <e p="node_modules\karma" t="IncludeRecursive" />
           <e p="node_modules\karma-chrome-launcher" t="IncludeRecursive" />
           <e p="node_modules\karma-coverage-istanbul-reporter" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
+          <e p="node_modules\popper.js" t="IncludeRecursive" />
           <e p="node_modules\protractor" t="IncludeRecursive" />
           <e p="node_modules\rxjs" t="IncludeRecursive" />
+          <e p="node_modules\semantic-ui-css" t="IncludeRecursive" />
           <e p="node_modules\source-map" t="IncludeRecursive" />
+          <e p="node_modules\toastr" t="IncludeRecursive" />
           <e p="node_modules\ts-node" t="IncludeRecursive" />
           <e p="node_modules\tslib" t="IncludeRecursive" />
           <e p="node_modules\tslint" t="IncludeRecursive" />
@@ -59,14 +65,94 @@
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
             <e p="app" t="Include">
+              <e p="Admin" t="Include">
+                <e p="admin.module.ts" t="Include" />
+                <e p="admin.routes.ts" t="Include" />
+                <e p="dashboard" t="Include">
+                  <e p="dashboard.component.css" t="Include" />
+                  <e p="dashboard.component.html" t="Include" />
+                  <e p="dashboard.component.ts" t="Include" />
+                </e>
+                <e p="users-list" t="Include">
+                  <e p="users-list.component.css" t="Include" />
+                  <e p="users-list.component.html" t="Include" />
+                  <e p="users-list.component.ts" t="Include" />
+                </e>
+              </e>
               <e p="app.component.css" t="Include" />
               <e p="app.component.html" t="Include" />
               <e p="app.component.spec.ts" t="Include" />
               <e p="app.component.ts" t="Include" />
               <e p="app.module.ts" t="Include" />
+              <e p="app.routes.ts" t="Include" />
+              <e p="book" t="Include">
+                <e p="book.module.ts" t="Include" />
+                <e p="books-list" t="Include">
+                  <e p="books-list.component.css" t="Include" />
+                  <e p="books-list.component.html" t="Include" />
+                  <e p="books-list.component.ts" t="Include" />
+                </e>
+                <e p="detail" t="Include">
+                  <e p="detail.component.css" t="Include" />
+                  <e p="detail.component.html" t="Include" />
+                  <e p="detail.component.ts" t="Include" />
+                </e>
+              </e>
+              <e p="models" t="Include">
+                <e p="user.ts" t="Include" />
+              </e>
+              <e p="Services" t="Include">
+                <e p="book-services" t="Include">
+                  <e p="book-api-service.service.ts" t="Include" />
+                </e>
+                <e p="user-services" t="Include">
+                  <e p="user-api-service.service.ts" t="Include" />
+                  <e p="user-authentication.service.ts" t="Include" />
+                </e>
+              </e>
+              <e p="store" t="Include">
+                <e p="app.states.ts" t="Include" />
+                <e p="effects" t="Include">
+                  <e p="auth.effects.ts" t="Include" />
+                </e>
+                <e p="reducers" t="Include">
+                  <e p="auth.reducer.ts" t="Include" />
+                </e>
+              </e>
+              <e p="template" t="Include">
+                <e p="menu" t="Include">
+                  <e p="menu.component.css" t="Include" />
+                  <e p="menu.component.html" t="Include" />
+                  <e p="menu.component.ts" t="Include" />
+                </e>
+                <e p="template.module.ts" t="Include" />
+                <e p="welcome" t="Include">
+                  <e p="welcome.component.css" t="Include" />
+                  <e p="welcome.component.html" t="Include" />
+                  <e p="welcome.component.ts" t="Include" />
+                </e>
+              </e>
+              <e p="user" t="Include">
+                <e p="login" t="Include">
+                  <e p="login.component.css" t="Include" />
+                  <e p="login.component.html" t="Include" />
+                  <e p="login.component.ts" t="Include" />
+                </e>
+                <e p="register" t="Include">
+                  <e p="register.component.css" t="Include" />
+                  <e p="register.component.html" t="Include" />
+                  <e p="register.component.ts" t="Include" />
+                </e>
+                <e p="user.module.ts" t="Include" />
+                <e p="user.routes.ts" t="Include" />
+              </e>
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
+              <e p="images" t="Include">
+                <e p="bigin-logo-1.png" t="Include" />
+                <e p="bigin-logo.png" t="Include" />
+              </e>
             </e>
             <e p="environments" t="Include">
               <e p="environment.prod.ts" t="Include" />

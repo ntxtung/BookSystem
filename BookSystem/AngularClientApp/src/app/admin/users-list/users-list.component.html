@@ -1,0 +1,16 @@
+<div class="ui container">
+    <table class="ui red table" id="user-table">
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Fullname</th>
+            <th>email</th>
+        </tr>
+        <tr *ngFor="let user of users" class="user-row">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.firstname}} {{user.lastname}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </table>
+</div>

@@ -41,8 +41,8 @@ namespace BookSystem {
                     };
                 });
             // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
-//            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "AngularClientApp/dist"; });
+//            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
+            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "AngularClientApp/dist"; });
 
             // Dependency Injection
             services.AddScoped<IUserServices, UsersServices>();
@@ -70,6 +70,7 @@ namespace BookSystem {
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
+                .AllowCredentials()
             );
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -78,17 +79,16 @@ namespace BookSystem {
             app.UseMvc();
 
             app.UseSpa(spa => {
-                spa.Options.SourcePath = "ClientApp";
+//                 spa.Options.SourcePath = "ClientApp";
 
+//                 if (env.IsDevelopment()) {
+//                     spa.UseReactDevelopmentServer("start");
+//                 }
+
+               spa.Options.SourcePath = "AngularClientApp";
                 if (env.IsDevelopment()) {
-                    spa.UseReactDevelopmentServer("start");
+                    spa.UseAngularCliServer("start");
                 }
-
-//                spa.Options.SourcePath = "AngularClientApp";
-//
-//                if (env.IsDevelopment()) {
-//                    spa.UseAngularCliServer("start");
-//                }
             });
         }
     }

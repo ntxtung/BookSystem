@@ -1,0 +1,32 @@
+<div>
+    <form>
+        <div class="ui raised card register-form">
+            <div class="content">
+                <div class="header">Register</div>
+                <div class="ui form">
+                    <table align="center">
+                        <tr>
+                            <td>Email</td>
+                            <td><input [(ngModel)]="loginRegisterData.email" type="text" name="email" id=""></td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td><input [(ngModel)]="loginRegisterData.username" type="text" name="email" id=""></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input [(ngModel)]="loginRegisterData.password" type="password" name="password" id=""></td>
+                        </tr>
+                        <tr>
+                            <td>Repassword</td>
+                            <td><input [(ngModel)]="loginRegisterData.repassword" type="password" name="password" id=""></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="extra content">
+                <button (click)="register()" type="submit" class="ui primary button register-button">Register</button>
+            </div>
+        </div>
+    </form>
+</div>

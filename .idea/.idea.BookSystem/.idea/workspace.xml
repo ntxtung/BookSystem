@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/BookSystem/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Controllers/UserController.cs" afterDir="false" />
@@ -11,6 +12,9 @@
       <change beforePath="$PROJECT_DIR$/BookSystem/Services/Interface/IUsersServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/Interface/IUsersServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookSystem/Services/UsersServices.cs" afterDir="false" />
     </list>
+=======
+    <list default="true" id="dec7a097-3470-4338-a637-49dc60af4717" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -434,9 +438,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Entities/UserRequestsBook.cs" />
     <entry file="file://$PROJECT_DIR$/BookSystem/Entities/Book.cs" />
-    <entry file="file://$PROJECT_DIR$/BookSystem/Pages/_ViewImports.cshtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/BookSystem/Pages/Error.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
