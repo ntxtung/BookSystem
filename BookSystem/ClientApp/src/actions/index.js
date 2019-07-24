@@ -7,7 +7,7 @@ export const doAuthLogin = (userData) => async dispatch => {
     method: "POST",
     url: './auth/login',
     headers: {},
-    params: {
+    data: {
       username: userData.username,
       password: userData.password
     }

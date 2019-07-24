@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Admin\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Admin\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-105955551.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Admin\Documents\GitHub\BookSystem" t="IncludeFlat">
+    <e p="C:\Users\xuant\.Rider2019.1\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
+    <e p="E:\BigIn\BookSystem" t="IncludeFlat">
       <e p="BookSystem" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="AngularClientApp" t="Include">
@@ -65,7 +66,7 @@
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
             <e p="app" t="Include">
-              <e p="Admin" t="Include">
+              <e p="admin" t="Include">
                 <e p="admin.module.ts" t="Include" />
                 <e p="admin.routes.ts" t="Include" />
                 <e p="dashboard" t="Include">
@@ -211,7 +212,6 @@
           <e p="node_modules\redux-thunk" t="IncludeRecursive" />
           <e p="node_modules\rimraf" t="IncludeRecursive" />
           <e p="node_modules\semantic-ui-react" t="IncludeRecursive" />
-          <e p="package-lock.json" t="Include" />
           <e p="package.json" t="Include" />
           <e p="public" t="Include">
             <e p="authBackground.jpg" t="Include" />
