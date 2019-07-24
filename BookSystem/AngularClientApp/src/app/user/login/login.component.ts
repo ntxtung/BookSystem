@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthenticationService } from 'src/app/services/user-services/user-authentication.service';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 declare let toastr
 
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     loginUserData = {}
     loggedUser : User = new User()
     isLogged = false;
-    constructor(private userAuthenticationService : UserAuthenticationService) { }
+    constructor(private userAuthenticationService : UserAuthenticationService, private router: Router) { }
 
     ngOnInit() {
     }
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
                     this.loggedUser.token = res.token
                     console.log(this.loggedUser)
                     localStorage.setItem('token', res.token)
+                    this.router.navigate(['/books'])
                 }else{
                     toastr.error("invalid username or password")
                 }
