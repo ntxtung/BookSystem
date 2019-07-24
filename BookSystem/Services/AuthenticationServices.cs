@@ -23,29 +23,30 @@ namespace BookSystem.Services {
             return Convert.ToInt32(httpContext.User.FindFirst("Id")?.Value);
         }
 
-        public string GenerateJsonWebToken(FullUsersDto userInfo)  
-        {  
+        public string GenerateJsonWebToken(FullUsersDto userInfo) {
+            var userRole = userInfo.Role == 0 ? "Admin" : "User";
+            
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));  
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-            Console.WriteLine("HELLO DEBUG: " + userInfo.Role);
+            
             var claims = new[] {  
                 new Claim("Id", userInfo.Id.ToString()),
                 new Claim("Username", userInfo.Username),  
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Role, userInfo.Role == 0 ? "Admin" : "User")
+                new Claim(ClaimTypes.Role, userRole)
             };  
             
             var token = new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],  
                 _configuration["Jwt:Issuer"],  
-                claims,
+                claims: claims,
                 expires: DateTime.Now.AddMinutes(120),  
                 signingCredentials: credentials);  
   
             return new JwtSecurityTokenHandler().WriteToken(token);  
         }  
 
-        public FullUsersDto Authentication(LoginDto loginData) {
+        public FullUsersDto Authenticate(LoginDto loginData) {
             var loginUser = _context.Users.SingleOrDefault(user => user.Username == loginData.Username && user.Password == loginData.Password);
             if (loginUser == null)
                 return null;

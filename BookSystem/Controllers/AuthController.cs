@@ -28,7 +28,7 @@ namespace BookSystem.Controllers {
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] LoginDto loginData) {
             IActionResult response = Unauthorized();
-            var loginUser = _authenticationServices.Authentication(loginData);
+            var loginUser = _authenticationServices.Authenticate(loginData);
             if (loginUser != null) {
                 var tokenString = _authenticationServices.GenerateJsonWebToken(loginUser);
                 loginUser.Token = tokenString;
