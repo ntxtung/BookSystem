@@ -32,7 +32,7 @@ namespace BookSystem.Services {
         public IQueryable GetUsers() {
             try {
                 return _userContext
-                    .Select(user => new FullUsersDTO {
+                    .Select(user => new FullUsersDto {
                         Id = user.Id,
                         Username = user.Username,
                         Firstname = user.Firstname,
@@ -71,10 +71,10 @@ namespace BookSystem.Services {
                 });
         }
 
-        public FullUsersDTO Authenticate(string username, string password) {
+        public FullUsersDto Authenticate(string username, string password) {
             try {               
                 return _userContext
-                    .Select(user => new FullUsersDTO{
+                    .Select(user => new FullUsersDto{
                         Id = user.Id,
                         Username = user.Username,
                         Firstname = user.Firstname,

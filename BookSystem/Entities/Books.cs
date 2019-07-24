@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookSystem.Entities {
-    public partial class Books {
-        public Books() {
+namespace BookSystem.Entities
+{
+    public partial class Books
+    {
+        public Books()
+        {
             RentLog = new HashSet<RentLog>();
             UserRequestBook = new HashSet<UserRequestBook>();
             UsersReviewsBooks = new HashSet<UsersReviewsBooks>();
