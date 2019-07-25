@@ -90,15 +90,19 @@ namespace BookSystem.Services {
         }
 
 
-        public int PostUser(Users user) {
-            try {
+        public int PostUser(Users user)
+        {
+            try
+            {
                 _userContext.Add(user);
                 return _context.SaveChanges();
             }
-            catch (DbUpdateException dbe) {
+            catch (DbUpdateException dbe)
+            {
                 var mysqlEx = dbe.InnerException as MySqlException;
                 if (mysqlEx == null) return 0;
-                switch (mysqlEx.Number) {
+                switch (mysqlEx.Number)
+                {
                     case 1062:
                         throw new DuplicationEntryException();
                     default:
@@ -107,11 +111,13 @@ namespace BookSystem.Services {
             }
         }
 
-        public int PutUser(int id, Users newUser) {
+        public int PutUser(int id, Users newUser)
+        {
             throw new NotImplementedException();
         }
 
-        public int DeleteUser(int id) {
+        public int DeleteUser(int id)
+        {
             throw new NotImplementedException();
         }
     }
