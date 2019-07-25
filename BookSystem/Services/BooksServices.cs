@@ -82,8 +82,7 @@ namespace BookSystem.Services {
         }
 
         public int DeleteBooks(int id) {
-            _bookContext.Remove(_bookContext.Single(book => book.Id == id));
-            return _context.SaveChanges();
+            throw new NotImplementedException();
         }
     }
 }

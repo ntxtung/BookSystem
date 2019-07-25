@@ -2,6 +2,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookSystem.Entities {
     public class BasicUsersDTO {
+        public BasicUsersDTO() {
+            
+        }
+        public BasicUsersDTO(Users user) {
+            Id = user.Id;
+            Username = user.Username;
+            Firstname = user.Firstname;
+            Lastname = user.Lastname;
+            Avatar = user.Avatar;
+        }
         [Required]
         public int Id { get; set; }
         [Required]

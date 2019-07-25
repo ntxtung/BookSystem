@@ -22,7 +22,7 @@ namespace BookSystem.Controllers {
 
         #region API Declaration
 
-        #region Fundamental
+        #region Basic
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -36,17 +36,16 @@ namespace BookSystem.Controllers {
             try {
                 return Ok(_booksServices.GetBookById(id));
             }
-            catch (Exception e) {
-                return BadRequest(new {
-                    message = e.Message
-                });
+            catch (Exception) {
+                return StatusCode(500);
             }
         }
         
         [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}")]
         public IActionResult DeleteBookById([FromRoute] int id) {
-            return Ok(_booksServices.DeleteBooks(id));
+//            return Ok(_booksServices.DeleteBooks(id));
+            return StatusCode(501);
         }
 
         [Authorize(Roles = "Admin, User")]
@@ -58,12 +57,7 @@ namespace BookSystem.Controllers {
                     return CreatedAtRoute(
                         "BookLink",
                         new { id = bookData.Id }, 
-                        new FullBooksDTO {
-                            Id = bookData.Id,
-                            Title = bookData.Title,
-                            Author = bookData.Author,
-                            Image = bookData.Image
-                        });
+                        new FullBooksDTO(bookData));
             }
             catch (DuplicationEntryException) {
                 return BadRequest(new {
@@ -71,19 +65,15 @@ namespace BookSystem.Controllers {
                 });
             }
             catch (Exception) {
-                return BadRequest(new {
-                    message = "Unhandled Exception"
-                });
+                return StatusCode(500);
             }
-            return BadRequest(new {
-                message = "Register Unsuccessfully"
-            });
+            return StatusCode(500);
         }
         
         [Authorize(Roles = "Admin, User")]
         [HttpPut("{bookId}")]
         public IActionResult UpdateBook([FromBody] FullBooksDTO bookData) {
-            throw new NotImplementedException();
+            return StatusCode(501);
         }
 
         #endregion
@@ -92,8 +82,8 @@ namespace BookSystem.Controllers {
 
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{bookId}/request/users")]
-        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId) {
-            return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId));
+        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId, [FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+            return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId, page, pageSize));
         }
         
         #endregion
@@ -122,7 +112,7 @@ namespace BookSystem.Controllers {
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{bookId}/reviews/")]
         public IActionResult GetReviewsOfBook([FromRoute] int bookId) {
-            throw new NotImplementedException();
+            return StatusCode(501);
         }
         
 

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Linq;
 using BookSystem.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +33,13 @@ namespace BookSystem.Services {
         }
 
         public int DoApprove(int userId, int bookId) {
-            throw new NotImplementedException();
+            var rentedBook = _context.Books.Find(bookId);
+            if (rentedBook != null) {
+                rentedBook.UsersRentId = userId;
+                return _context.SaveChanges();
+            }
+
+            return -1;
         }
 
         public int DoNotApprove(int userId, int bookId) {
@@ -46,13 +51,11 @@ namespace BookSystem.Services {
                 .Where(request => request.UserId == userId)
                 .Select(request =>
                     _context.Books
-                        .Select(book => new FullBooksDTO {
-                            Id = book.Id,
-                            Image = book.Image,
-                            Title = book.Title
-                        })
+                        .Select(book => new FullBooksDTO(book))
                         .Single(book => book.Id == request.BookId)
-                ).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
+                )
+                .Skip((int) ((page - 1) * pageSize))
+                .Take((int) pageSize);
         }
 
         public IQueryable GetAllUsersWhoRequestBook(int bookId, int? page=1, int? pageSize=5) {
@@ -60,13 +63,7 @@ namespace BookSystem.Services {
                 .Where(request => request.BookId == bookId)
                 .Select(request =>
                     _context.Users
-                        .Select(user => new BasicUsersDTO {
-                            Id = user.Id,
-                            Username = user.Username,
-                            Firstname = user.Firstname,
-                            Lastname = user.Lastname,
-                            Avatar = user.Avatar
-                        })
+                        .Select(user => new BasicUsersDTO(user))
                         .Single(user => user.Id == request.UserId)
                 ).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
