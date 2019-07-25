@@ -26,8 +26,8 @@ namespace BookSystem.Controllers {
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IActionResult GetBooks() {
-            return Ok(_booksServices.GetBooks());
+        public IActionResult GetBooks([FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 10) {
+            return Ok(_booksServices.GetBooks(page, pageSize));
         }
         
         [Authorize(Roles = "Admin, User")]

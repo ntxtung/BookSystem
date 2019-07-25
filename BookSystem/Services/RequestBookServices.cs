@@ -41,7 +41,7 @@ namespace BookSystem.Services {
             throw new NotImplementedException();
         }
 
-        public IQueryable GetAllBooksUserDidRequest(int userId) {
+        public IQueryable GetAllBooksUserDidRequest(int userId, int? page=1, int? pageSize=5) {
             return _context.UserRequestBook
                 .Where(request => request.UserId == userId)
                 .Select(request =>
@@ -52,10 +52,10 @@ namespace BookSystem.Services {
                             Title = book.Title
                         })
                         .Single(book => book.Id == request.BookId)
-                );
+                ).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
 
-        public IQueryable GetAllUsersWhoRequestBook(int bookId) {
+        public IQueryable GetAllUsersWhoRequestBook(int bookId, int? page=1, int? pageSize=5) {
             return _context.UserRequestBook
                 .Where(request => request.BookId == bookId)
                 .Select(request =>
@@ -68,7 +68,7 @@ namespace BookSystem.Services {
                             Avatar = user.Avatar
                         })
                         .Single(user => user.Id == request.UserId)
-                );
+                ).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
     }
 }

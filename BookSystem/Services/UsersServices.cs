@@ -47,7 +47,7 @@ namespace BookSystem.Services {
             }
         }
 
-        public IQueryable GetUsers() {
+        public IQueryable GetUsers(int? page=1, int? pageSize=5) {
             try {
                 return _userContext
                     .Select(user => new FullUsersDto {
@@ -59,7 +59,7 @@ namespace BookSystem.Services {
                         Password = null,
                         Token = user.Token,
                         Avatar = user.Avatar
-                    });
+                    }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -67,7 +67,7 @@ namespace BookSystem.Services {
             }
         }
 
-        public IQueryable GetFundedBookOfUser(int id) {
+        public IQueryable GetFundedBookOfUser(int id, int? page=1, int? pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersFundId == id)
                 .Select(book => new FullBooksDTO {
@@ -75,10 +75,10 @@ namespace BookSystem.Services {
                     Title = book.Title,
                     Author = book.Author,
                     Image = book.Image
-                });
+                }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
 
-        public IQueryable GetRentedBookOfUser(int id) {
+        public IQueryable GetRentedBookOfUser(int id, int? page=1, int? pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersRentId == id)
                 .Select(book => new FullBooksDTO {
@@ -86,9 +86,8 @@ namespace BookSystem.Services {
                     Title = book.Title,
                     Author = book.Author,
                     Image = book.Image
-                });
+                }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
-
 
         public int PostUser(Users user) {
             try {

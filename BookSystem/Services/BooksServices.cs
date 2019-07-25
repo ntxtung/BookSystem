@@ -14,13 +14,13 @@ namespace BookSystem.Services {
             _bookContext = _context.Books;
         }
         
-        public IQueryable GetBooks() {
+        public IQueryable GetBooks(int? page=1, int? pageSize=10) {
             return _bookContext.Select(books => new FullBooksDTO {
                 Id = books.Id,
                 Title = books.Title,
                 Author = books.Author,
                 Image = books.Image
-            });
+            }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
 
         public FullBooksDTO GetBookById(int id) {
