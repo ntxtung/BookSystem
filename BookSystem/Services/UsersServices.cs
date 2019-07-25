@@ -14,13 +14,31 @@ namespace BookSystem.Services {
             _userContext = _context.Users;
         }
 
-        public BasicUsersDTO GetUserById(int id) {
+        public BasicUsersDTO GetBasicUserById(int id) {
             try {
                 return _userContext.Select(user => new BasicUsersDTO {
                     Id = user.Id,
                     Username = user.Username,
                     Firstname = user.Firstname,
                     Lastname = user.Lastname,
+                    Avatar = user.Avatar
+                }).Single(user => user.Id == id);
+            }
+            catch (InvalidOperationException) {
+                throw new Exception("No element found");
+            }
+        }
+        
+        public FullUsersDto GetFullUserById(int id) {
+            try {
+                return _userContext.Select(user => new FullUsersDto {
+                    Id = user.Id,
+                    Username = user.Username,
+                    Firstname = user.Firstname,
+                    Lastname = user.Lastname,
+                    Email = user.Email,
+                    Password = null,
+                    Token = null,
                     Avatar = user.Avatar
                 }).Single(user => user.Id == id);
             }
@@ -71,25 +89,6 @@ namespace BookSystem.Services {
                 });
         }
 
-        public FullUsersDto Authenticate(string username, string password) {
-            try {               
-                return _userContext
-                    .Select(user => new FullUsersDto{
-                        Id = user.Id,
-                        Username = user.Username,
-                        Firstname = user.Firstname,
-                        Lastname = user.Lastname,
-                        Email = user.Email,
-                        Password = user.Password,
-                        Token = user.Token,
-                        Avatar = user.Avatar
-                    })
-                    .Single(user => user.Username == username && user.Password == password);
-            }
-            catch (InvalidOperationException) {
-                return null;
-            }
-        }
 
         public int PostUser(Users user) {
             try {
@@ -106,7 +105,6 @@ namespace BookSystem.Services {
                         throw new Exception();
                 }
             }
-            return 0;
         }
 
         public int PutUser(int id, Users newUser) {

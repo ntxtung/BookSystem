@@ -17,5 +17,6 @@ namespace BookSystem.Entities {
         public string Token { get; set; }
         [Required]
         public string Avatar { get; set; }
+        public int Role { get; set; }
     }
 }
