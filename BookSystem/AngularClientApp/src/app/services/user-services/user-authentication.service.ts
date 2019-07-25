@@ -15,4 +15,8 @@ export class UserAuthenticationService {
         console.log(this.loginUrlWithParameters)
         return this.httpClient.post<any>(this.loginUrlWithParameters, null)
     }
+    
+    loginUserWithBody(inputData){
+        return this.httpClient.post<any>(this.loginUrl, inputData)
+    }
 }

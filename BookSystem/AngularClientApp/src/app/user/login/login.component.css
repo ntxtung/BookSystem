@@ -8,3 +8,14 @@
     margin:auto;
     display:block;
 }
+
+.background {
+    background-image: url("/src/assets/images/login-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon {
+    margin-right: 10px;
+}

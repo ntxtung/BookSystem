@@ -1,4 +1,4 @@
-<div>
+<div class="background">
     <form>
         <div class="ui raised card login-form">
             <div class="content">
@@ -6,12 +6,23 @@
                 <div class="ui form">
                     <table align="center">
                         <tr>
-                            <td>Email</td>
-                            <td><input [(ngModel)]="loginUserData.email" type="text" name="email" id="" required></td>
+                            <td><i class="fas fa-user icon"></i></td>
+                            <td>
+                                <div [ngClass]="{'field error': error} || {'field error': nullUsername}">
+                                    <input [(ngModel)]="loginUserData.username" type="text" name="email" id=""
+                                        placeholder="Username" required>
+                                </div>
+                            </td>
+
                         </tr>
                         <tr>
-                            <td>Password</td>
-                            <td><input [(ngModel)]="loginUserData.password" type="password" name="password" id="" required></td>
+                            <td><i class="fas fa-lock icon"></i></td>
+                            <td>
+                                <div [ngClass]="{'field error': error} || {'field error': nullPassword}">
+                                    <input [(ngModel)]="loginUserData.password" type="password" name="password" id=""
+                                        placeholder="Password" required>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
