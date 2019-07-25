@@ -7,19 +7,21 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { DirectivesModule } from '../directives/directives.module';
 
 
 
 @NgModule({
     declarations: [
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
     ],
     imports: [
         CommonModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forChild(userRoutes)
+        RouterModule.forChild(userRoutes),
+        DirectivesModule
     ]
 })
 export class UserModule { }

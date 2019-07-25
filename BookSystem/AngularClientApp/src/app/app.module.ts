@@ -18,6 +18,8 @@ import { appRoutes } from './app.routes';
 import { UserAuthenticationService } from './services/user-services/user-authentication.service';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
+import { TooltipMessageDirective } from './directives/tooltip-message.directive';
+import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
     declarations: [
@@ -32,7 +34,8 @@ import { AuthEffects } from './store/effects/auth.effects';
         HttpClientModule,
         FormsModule,
         // EffectsModule.forRoot([AuthEffects]),
-        RouterModule.forRoot(appRoutes, {useHash: true})
+        RouterModule.forRoot(appRoutes, {useHash: true}),
+        DirectivesModule
     ],
     providers: [
         UserApiService,

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\xuant\.Rider2019.1\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
-    <e p="E:\BigIn\BookSystem" t="IncludeFlat">
+    <e p="C:\Users\Admin\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-105955551.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Admin\Documents\GitHub\BookSystem" t="IncludeFlat">
       <e p="BookSystem" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="AngularClientApp" t="Include">
@@ -22,12 +21,14 @@
           </e>
           <e p="karma.conf.js" t="Include" />
           <e p="node_modules\@angular\animations" t="IncludeRecursive" />
+          <e p="node_modules\@angular\cdk" t="IncludeRecursive" />
           <e p="node_modules\@angular\cli" t="IncludeRecursive" />
           <e p="node_modules\@angular\common" t="IncludeRecursive" />
           <e p="node_modules\@angular\compiler" t="IncludeRecursive" />
           <e p="node_modules\@angular\compiler-cli" t="IncludeRecursive" />
           <e p="node_modules\@angular\core" t="IncludeRecursive" />
           <e p="node_modules\@angular\forms" t="IncludeRecursive" />
+          <e p="node_modules\@angular\material" t="IncludeRecursive" />
           <e p="node_modules\@angular\platform-browser" t="IncludeRecursive" />
           <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
           <e p="node_modules\@angular\router" t="IncludeRecursive" />
@@ -46,6 +47,7 @@
           <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
           <e p="node_modules\font-awesome" t="IncludeRecursive" />
+          <e p="node_modules\hammerjs" t="IncludeRecursive" />
           <e p="node_modules\jasmine-core" t="IncludeRecursive" />
           <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
           <e p="node_modules\jquery" t="IncludeRecursive" />
@@ -68,7 +70,7 @@
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
             <e p="app" t="Include">
-              <e p="admin" t="Include">
+              <e p="Admin" t="Include">
                 <e p="admin.module.ts" t="Include" />
                 <e p="admin.routes.ts" t="Include" />
                 <e p="dashboard" t="Include">
@@ -100,6 +102,10 @@
                   <e p="detail.component.html" t="Include" />
                   <e p="detail.component.ts" t="Include" />
                 </e>
+              </e>
+              <e p="directives" t="Include">
+                <e p="directives.module.ts" t="Include" />
+                <e p="tooltip-message.directive.ts" t="Include" />
               </e>
               <e p="models" t="Include">
                 <e p="user.ts" t="Include" />
@@ -238,6 +244,7 @@
           <e p="node_modules\rimraf" t="IncludeRecursive" />
           <e p="node_modules\semantic-ui-react" t="IncludeRecursive" />
           <e p="node_modules\webpack-dev-server" t="IncludeRecursive" />
+          <e p="package-lock.json" t="Include" />
           <e p="package.json" t="Include" />
           <e p="public" t="Include">
             <e p="authBackground.jpg" t="Include" />
