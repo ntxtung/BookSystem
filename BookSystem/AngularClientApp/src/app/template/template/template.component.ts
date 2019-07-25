@@ -16,8 +16,4 @@ export class TemplateComponent implements OnInit {
         console.log("token - "+this.token)
     }
 
-    isLogged() :boolean {
-        return (this.token != null)? true : false;
-    }
-
 }

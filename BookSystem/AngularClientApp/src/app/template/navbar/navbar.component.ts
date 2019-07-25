@@ -7,13 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-    @Input()
-    isLogged
+    // @Input()
+    // isLogged
 
     constructor() { }
 
     ngOnInit() {
-        console.log("is logged - "+this.isLogged)
+        // console.log("is logged - "+this.isLogged)
     }
 
 }

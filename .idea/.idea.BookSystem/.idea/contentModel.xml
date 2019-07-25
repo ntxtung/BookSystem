@@ -240,7 +240,6 @@
           <e p="node_modules\rimraf" t="IncludeRecursive" />
           <e p="node_modules\semantic-ui-react" t="IncludeRecursive" />
           <e p="node_modules\webpack-dev-server" t="IncludeRecursive" />
-          <e p="package-lock.json" t="Include" />
           <e p="package.json" t="Include" />
           <e p="public" t="Include">
             <e p="authBackground.jpg" t="Include" />
