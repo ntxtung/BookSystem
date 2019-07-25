@@ -6,6 +6,6 @@ namespace BookSystem.Services {
     public interface IAuthenticationServices {
         int GetCurrentUserId(HttpContext httpContext);
         string GenerateJsonWebToken(FullUsersDto userInfo);
-        FullUsersDto Authentication(LoginDto loginData);
+        FullUsersDto Authenticate(LoginDto loginData);
     }
 }

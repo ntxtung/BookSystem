@@ -23,27 +23,30 @@ namespace BookSystem.Services {
             return Convert.ToInt32(httpContext.User.FindFirst("Id")?.Value);
         }
 
-        public string GenerateJsonWebToken(FullUsersDto userInfo)  
-        {  
+        public string GenerateJsonWebToken(FullUsersDto userInfo) {
+            var userRole = userInfo.Role == 0 ? "Admin" : "User";
+            
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));  
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);  
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             
             var claims = new[] {  
                 new Claim("Id", userInfo.Id.ToString()),
                 new Claim("Username", userInfo.Username),  
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())  
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, userRole)
             };  
             
-            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],  
+            var token = new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],  
-                claims,
+                _configuration["Jwt:Issuer"],  
+                claims: claims,
                 expires: DateTime.Now.AddMinutes(120),  
                 signingCredentials: credentials);  
   
             return new JwtSecurityTokenHandler().WriteToken(token);  
         }  
 
-        public FullUsersDto Authentication(LoginDto loginData) {
+        public FullUsersDto Authenticate(LoginDto loginData) {
             var loginUser = _context.Users.SingleOrDefault(user => user.Username == loginData.Username && user.Password == loginData.Password);
             if (loginUser == null)
                 return null;
@@ -55,7 +58,8 @@ namespace BookSystem.Services {
                 Email = loginUser.Email,
                 Password = null,
                 Token = null,
-                Avatar = loginUser.Avatar
+                Avatar = loginUser.Avatar,
+                Role = loginUser.Role
             };
         }
     }
