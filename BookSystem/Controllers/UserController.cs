@@ -29,7 +29,7 @@ namespace BookSystem.Controllers {
 
         #region API Declaration
 
-        #region Fundamental
+        #region Basic
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -49,62 +49,29 @@ namespace BookSystem.Controllers {
                 return BadRequest(e.Message);
             }
         }
+
+        #endregion
         
+        #region Fund
+                
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/fundedBook")]
+        [HttpGet("{id}/fund/books")]
         public IActionResult GetFundedBookOfUser([FromRoute] int id) {
             return Ok(_userService.GetFundedBookOfUser(id));
         }
         
-        [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/rentedBook")]
-        public IActionResult GetRentedBookOfUser([FromRoute] int id) {
-            return Ok(_userService.GetRentedBookOfUser(id));
-        }
-        
-//        [Authorize(Roles = "Admin, User")]
-        [AllowAnonymous]
-        [HttpPost]
-        public IActionResult RegisterNewUser([FromBody] Users userData) {
-            try {
-                var result = _userService.PostUser(userData);
-                if (result > 0) {
-                    var loggedUser = _authenticationServices.Authenticate(new LoginDto{Username = userData.Username, Password = userData.Password});
-                    loggedUser.Token = _authenticationServices.GenerateJsonWebToken(loggedUser);
-                    return CreatedAtRoute(
-                        "UserLink",
-                        new {id = userData.Id},
-                        loggedUser
-                    );
-                }
-            }
-            catch (DuplicationEntryException) {
-                return Ok(new {
-                    message = "Duplicated Entry"
-                });
-            }
-            catch (Exception) {
-                return Ok(new {
-                    message = "Unhandled Exception"
-                });
-            }
-
-            return Ok(new {
-                message = "Register Unsuccessfully"
-            });
-        }
 
         #endregion
 
         #region Request
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("request")]
+        [HttpGet("request/books")]
         public IActionResult GetRequestedBook() {
             return Ok(_requestBookServices.GetAllBooksUserDidRequest(_authenticationServices.GetCurrentUserId(HttpContext)));
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpPost("request/{bookId}")]
+        [HttpPost("request/books/{bookId}")]
         public IActionResult RequestBook([FromRoute] int bookId) {
             try {
                 var currentUserId = _authenticationServices.GetCurrentUserId(HttpContext);
@@ -123,19 +90,19 @@ namespace BookSystem.Controllers {
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpPost("request/{bookId}")]
+        [HttpPost("request/books/{bookId}")]
         public IActionResult CancelRequest([FromRoute] int bookId) {
             throw new NotImplementedException();
         }
         
         [Authorize(Roles = "Admin")]
-        [HttpGet("{userId}/request")]
+        [HttpGet("{userId}/request/books")]
         public IActionResult GetAllBooksUserDidRequest([FromRoute] int userId) {
             return Ok(_requestBookServices.GetAllBooksUserDidRequest(userId));
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpPost("approve/{requestUserId}/{bookId}")]
+        [HttpPost("approve/users/{requestUserId}/books/{bookId}")]
         public IActionResult ApproveRequest([FromRoute] int requestUserId, [FromRoute] int bookId) {
 //            return Ok(new {
 //                funderId = fundUserId, renterId = requestUserId, bookId
@@ -144,7 +111,7 @@ namespace BookSystem.Controllers {
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpDelete("approve/{requestUserId}/{bookId}")]
+        [HttpDelete("approve/users/{requestUserId}/books/{bookId}")]
         public IActionResult DisApproveRequest([FromRoute] int requestUserId, [FromRoute] int bookId) {
 //            return Ok(new {
 //                funderId = fundUserId, renterId = requestUserId, bookId
@@ -154,6 +121,16 @@ namespace BookSystem.Controllers {
 
         #endregion
 
+        #region Rent
+        
+        [Authorize(Roles = "Admin, User")]
+        [HttpGet("{id}/rent/books")]
+        public IActionResult GetRentedBookOfUser([FromRoute] int id) {
+            return Ok(_userService.GetRentedBookOfUser(id));
+        }
+
+        #endregion
+        
         #region Review
         
         [Authorize(Roles = "Admin, User")]
@@ -164,7 +141,6 @@ namespace BookSystem.Controllers {
         }
 
         #endregion
-
         #endregion
     }
 }

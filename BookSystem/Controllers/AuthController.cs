@@ -25,6 +25,37 @@ namespace BookSystem.Controllers {
         #region API Declaration
 
         [AllowAnonymous]
+        [HttpPost("register")]
+        public IActionResult RegisterNewUser([FromBody] Users userData) {
+            try {
+                var result = _userServices.PostUser(userData);
+                if (result > 0) {
+                    var loggedUser = _authenticationServices.Authenticate(new LoginDto{Username = userData.Username, Password = userData.Password});
+                    loggedUser.Token = _authenticationServices.GenerateJsonWebToken(loggedUser);
+                    return CreatedAtRoute(
+                        "UserLink",
+                        new {id = userData.Id},
+                        loggedUser
+                    );
+                }
+            }
+            catch (DuplicationEntryException) {
+                return BadRequest(new {
+                    message = "Duplicated Entry"
+                });
+            }
+            catch (Exception) {
+                return BadRequest(new {
+                    message = "Unhandled Exception"
+                });
+            }
+
+            return BadRequest(new {
+                message = "Register Unsuccessfully"
+            });
+        }
+        
+        [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] LoginDto loginData) {
             IActionResult response = Unauthorized();

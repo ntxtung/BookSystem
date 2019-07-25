@@ -51,7 +51,7 @@ namespace BookSystem.Controllers {
 
         [Authorize(Roles = "Admin, User")]
         [HttpPost]
-        public IActionResult PostBook([FromBody] Books bookData) {
+        public IActionResult FundBook([FromBody] Books bookData) {
             try {
                 var result = _booksServices.PostBooks(bookData);
                 if (result > 0)
@@ -66,7 +66,7 @@ namespace BookSystem.Controllers {
                         });
             }
             catch (DuplicationEntryException) {
-                return Conflict(new {
+                return BadRequest(new {
                     message = "Duplicated Entry"
                 });
             }
@@ -79,29 +79,53 @@ namespace BookSystem.Controllers {
                 message = "Register Unsuccessfully"
             });
         }
+        
+        [Authorize(Roles = "Admin, User")]
+        [HttpPut("{bookId}")]
+        public IActionResult UpdateBook([FromBody] FullBooksDTO bookData) {
+            throw new NotImplementedException();
+        }
 
-        [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/rentUser")]
-        public IActionResult GetRentedUser([FromRoute] int id) {
-            return Ok(_booksServices.GetRentedUser(id));
-        }
-        
-        [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/fundedUser")]
-        public IActionResult GetFundedUser([FromRoute] int id) {
-            return Ok(_booksServices.GetFundedUser(id));
-        }
-        
         #endregion
 
         #region Request
 
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("{bookId}/request")]
+        [HttpGet("{bookId}/request/users")]
         public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId) {
             return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId));
         }
         
+        #endregion
+
+        #region Fund
+        [Authorize(Roles = "Admin, User")]
+        [HttpGet("{id}/fund/users")]
+        public IActionResult GetFundedUser([FromRoute] int id) {
+            return Ok(_booksServices.GetFundedUser(id));
+        }
+
+        #endregion
+
+        #region Rent
+        
+        [Authorize(Roles = "Admin, User")]
+        [HttpGet("{id}/rent/users")]
+        public IActionResult GetRentedUser([FromRoute] int id) {
+            return Ok(_booksServices.GetRentedUser(id));
+        }
+        
+
+        #endregion
+
+        #region Review
+        [Authorize(Roles = "Admin, User")]
+        [HttpGet("{bookId}/reviews/")]
+        public IActionResult GetReviewsOfBook([FromRoute] int bookId) {
+            throw new NotImplementedException();
+        }
+        
+
         #endregion
         #endregion
     }
