@@ -15,7 +15,7 @@ namespace BookSystem.Services {
         }
         
         public IQueryable GetBooks(int? page=1, int? pageSize=10) {
-            return _bookContext.Select(books => new FullBooksDTO {
+            return _bookContext.Select(books => new FullBooksDto {
                 Id = books.Id,
                 Title = books.Title,
                 Author = books.Author,
@@ -23,9 +23,9 @@ namespace BookSystem.Services {
             }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
 
-        public FullBooksDTO GetBookById(int id) {
+        public FullBooksDto GetBookById(int id) {
             try {
-                return _bookContext.Select(book => new FullBooksDTO {
+                return _bookContext.Select(book => new FullBooksDto {
                     Id = book.Id,
                     Image = book.Image,
                     Title = book.Title

@@ -51,7 +51,7 @@ namespace BookSystem.Services {
                 .Where(request => request.UserId == userId)
                 .Select(request =>
                     _context.Books
-                        .Select(book => new FullBooksDTO(book))
+                        .Select(book => new FullBooksDto(book))
                         .Single(book => book.Id == request.BookId)
                 )
                 .Skip((int) ((page - 1) * pageSize))

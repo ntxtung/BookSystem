@@ -3,7 +3,7 @@ using BookSystem.Entities;
 
 namespace BookSystem.Services {
     public interface IBooksServices {
-        FullBooksDTO GetBookById(int id);
+        FullBooksDto GetBookById(int id);
         IQueryable GetBooks(int? page=1, int? pageSize=5);
         BasicUsersDTO GetRentedUser(int id);
         BasicUsersDTO GetFundedUser(int id);

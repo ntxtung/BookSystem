@@ -50,7 +50,7 @@ namespace BookSystem.Services {
         public IQueryable GetFundedBookOfUser(int id, int? page=1, int? pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersFundId == id)
-                .Select(book => new FullBooksDTO(book))
+                .Select(book => new FullBooksDto(book))
                 .Skip((int) ((page - 1) * pageSize))
                 .Take((int) pageSize);
         }
@@ -58,7 +58,7 @@ namespace BookSystem.Services {
         public IQueryable GetRentedBookOfUser(int id, int? page=1, int? pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersRentId == id)
-                .Select(book => new FullBooksDTO(book))
+                .Select(book => new FullBooksDto(book))
                 .Skip((int) ((page - 1) * pageSize))
                 .Take((int) pageSize);
         }

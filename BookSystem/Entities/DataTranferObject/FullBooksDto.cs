@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace BookSystem.Entities {
-    public class FullBooksDTO {
-        public FullBooksDTO() {
+    public class FullBooksDto {
+        public FullBooksDto() {
         }
 
-        public FullBooksDTO(Books book) {
+        public FullBooksDto(Books book) {
             Id = book.Id;
             Title = book.Title;
             Author = book.Author;

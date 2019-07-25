@@ -3,7 +3,9 @@ using System.Linq;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BookSystem.Controllers {
     [Route("api/books")]
@@ -37,7 +39,7 @@ namespace BookSystem.Controllers {
                 return Ok(_booksServices.GetBookById(id));
             }
             catch (Exception) {
-                return StatusCode(500);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
             }
         }
         
@@ -45,7 +47,7 @@ namespace BookSystem.Controllers {
         [HttpDelete("{id}")]
         public IActionResult DeleteBookById([FromRoute] int id) {
 //            return Ok(_booksServices.DeleteBooks(id));
-            return StatusCode(501);
+            return StatusCode(StatusCodes.Status501NotImplemented, "This method was not implemented, sorry :(");
         }
 
         [Authorize(Roles = "Admin, User")]
@@ -57,7 +59,7 @@ namespace BookSystem.Controllers {
                     return CreatedAtRoute(
                         "BookLink",
                         new { id = bookData.Id }, 
-                        new FullBooksDTO(bookData));
+                        new FullBooksDto(bookData));
             }
             catch (DuplicationEntryException) {
                 return BadRequest(new {
@@ -65,15 +67,15 @@ namespace BookSystem.Controllers {
                 });
             }
             catch (Exception) {
-                return StatusCode(500);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
             }
-            return StatusCode(500);
+            return StatusCode(StatusCodes.Status500InternalServerError, "Unknown Exception");
         }
         
         [Authorize(Roles = "Admin, User")]
         [HttpPut("{bookId}")]
-        public IActionResult UpdateBook([FromBody] FullBooksDTO bookData) {
-            return StatusCode(501);
+        public IActionResult UpdateBook([FromBody] FullBooksDto bookData) {
+            return StatusCode(StatusCodes.Status501NotImplemented);
         }
 
         #endregion
