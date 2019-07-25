@@ -33,10 +33,10 @@ namespace BookSystem.Controllers {
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}", Name = "BookLink")]
-        public IActionResult GetBookById([FromRoute]int id) {
+        [HttpGet("{bookId}", Name = "BookLink")]
+        public IActionResult GetBookById([FromRoute]int bookId) {
             try {
-                return Ok(_booksServices.GetBookById(id));
+                return Ok(_booksServices.GetBookById(bookId));
             }
             catch (Exception) {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
@@ -44,9 +44,9 @@ namespace BookSystem.Controllers {
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpDelete("{id}")]
-        public IActionResult DeleteBookById([FromRoute] int id) {
-//            return Ok(_booksServices.DeleteBooks(id));
+        [HttpDelete("{bookId}")]
+        public IActionResult DeleteBookById([FromRoute] int bookId) {
+//            return Ok(_booksServices.DeleteBooks(bookId));
             return StatusCode(StatusCodes.Status501NotImplemented, "This method was not implemented, sorry :(");
         }
 
@@ -92,9 +92,9 @@ namespace BookSystem.Controllers {
 
         #region Fund
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/fund/users")]
-        public IActionResult GetFundedUser([FromRoute] int id) {
-            return Ok(_booksServices.GetFundedUser(id));
+        [HttpGet("{bookId}/fund/users")]
+        public IActionResult GetFundedUser([FromRoute] int bookId) {
+            return Ok(_booksServices.GetFundedUser(bookId));
         }
 
         #endregion
@@ -102,9 +102,9 @@ namespace BookSystem.Controllers {
         #region Rent
         
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/rent/users")]
-        public IActionResult GetRentedUser([FromRoute] int id) {
-            return Ok(_booksServices.GetRentedUser(id));
+        [HttpGet("{bookId}/rent/users")]
+        public IActionResult GetRentedUser([FromRoute] int bookId) {
+            return Ok(_booksServices.GetRentedUser(bookId));
         }
         
 
@@ -114,7 +114,7 @@ namespace BookSystem.Controllers {
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{bookId}/reviews/")]
         public IActionResult GetReviewsOfBook([FromRoute] int bookId) {
-            return StatusCode(501);
+            return StatusCode(StatusCodes.Status501NotImplemented);
         }
         
 
