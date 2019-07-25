@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { UserAuthenticationService } from 'src/app/services/user-services/user-authentication.service';
 import { Router } from '@angular/router';
 
@@ -9,19 +9,23 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-    @Input()
-    isLogged
+    token: string;
+    isLogged: boolean;
 
-    constructor(private userAuthenticationService: UserAuthenticationService, private router: Router) {
+    constructor(private userAuthenticationService: UserAuthenticationService) {
     }
 
     ngOnInit() {
-        console.log("is logged - "+this.isLogged)
+        this.changeVariables()
     }
 
-    logout(){
-        this.userAuthenticationService.logout()
-        // this.router.navigate(["/login"])
+    async logout(){
+        await this.userAuthenticationService.logout()
+        this.changeVariables()
     }
 
+    private changeVariables(){
+        this.token = localStorage.getItem("token")
+        this.isLogged = (this.token != null)? true : false;
+    }
 }
