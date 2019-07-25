@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms"
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
@@ -21,7 +23,8 @@ import { DirectivesModule } from '../directives/directives.module';
         FormsModule,
         HttpClientModule,
         RouterModule.forChild(userRoutes),
-        DirectivesModule
+        DirectivesModule,
+        MatSnackBarModule
     ]
 })
 export class UserModule { }

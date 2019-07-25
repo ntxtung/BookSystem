@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background" [appTooltipMessage]="loginUserData.username">
     <form>
         <div class="ui raised card login-form">
             <div class="content">
@@ -10,7 +10,7 @@
                             <td>
                                 <div [ngClass]="{'field error': error} || {'field error': nullUsername}">
                                     <input [(ngModel)]="loginUserData.username" type="text" name="email" id=""
-                                        placeholder="Username" required>
+                                        placeholder="Username" (keyup)="checkNull($event)" required>
                                 </div>
                             </td>
 
