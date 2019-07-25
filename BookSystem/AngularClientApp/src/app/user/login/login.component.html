@@ -7,11 +7,22 @@
                     <table align="center">
                         <tr>
                             <td><i class="fas fa-user icon"></i></td>
-                            <td><input [(ngModel)]="loginUserData.username" type="text" name="email" id="" placeholder="username" required></td>
+                            <td>
+                                <div [ngClass]="{'field error': error} || {'field error': nullUsername}">
+                                    <input [(ngModel)]="loginUserData.username" type="text" name="email" id=""
+                                        placeholder="Username" required>
+                                </div>
+                            </td>
+
                         </tr>
                         <tr>
                             <td><i class="fas fa-lock icon"></i></td>
-                            <td><input [(ngModel)]="loginUserData.password" type="password" name="password" id="" placeholder="password" required></td>
+                            <td>
+                                <div [ngClass]="{'field error': error} || {'field error': nullPassword}">
+                                    <input [(ngModel)]="loginUserData.password" type="password" name="password" id=""
+                                        placeholder="Password" required>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
