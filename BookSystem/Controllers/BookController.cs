@@ -3,7 +3,9 @@ using System.Linq;
 using BookSystem.Entities;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BookSystem.Controllers {
     [Route("api/books")]
@@ -22,12 +24,12 @@ namespace BookSystem.Controllers {
 
         #region API Declaration
 
-        #region Fundamental
+        #region Basic
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IActionResult GetBooks() {
-            return Ok(_booksServices.GetBooks());
+        public IActionResult GetBooks([FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 10) {
+            return Ok(_booksServices.GetBooks(page, pageSize));
         }
         
         [Authorize(Roles = "Admin, User")]
@@ -36,17 +38,16 @@ namespace BookSystem.Controllers {
             try {
                 return Ok(_booksServices.GetBookById(id));
             }
-            catch (Exception e) {
-                return BadRequest(new {
-                    message = e.Message
-                });
+            catch (Exception) {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
             }
         }
         
         [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}")]
         public IActionResult DeleteBookById([FromRoute] int id) {
-            return Ok(_booksServices.DeleteBooks(id));
+//            return Ok(_booksServices.DeleteBooks(id));
+            return StatusCode(StatusCodes.Status501NotImplemented, "This method was not implemented, sorry :(");
         }
 
         [Authorize(Roles = "Admin, User")]
@@ -58,12 +59,7 @@ namespace BookSystem.Controllers {
                     return CreatedAtRoute(
                         "BookLink",
                         new { id = bookData.Id }, 
-                        new FullBooksDTO {
-                            Id = bookData.Id,
-                            Title = bookData.Title,
-                            Author = bookData.Author,
-                            Image = bookData.Image
-                        });
+                        new FullBooksDto(bookData));
             }
             catch (DuplicationEntryException) {
                 return BadRequest(new {
@@ -71,19 +67,15 @@ namespace BookSystem.Controllers {
                 });
             }
             catch (Exception) {
-                return BadRequest(new {
-                    message = "Unhandled Exception"
-                });
+                return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
             }
-            return BadRequest(new {
-                message = "Register Unsuccessfully"
-            });
+            return StatusCode(StatusCodes.Status500InternalServerError, "Unknown Exception");
         }
         
         [Authorize(Roles = "Admin, User")]
         [HttpPut("{bookId}")]
-        public IActionResult UpdateBook([FromBody] FullBooksDTO bookData) {
-            throw new NotImplementedException();
+        public IActionResult UpdateBook([FromBody] FullBooksDto bookData) {
+            return StatusCode(StatusCodes.Status501NotImplemented);
         }
 
         #endregion
@@ -92,8 +84,8 @@ namespace BookSystem.Controllers {
 
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{bookId}/request/users")]
-        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId) {
-            return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId));
+        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId, [FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+            return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId, page, pageSize));
         }
         
         #endregion
@@ -122,7 +114,7 @@ namespace BookSystem.Controllers {
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{bookId}/reviews/")]
         public IActionResult GetReviewsOfBook([FromRoute] int bookId) {
-            throw new NotImplementedException();
+            return StatusCode(501);
         }
         
 

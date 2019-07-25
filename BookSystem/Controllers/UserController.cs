@@ -56,8 +56,8 @@ namespace BookSystem.Controllers {
                 
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{id}/fund/books")]
-        public IActionResult GetFundedBookOfUser([FromRoute] int id) {
-            return Ok(_userService.GetFundedBookOfUser(id));
+        public IActionResult GetFundedBookOfUser([FromRoute] int id, [FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+            return Ok(_userService.GetFundedBookOfUser(id, page, pageSize));
         }
         
 
@@ -66,8 +66,8 @@ namespace BookSystem.Controllers {
         #region Request
         [Authorize(Roles = "Admin, User")]
         [HttpGet("request/books")]
-        public IActionResult GetRequestedBook() {
-            return Ok(_requestBookServices.GetAllBooksUserDidRequest(_authenticationServices.GetCurrentUserId(HttpContext)));
+        public IActionResult GetRequestedBook([FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+            return Ok(_requestBookServices.GetAllBooksUserDidRequest(_authenticationServices.GetCurrentUserId(HttpContext), page, pageSize));
         }
         
         [Authorize(Roles = "Admin, User")]
@@ -90,7 +90,7 @@ namespace BookSystem.Controllers {
         }
         
         [Authorize(Roles = "Admin, User")]
-        [HttpPost("request/books/{bookId}")]
+        [HttpDelete("request/books/{bookId}")]
         public IActionResult CancelRequest([FromRoute] int bookId) {
             throw new NotImplementedException();
         }
@@ -124,9 +124,9 @@ namespace BookSystem.Controllers {
         #region Rent
         
         [Authorize(Roles = "Admin, User")]
-        [HttpGet("{id}/rent/books")]
-        public IActionResult GetRentedBookOfUser([FromRoute] int id) {
-            return Ok(_userService.GetRentedBookOfUser(id));
+        [HttpGet("{userId}/rent/books")]
+        public IActionResult GetRentedBookOfUser([FromRoute] int userId,[FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+            return Ok(_userService.GetRentedBookOfUser(userId, page, pageSize));
         }
 
         #endregion

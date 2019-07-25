@@ -40,7 +40,7 @@ namespace BookSystem.Services {
                 _configuration["Jwt:Issuer"],  
                 _configuration["Jwt:Issuer"],  
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(120),  
+                expires: DateTime.Now.AddMinutes(1200),  
                 signingCredentials: credentials);  
   
             return new JwtSecurityTokenHandler().WriteToken(token);  
@@ -50,17 +50,7 @@ namespace BookSystem.Services {
             var loginUser = _context.Users.SingleOrDefault(user => user.Username == loginData.Username && user.Password == loginData.Password);
             if (loginUser == null)
                 return null;
-            return new FullUsersDto {
-                Id = loginUser.Id,
-                Username = loginUser.Username,
-                Firstname = loginUser.Firstname,
-                Lastname = loginUser.Lastname,
-                Email = loginUser.Email,
-                Password = null,
-                Token = null,
-                Avatar = loginUser.Avatar,
-                Role = loginUser.Role
-            };
+            return new FullUsersDto(loginUser);
         }
     }
 }

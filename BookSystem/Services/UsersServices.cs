@@ -16,13 +16,7 @@ namespace BookSystem.Services {
 
         public BasicUsersDTO GetBasicUserById(int id) {
             try {
-                return _userContext.Select(user => new BasicUsersDTO {
-                    Id = user.Id,
-                    Username = user.Username,
-                    Firstname = user.Firstname,
-                    Lastname = user.Lastname,
-                    Avatar = user.Avatar
-                }).Single(user => user.Id == id);
+                return _userContext.Select(user => new BasicUsersDTO(user)).Single(user => user.Id == id);
             }
             catch (InvalidOperationException) {
                 throw new Exception("No element found");
@@ -31,35 +25,21 @@ namespace BookSystem.Services {
         
         public FullUsersDto GetFullUserById(int id) {
             try {
-                return _userContext.Select(user => new FullUsersDto {
-                    Id = user.Id,
-                    Username = user.Username,
-                    Firstname = user.Firstname,
-                    Lastname = user.Lastname,
-                    Email = user.Email,
-                    Password = null,
-                    Token = null,
-                    Avatar = user.Avatar
-                }).Single(user => user.Id == id);
+                return _userContext
+                    .Select(user => new FullUsersDto(user))
+                    .Single(user => user.Id == id);
             }
             catch (InvalidOperationException) {
                 throw new Exception("No element found");
             }
         }
 
-        public IQueryable GetUsers() {
+        public IQueryable GetUsers(int? page=1, int? pageSize=5) {
             try {
                 return _userContext
-                    .Select(user => new FullUsersDto {
-                        Id = user.Id,
-                        Username = user.Username,
-                        Firstname = user.Firstname,
-                        Lastname = user.Lastname,
-                        Email = user.Email,
-                        Password = null,
-                        Token = user.Token,
-                        Avatar = user.Avatar
-                    });
+                    .Select(user => new FullUsersDto(user))
+                    .Skip((int) ((page - 1) * pageSize))
+                    .Take((int) pageSize);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -67,33 +47,24 @@ namespace BookSystem.Services {
             }
         }
 
-        public IQueryable GetFundedBookOfUser(int id) {
+        public IQueryable GetFundedBookOfUser(int id, int? page=1, int? pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersFundId == id)
-                .Select(book => new FullBooksDTO {
-                    Id = book.Id,
-                    Title = book.Title,
-                    Author = book.Author,
-                    Image = book.Image
-                });
+                .Select(book => new FullBooksDto(book))
+                .Skip((int) ((page - 1) * pageSize))
+                .Take((int) pageSize);
         }
 
-        public IQueryable GetRentedBookOfUser(int id) {
+        public IQueryable GetRentedBookOfUser(int id, int? page=1, int? pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersRentId == id)
-                .Select(book => new FullBooksDTO {
-                    Id = book.Id,
-                    Title = book.Title,
-                    Author = book.Author,
-                    Image = book.Image
-                });
+                .Select(book => new FullBooksDto(book))
+                .Skip((int) ((page - 1) * pageSize))
+                .Take((int) pageSize);
         }
 
-
-        public int PostUser(Users user)
-        {
-            try
-            {
+        public int PostUser(Users user) {
+            try {
                 _userContext.Add(user);
                 return _context.SaveChanges();
             }
