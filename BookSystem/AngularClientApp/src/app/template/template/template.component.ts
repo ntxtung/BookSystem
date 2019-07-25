@@ -8,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class TemplateComponent implements OnInit {
 
     token: string
-
+    userIsLogged: boolean
     constructor() { }
 
     ngOnInit() {
         this.token = localStorage.getItem("token")
         console.log("token - "+this.token)
+        this.userIsLogged = (this.token != null)? true : false;
     }
 
 }
