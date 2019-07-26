@@ -1,7 +1,8 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, SimpleChanges, AfterViewInit } from '@angular/core';
 import { UserAuthenticationService } from 'src/app/services/user-services/user-authentication.service';
 import { Router } from '@angular/router';
 import { UserAuthorizationService } from 'src/app/services/user-services/user-authorization.service';
+import { User } from 'src/app/models/user';
 
 @Component({
     selector: 'template-navbar',
@@ -12,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
     token: string;
     isLogged: boolean;
+    user : any;
 
     constructor(
         private userAuthenticationService: UserAuthenticationService,
@@ -21,7 +23,12 @@ export class NavbarComponent implements OnInit {
 
     ngOnInit() {
         this.isLogged = this.userAuthorizationService.checkAuthorization()
-        console.log("navbar-isLogged: " + this.isLogged)
+        this.getCurrentUser()
+    }
+    
+    getCurrentUser(){
+        this.user = JSON.parse(localStorage.getItem("user"))
+        console.log("navbar-user: "+this.user)
     }
 
     async logout(){
@@ -29,4 +36,5 @@ export class NavbarComponent implements OnInit {
         this.isLogged = this.userAuthorizationService.checkAuthorization()
         this.router.navigate(["/login"])
     }
+
 }

@@ -9,14 +9,13 @@
                     UP</button></a>
         </div>
 
-        <div class="ui inverted right menu" *ngIf="userAuthorizationService.checkAuthorization()">
-            <a class="ui item menu-item" (click)="logout()">LOGOUT</a>
-            <div class="ui simple dropdown item">blah
+        <div (load)="getCurrentUser()" class="ui inverted right menu" *ngIf="userAuthorizationService.checkAuthorization()">
+            <div class="ui simple dropdown item">{{user.firstname}} {{user.lastname}}
                 <i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
+                    <a class="item">Profile</a>
+                    <a class="item">Funded books</a>
+                    <a class="item" (click)="logout()">Logout</a>
                 </div>
             </div>
         </div>

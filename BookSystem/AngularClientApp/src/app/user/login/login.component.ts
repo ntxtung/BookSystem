@@ -41,22 +41,20 @@ export class LoginComponent implements OnInit {
                         this.isLogged = true;
                         this.loggedUser.id = res.id
                         this.loggedUser.token = res.token
-                        console.log(this.loggedUser)
                         localStorage.setItem('token', res.token)
+                        localStorage.setItem('user', JSON.stringify(res))
                         this.userAuthorizationService.checkAuthorization()
                         this.router.navigate(['/books'])
                     }
                 },
                 err => {
                     if(err.status === 401){
-                        toastr.error("Invalid username or password")
                         this.error = true;
-                        console.log(this.error)
                     }
                 }
             )
         }else {
-            toastr.error("username or password cannot be empty")
+            console.log("username or password cannot be empty")
         }
         
     }
