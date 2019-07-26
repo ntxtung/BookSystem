@@ -23,7 +23,11 @@ export class LoginComponent implements OnInit {
     nullUsername = false;
     nullPassword = false;
 
-    constructor(private userAuthenticationService : UserAuthenticationService, private userAuthorizationService: UserAuthorizationService, private router: Router) { }
+    constructor(
+        private userAuthenticationService : UserAuthenticationService, 
+        private userAuthorizationService: UserAuthorizationService, 
+        private router: Router
+    ) { }
 
     ngOnInit() {
     }
@@ -37,11 +41,12 @@ export class LoginComponent implements OnInit {
             this.userAuthenticationService.loginUserWithBody(this.loginUserData).subscribe(
                 res => {
                     if(res.token){
-                        toastr.success("login success as "+res.firstname+" "+res.lastname)
                         this.isLogged = true;
                         this.loggedUser.id = res.id
                         this.loggedUser.token = res.token
                         localStorage.setItem('token', res.token)
+
+                        // value that is gonna saved in localStorage must be a string
                         localStorage.setItem('user', JSON.stringify(res))
                         this.userAuthorizationService.checkAuthorization()
                         this.router.navigate(['/books'])
