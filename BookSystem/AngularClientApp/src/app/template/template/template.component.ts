@@ -7,17 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-    token: string
-
     constructor() { }
 
     ngOnInit() {
-        this.token = localStorage.getItem("token")
-        console.log("token - "+this.token)
-    }
-
-    isLogged() :boolean {
-        return (this.token != null)? true : false;
+        
     }
 
 }

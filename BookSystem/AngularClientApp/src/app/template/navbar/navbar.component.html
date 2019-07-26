@@ -1,7 +1,7 @@
 <div class="ui inverted menu">
     <div class="container">
         <img class="logo" src="assets/images/bigin-logo.png" alt="">
-        <div class="ui inverted right menu" *ngIf="!isLogged">
+        <div class="ui inverted right menu" *ngIf="!userAuthorizationService.checkAuthorization()">
             <a class="ui item menu-item" [routerLink]="['/']">HOME</a>
             <a class="ui item menu-item" [routerLink]="['/']">ABOUT</a>
             <a class="ui item menu-item" [routerLink]="['/login']">LOGIN</a>
@@ -9,14 +9,13 @@
                     UP</button></a>
         </div>
 
-        <div class="ui inverted right menu" *ngIf="isLogged">
-            <a class="ui item menu-item" href="">LOGOUT</a>
-            <div class="ui dropdown item">
-                Language <i class="dropdown icon"></i>
+        <div (load)="getCurrentUser()" class="ui inverted right menu" *ngIf="userAuthorizationService.checkAuthorization()">
+            <div class="ui simple dropdown item">{{user.firstname}} {{user.lastname}}
+                <i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
+                    <a class="item">Profile</a>
+                    <a class="item">Funded books</a>
+                    <a class="item" (click)="logout()">Logout</a>
                 </div>
             </div>
         </div>

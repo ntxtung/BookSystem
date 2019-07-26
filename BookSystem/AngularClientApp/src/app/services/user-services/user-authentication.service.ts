@@ -19,4 +19,8 @@ export class UserAuthenticationService {
     loginUserWithBody(inputData){
         return this.httpClient.post<any>(this.loginUrl, inputData)
     }
+
+    logout(){
+        localStorage.removeItem("token")
+    }
 }

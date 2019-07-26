@@ -18,6 +18,7 @@ import { appRoutes } from './app.routes';
 import { UserAuthenticationService } from './services/user-services/user-authentication.service';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
+import { UserAuthorizationService } from './services/user-services/user-authorization.service';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { AuthEffects } from './store/effects/auth.effects';
     providers: [
         UserApiService,
         BookApiService,
-        UserAuthenticationService
+        UserAuthenticationService,
+        UserAuthorizationService
     ],
     bootstrap: [AppComponent]
 })
