@@ -232,11 +232,15 @@
                 </e>
               </e>
               <e p="models" t="Include">
+                <e p="book-paging.model.ts" t="Include" />
                 <e p="user.ts" t="Include" />
               </e>
               <e p="Services" t="Include">
                 <e p="book-services" t="Include">
                   <e p="book-api-service.service.ts" t="Include" />
+                </e>
+                <e p="paging-service" t="Include">
+                  <e p="paging.service.ts" t="Include" />
                 </e>
                 <e p="user-services" t="Include">
                   <e p="user-api-service.service.ts" t="Include" />
