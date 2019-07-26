@@ -11,6 +11,134 @@
           <e p=".gitignore" t="Include" />
           <e p="angular.json" t="Include" />
           <e p="browserslist" t="Include" />
+          <e p="dist" t="Include">
+            <e p="out-tsc" t="Include">
+              <e p="e2e" t="Include">
+                <e p="src" t="Include">
+                  <e p="app.e2e-spec.js" t="Include" />
+                  <e p="app.e2e-spec.js.map" t="Include" />
+                  <e p="app.po.js" t="Include" />
+                  <e p="app.po.js.map" t="Include" />
+                </e>
+              </e>
+              <e p="src" t="Include">
+                <e p="app" t="Include">
+                  <e p="Admin" t="Include">
+                    <e p="admin.module.js" t="Include" />
+                    <e p="admin.module.js.map" t="Include" />
+                    <e p="admin.routes.js" t="Include" />
+                    <e p="admin.routes.js.map" t="Include" />
+                    <e p="dashboard" t="Include">
+                      <e p="dashboard.component.js" t="Include" />
+                      <e p="dashboard.component.js.map" t="Include" />
+                    </e>
+                    <e p="users-list" t="Include">
+                      <e p="users-list.component.js" t="Include" />
+                      <e p="users-list.component.js.map" t="Include" />
+                    </e>
+                  </e>
+                  <e p="app.component.js" t="Include" />
+                  <e p="app.component.js.map" t="Include" />
+                  <e p="app.component.spec.js" t="Include" />
+                  <e p="app.component.spec.js.map" t="Include" />
+                  <e p="app.module.js" t="Include" />
+                  <e p="app.module.js.map" t="Include" />
+                  <e p="app.routes.js" t="Include" />
+                  <e p="app.routes.js.map" t="Include" />
+                  <e p="book" t="Include">
+                    <e p="book.module.js" t="Include" />
+                    <e p="book.module.js.map" t="Include" />
+                    <e p="books-list" t="Include">
+                      <e p="books-list.component.js" t="Include" />
+                      <e p="books-list.component.js.map" t="Include" />
+                    </e>
+                    <e p="detail" t="Include">
+                      <e p="detail.component.js" t="Include" />
+                      <e p="detail.component.js.map" t="Include" />
+                    </e>
+                  </e>
+                  <e p="models" t="Include">
+                    <e p="user.js" t="Include" />
+                    <e p="user.js.map" t="Include" />
+                  </e>
+                  <e p="Services" t="Include">
+                    <e p="book-services" t="Include">
+                      <e p="book-api-service.service.js" t="Include" />
+                      <e p="book-api-service.service.js.map" t="Include" />
+                    </e>
+                    <e p="user-services" t="Include">
+                      <e p="user-api-service.service.js" t="Include" />
+                      <e p="user-api-service.service.js.map" t="Include" />
+                      <e p="user-authentication.service.js" t="Include" />
+                      <e p="user-authentication.service.js.map" t="Include" />
+                    </e>
+                  </e>
+                  <e p="store" t="Include">
+                    <e p="app.states.js" t="Include" />
+                    <e p="app.states.js.map" t="Include" />
+                    <e p="effects" t="Include">
+                      <e p="auth.effects.js" t="Include" />
+                      <e p="auth.effects.js.map" t="Include" />
+                    </e>
+                    <e p="reducers" t="Include">
+                      <e p="auth.reducer.js" t="Include" />
+                      <e p="auth.reducer.js.map" t="Include" />
+                    </e>
+                  </e>
+                  <e p="template" t="Include">
+                    <e p="content" t="Include">
+                      <e p="content.component.js" t="Include" />
+                      <e p="content.component.js.map" t="Include" />
+                    </e>
+                    <e p="navbar" t="Include">
+                      <e p="navbar.component.js" t="Include" />
+                      <e p="navbar.component.js.map" t="Include" />
+                    </e>
+                    <e p="page-not-found" t="Include">
+                      <e p="page-not-found.component.js" t="Include" />
+                      <e p="page-not-found.component.js.map" t="Include" />
+                    </e>
+                    <e p="template" t="Include">
+                      <e p="template.component.js" t="Include" />
+                      <e p="template.component.js.map" t="Include" />
+                    </e>
+                    <e p="template.module.js" t="Include" />
+                    <e p="template.module.js.map" t="Include" />
+                    <e p="welcome" t="Include">
+                      <e p="welcome.component.js" t="Include" />
+                      <e p="welcome.component.js.map" t="Include" />
+                    </e>
+                  </e>
+                  <e p="user" t="Include">
+                    <e p="login" t="Include">
+                      <e p="login.component.js" t="Include" />
+                      <e p="login.component.js.map" t="Include" />
+                    </e>
+                    <e p="register" t="Include">
+                      <e p="register.component.js" t="Include" />
+                      <e p="register.component.js.map" t="Include" />
+                    </e>
+                    <e p="user.module.js" t="Include" />
+                    <e p="user.module.js.map" t="Include" />
+                    <e p="user.routes.js" t="Include" />
+                    <e p="user.routes.js.map" t="Include" />
+                  </e>
+                </e>
+                <e p="environments" t="Include">
+                  <e p="environment.js" t="Include" />
+                  <e p="environment.js.map" t="Include" />
+                  <e p="environment.prod.js" t="Include" />
+                  <e p="environment.prod.js.map" t="Include" />
+                </e>
+                <e p="main.js" t="Include" />
+                <e p="main.js.map" t="Include" />
+                <e p="polyfills.js" t="Include" />
+                <e p="polyfills.js.map" t="Include" />
+                <e p="test.js" t="Include" />
+                <e p="test.js.map" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="e2e" t="Include">
             <e p="protractor.conf.js" t="Include" />
             <e p="src" t="Include">
