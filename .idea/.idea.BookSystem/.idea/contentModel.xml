@@ -241,6 +241,7 @@
                 <e p="user-services" t="Include">
                   <e p="user-api-service.service.ts" t="Include" />
                   <e p="user-authentication.service.ts" t="Include" />
+                  <e p="user-authorization.service.ts" t="Include" />
                 </e>
               </e>
               <e p="store" t="Include">

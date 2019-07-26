@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
@@ -17,5 +18,16 @@ export class UserAuthorizationService {
         this.token = localStorage.getItem("token");
         this.isLogged = (this.token != null) ? true : false;
         return this.isLogged;
+    }
+
+    getToken() :string {
+        return localStorage.getItem("token")
+    }
+
+    setHeader(): HttpHeaders{
+        return new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + this.token
+        })
     }
 }
