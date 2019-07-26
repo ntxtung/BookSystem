@@ -28,7 +28,6 @@ export class NavbarComponent implements OnInit {
     
     getCurrentUser(){
         this.user = JSON.parse(localStorage.getItem("user"))
-        console.log("navbar-user: "+this.user)
     }
 
     async logout(){
