@@ -1,5 +1,7 @@
 using System;
 using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
+using BookSystem.Helpers.ExceptionHelper;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +32,7 @@ namespace BookSystem.Controllers {
             try {
                 var result = _userServices.PostUser(userData);
                 if (result > 0) {
-                    var loggedUser = _authenticationServices.Authenticate(new LoginDto{Username = userData.Username, Password = userData.Password});
+                    var loggedUser = _authenticationServices.FindUser(new LoginDto{Username = userData.Username, Password = userData.Password});
                     loggedUser.Token = _authenticationServices.GenerateJsonWebToken(loggedUser);
                     return CreatedAtRoute(
                         "UserLink",
@@ -39,7 +41,7 @@ namespace BookSystem.Controllers {
                     );
                 }
             }
-            catch (DuplicationEntryException) {
+            catch (DuplicateEntryException) {
                 return BadRequest(new {
                     message = "Duplicated Entry"
                 });
@@ -59,7 +61,7 @@ namespace BookSystem.Controllers {
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] LoginDto loginData) {
             IActionResult response = Unauthorized();
-            var loginUser = _authenticationServices.Authenticate(loginData);
+            var loginUser = _authenticationServices.FindUser(loginData);
             if (loginUser != null) {
                 var tokenString = _authenticationServices.GenerateJsonWebToken(loginUser);
                 loginUser.Token = tokenString;

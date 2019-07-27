@@ -1,17 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BookSystem.Entities {
-    public class FullUsersDto {
-        public FullUsersDto() {
+namespace BookSystem.Entities.DataTransferObject {
+    public class BasicUsersDto {
+        public BasicUsersDto() {
             
         }
-        public FullUsersDto(Users user) {
+        public BasicUsersDto(Users user) {
             Id = user.Id;
             Username = user.Username;
             Firstname = user.Firstname;
             Lastname = user.Lastname;
-            Email = user.Email;
-            Token = user.Token;
             Avatar = user.Avatar;
         }
         [Required]
@@ -23,11 +21,6 @@ namespace BookSystem.Entities {
         [Required]
         public string Lastname { get; set; }
         [Required]
-        public string Email { get; set; }
-        [Required]
-        public string Token { get; set; }
-        [Required]
         public string Avatar { get; set; }
-        public int Role { get; set; }
     }
 }

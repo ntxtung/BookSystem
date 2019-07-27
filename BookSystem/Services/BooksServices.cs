@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
+using BookSystem.Helpers.ExceptionHelper;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 
@@ -14,13 +16,10 @@ namespace BookSystem.Services {
             _bookContext = _context.Books;
         }
         
-        public IQueryable GetBooks(int? page=1, int? pageSize=10) {
-            return _bookContext.Select(books => new FullBooksDto {
-                Id = books.Id,
-                Title = books.Title,
-                Author = books.Author,
-                Image = books.Image
-            }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
+        public IQueryable GetBooks(int page=1, int pageSize=10) {
+            return _bookContext.Select(books => new FullBooksDto(books))
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
 
         public FullBooksDto GetBookById(int id) {
@@ -37,9 +36,9 @@ namespace BookSystem.Services {
             }
         }
 
-        public BasicUsersDTO GetRentedUser(int id) {
+        public BasicUsersDto GetRentedUser(int id) {
             var bookObj = _bookContext.Single(book => book.Id == id);
-            return _context.Users.Select(user => new BasicUsersDTO {
+            return _context.Users.Select(user => new BasicUsersDto {
                 Id = user.Id,
                 Username = user.Username,
                 Firstname = user.Firstname,
@@ -48,9 +47,9 @@ namespace BookSystem.Services {
             }).Single(user => user.Id == bookObj.UsersRentId);
         }
         
-        public BasicUsersDTO GetFundedUser(int id) {
+        public BasicUsersDto GetFundedUser(int id) {
             var bookObj = _bookContext.Single(book => book.Id == id);
-            return _context.Users.Select(user => new BasicUsersDTO {
+            return _context.Users.Select(user => new BasicUsersDto {
                 Id = user.Id,
                 Username = user.Username,
                 Firstname = user.Firstname,
@@ -69,7 +68,7 @@ namespace BookSystem.Services {
                 if (dbe.InnerException is MySqlException mysqlEx)
                     switch (mysqlEx.Number) {
                         case 1062:
-                            throw new DuplicationEntryException();
+                            throw new DuplicateEntryException();
                         default:
                             throw new Exception();
                     }

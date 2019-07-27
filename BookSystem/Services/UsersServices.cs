@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
+using BookSystem.Helpers.ExceptionHelper;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 
@@ -14,9 +16,9 @@ namespace BookSystem.Services {
             _userContext = _context.Users;
         }
 
-        public BasicUsersDTO GetBasicUserById(int id) {
+        public BasicUsersDto GetBasicUserById(int id) {
             try {
-                return _userContext.Select(user => new BasicUsersDTO(user)).Single(user => user.Id == id);
+                return _userContext.Select(user => new BasicUsersDto(user)).Single(user => user.Id == id);
             }
             catch (InvalidOperationException) {
                 throw new Exception("No element found");
@@ -34,12 +36,12 @@ namespace BookSystem.Services {
             }
         }
 
-        public IQueryable GetUsers(int? page=1, int? pageSize=5) {
+        public IQueryable GetUsers(int page=1, int pageSize=5) {
             try {
                 return _userContext
                     .Select(user => new FullUsersDto(user))
-                    .Skip((int) ((page - 1) * pageSize))
-                    .Take((int) pageSize);
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -47,20 +49,20 @@ namespace BookSystem.Services {
             }
         }
 
-        public IQueryable GetFundedBookOfUser(int id, int? page=1, int? pageSize=5) {
+        public IQueryable GetFundedBookOfUser(int id, int page=1, int pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersFundId == id)
                 .Select(book => new FullBooksDto(book))
-                .Skip((int) ((page - 1) * pageSize))
-                .Take((int) pageSize);
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
 
-        public IQueryable GetRentedBookOfUser(int id, int? page=1, int? pageSize=5) {
+        public IQueryable GetRentedBookOfUser(int id, int page=1, int pageSize=5) {
             return _context.Books
                 .Where(book => book.UsersRentId == id)
                 .Select(book => new FullBooksDto(book))
-                .Skip((int) ((page - 1) * pageSize))
-                .Take((int) pageSize);
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
 
         public int PostUser(Users user) {
@@ -75,7 +77,7 @@ namespace BookSystem.Services {
                 switch (mysqlEx.Number)
                 {
                     case 1062:
-                        throw new DuplicationEntryException();
+                        throw new DuplicateEntryException();
                     default:
                         throw new Exception();
                 }

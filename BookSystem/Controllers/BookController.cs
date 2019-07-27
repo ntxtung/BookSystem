@@ -1,6 +1,7 @@
 using System;
-using System.Linq;
 using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
+using BookSystem.Helpers.ExceptionHelper;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -28,7 +29,7 @@ namespace BookSystem.Controllers {
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IActionResult GetBooks([FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 10) {
+        public IActionResult GetBooks([FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 10) {
             return Ok(_booksServices.GetBooks(page, pageSize));
         }
         
@@ -61,7 +62,7 @@ namespace BookSystem.Controllers {
                         new { id = bookData.Id }, 
                         new FullBooksDto(bookData));
             }
-            catch (DuplicationEntryException) {
+            catch (DuplicateEntryException) {
                 return BadRequest(new {
                     message = "Duplicated Entry"
                 });
@@ -84,7 +85,7 @@ namespace BookSystem.Controllers {
 
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{bookId}/request/users")]
-        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId, [FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+        public IActionResult GetAllUsersWhoRequestBook([FromRoute] int bookId, [FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
             return Ok(_requestBookServices.GetAllUsersWhoRequestBook(bookId, page, pageSize));
         }
         

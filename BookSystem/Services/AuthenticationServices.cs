@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -46,7 +47,7 @@ namespace BookSystem.Services {
             return new JwtSecurityTokenHandler().WriteToken(token);  
         }  
 
-        public FullUsersDto Authenticate(LoginDto loginData) {
+        public FullUsersDto FindUser(LoginDto loginData) {
             var loginUser = _context.Users.SingleOrDefault(user => user.Username == loginData.Username && user.Password == loginData.Password);
             if (loginUser == null)
                 return null;

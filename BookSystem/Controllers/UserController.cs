@@ -1,10 +1,9 @@
 using System;
-using System.Linq;
 using BookSystem.Entities;
+using BookSystem.Helpers.ExceptionHelper;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace BookSystem.Controllers {
     [Route("api/users")]
@@ -56,7 +55,7 @@ namespace BookSystem.Controllers {
                 
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{id}/fund/books")]
-        public IActionResult GetFundedBookOfUser([FromRoute] int id, [FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+        public IActionResult GetFundedBookOfUser([FromRoute] int id, [FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
             return Ok(_userService.GetFundedBookOfUser(id, page, pageSize));
         }
         
@@ -66,7 +65,7 @@ namespace BookSystem.Controllers {
         #region Request
         [Authorize(Roles = "Admin, User")]
         [HttpGet("request/books")]
-        public IActionResult GetRequestedBook([FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+        public IActionResult GetRequestedBook([FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
             return Ok(_requestBookServices.GetAllBooksUserDidRequest(_authenticationServices.GetCurrentUserId(HttpContext), page, pageSize));
         }
         
@@ -79,7 +78,7 @@ namespace BookSystem.Controllers {
                     return Ok(new {message = "Request Successful"});
                 }
             }
-            catch (DuplicationEntryException) {
+            catch (DuplicateEntryException) {
                 return BadRequest(new {message = "Duplicated Entry"});
             }
             catch (Exception) {
@@ -125,7 +124,7 @@ namespace BookSystem.Controllers {
         
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{userId}/rent/books")]
-        public IActionResult GetRentedBookOfUser([FromRoute] int userId,[FromQuery(Name="page")] int? page = 1, [FromQuery(Name="pageSize")] int? pageSize = 5) {
+        public IActionResult GetRentedBookOfUser([FromRoute] int userId,[FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
             return Ok(_userService.GetRentedBookOfUser(userId, page, pageSize));
         }
 

@@ -1,11 +1,10 @@
-using System.Net.Http;
-using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
 using Microsoft.AspNetCore.Http;
 
 namespace BookSystem.Services {
     public interface IAuthenticationServices {
         int GetCurrentUserId(HttpContext httpContext);
         string GenerateJsonWebToken(FullUsersDto userInfo);
-        FullUsersDto Authenticate(LoginDto loginData);
+        FullUsersDto FindUser(LoginDto loginData);
     }
 }

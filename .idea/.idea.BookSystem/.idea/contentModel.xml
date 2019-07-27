@@ -419,7 +419,7 @@
         <e p="Entities" t="Include">
           <e p="Books.cs" t="Include" />
           <e p="BookSystemContext.cs" t="Include" />
-          <e p="DataTranferObject" t="Include">
+          <e p="DataTransferObject" t="Include">
             <e p="BasicUsersDTO.cs" t="Include" />
             <e p="FullBooksDTO.cs" t="Include" />
             <e p="FullUsersDTO.cs" t="Include" />
@@ -429,6 +429,21 @@
           <e p="UserRequestBook.cs" t="Include" />
           <e p="Users.cs" t="Include" />
           <e p="UsersReviewsBooks.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="Exception" t="Include">
+            <e p="ApiException.cs" t="Include" />
+            <e p="ApiExceptionCodeEnum.cs" t="Include" />
+            <e p="DuplicateEntryException.cs" t="Include" />
+            <e p="InvalidEntry.cs" t="Include" />
+          </e>
+          <e p="ExceptionHandler" t="Include">
+            <e p="DbUpdateExceptionHandler.cs" t="Include" />
+          </e>
+          <e p="Response" t="Include">
+            <e p="ApiResponse.cs" t="Include" />
+            <e p="ResponseMessageEnum.cs" t="Include" />
+          </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -450,9 +465,6 @@
           <e p="AuthenticationServices.cs" t="Include" />
           <e p="BooksServices.cs" t="Include" />
           <e p="DoResearchServices.cs" t="Include" />
-          <e p="Exception" t="Include">
-            <e p="CustomException.cs" t="Include" />
-          </e>
           <e p="Interface" t="Include">
             <e p="IAuthenticationServices.cs" t="Include" />
             <e p="IBooksServices.cs" t="Include" />

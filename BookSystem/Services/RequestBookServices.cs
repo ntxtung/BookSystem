@@ -1,8 +1,9 @@
 using System;
 using System.Linq;
 using BookSystem.Entities;
+using BookSystem.Entities.DataTransferObject;
+using BookSystem.Helpers.ExceptionHandler;
 using Microsoft.EntityFrameworkCore;
-using MySql.Data.MySqlClient;
 
 namespace BookSystem.Services {
     public class RequestBookServices : IRequestBookServices {
@@ -21,15 +22,10 @@ namespace BookSystem.Services {
                 return _context.SaveChanges();
             }
             catch (DbUpdateException dbe) {
-                var mysqlEx = dbe.InnerException as MySqlException;
-                if (mysqlEx == null) throw new Exception();
-                switch (mysqlEx.Number) {
-                    case 1062:
-                        throw new DuplicationEntryException();
-                    default:
-                        throw new Exception();
-                }
+                new DbUpdateExceptionHandler(dbe).DoHandle();
             }
+
+            return -1;
         }
 
         public int DoApprove(int userId, int bookId) {
@@ -46,7 +42,7 @@ namespace BookSystem.Services {
             throw new NotImplementedException();
         }
 
-        public IQueryable GetAllBooksUserDidRequest(int userId, int? page=1, int? pageSize=5) {
+        public IQueryable GetAllBooksUserDidRequest(int userId, int page=1, int pageSize=5) {
             return _context.UserRequestBook
                 .Where(request => request.UserId == userId)
                 .Select(request =>
@@ -54,18 +50,20 @@ namespace BookSystem.Services {
                         .Select(book => new FullBooksDto(book))
                         .Single(book => book.Id == request.BookId)
                 )
-                .Skip((int) ((page - 1) * pageSize))
-                .Take((int) pageSize);
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
 
-        public IQueryable GetAllUsersWhoRequestBook(int bookId, int? page=1, int? pageSize=5) {
+        public IQueryable GetAllUsersWhoRequestBook(int bookId, int page=1, int pageSize=5) {
             return _context.UserRequestBook
                 .Where(request => request.BookId == bookId)
                 .Select(request =>
                     _context.Users
-                        .Select(user => new BasicUsersDTO(user))
+                        .Select(user => new BasicUsersDto(user))
                         .Single(user => user.Id == request.UserId)
-                ).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
+                )
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
     }
 }
