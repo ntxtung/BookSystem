@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms"
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -13,6 +14,7 @@ import { UserFundedBooksComponent } from './user-funded-books/user-funded-books.
 import { UserRentedBooksComponent } from './user-rented-books/user-rented-books.component';
 import { DashboardMenuComponent } from './user-templates/dashboard-menu/dashboard-menu.component';
 import { DashboardContentComponent } from './user-templates/dashboard-content/dashboard-content.component';
+import { UserBooksComponent } from './user-books/user-books.component';
 
 
 
@@ -25,13 +27,15 @@ import { DashboardContentComponent } from './user-templates/dashboard-content/da
         UserFundedBooksComponent,
         UserRentedBooksComponent,
         DashboardMenuComponent,
-        DashboardContentComponent
+        DashboardContentComponent,
+        UserBooksComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forChild(userRoutes)
+        RouterModule.forChild(userRoutes),
+        MatTabsModule
     ]
 })
 export class UserModule { }

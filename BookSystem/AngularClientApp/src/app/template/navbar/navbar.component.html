@@ -13,22 +13,22 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="ui inverted right menu" *ngIf="userAuthorizationService.checkAuthorization()">
             <div class="ui inverted segment">
                 <div class="ui inverted secondary pointing menu">
+                    <div class="ui search item">
+                        <div class="ui icon input">
+                            <input class="prompt" type="text" placeholder="Search books...">
+                            <i class="search icon"></i>
+                        </div>
+                    </div>
                     <div class="ui simple dropdown item">{{user.lastname}}
                         <i class="dropdown icon"></i>
                         <div class="menu">
                             <a class="item" [routerLink]="['/dashboard']">Dashboard</a>
                             <a class="item">Funded books</a>
                             <a class="item" (click)="logout()">Logout</a>
-                        </div>
-                    </div>
-                    <div class="ui search item">
-                        <div class="ui icon input">
-                            <input class="prompt" type="text" placeholder="Search books...">
-                            <i class="search icon"></i>
                         </div>
                     </div>
                 </div>
