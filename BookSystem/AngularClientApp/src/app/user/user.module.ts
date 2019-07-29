@@ -7,13 +7,15 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 
 @NgModule({
     declarations: [
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        UserDashboardComponent
     ],
     imports: [
         CommonModule,
