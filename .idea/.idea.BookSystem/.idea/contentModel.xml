@@ -5,7 +5,25 @@
     <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
     <e p="E:\BigIn\BookSystem" t="IncludeFlat">
-      <e p="BookSystem" t="IncludeRecursive">
+      <e p="BookSystem.Entities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Books.cs" t="Include" />
+        <e p="BookSystem.Entities.csproj" t="IncludeRecursive" />
+        <e p="BookSystemContext.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="BookSystem.Entities.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="RentLog.cs" t="Include" />
+        <e p="UserRequestBook.cs" t="Include" />
+        <e p="Users.cs" t="Include" />
+        <e p="UsersReviewsBooks.cs" t="Include" />
+      </e>
+      <e p="BookSystem.sln" t="IncludeFlat" />
+      <e p="BookSystem.WebApi" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="AngularClientApp" t="Include">
           <e p=".editorconfig" t="Include" />
@@ -199,7 +217,7 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="BookSystem.csproj" t="IncludeRecursive" />
+        <e p="BookSystem.WebApi.csproj" t="IncludeRecursive" />
         <e p="ClientApp" t="Include">
           <e p=".gitignore" t="Include" />
           <e p="node_modules\@material-ui\core" t="IncludeRecursive" />
@@ -294,14 +312,6 @@
           <e p="FullUsersDTO.cs" t="Include" />
           <e p="LoginDto.cs" t="Include" />
         </e>
-        <e p="Entities" t="Include">
-          <e p="Books.cs" t="Include" />
-          <e p="BookSystemContext.cs" t="Include" />
-          <e p="RentLog.cs" t="Include" />
-          <e p="UserRequestBook.cs" t="Include" />
-          <e p="Users.cs" t="Include" />
-          <e p="UsersReviewsBooks.cs" t="Include" />
-        </e>
         <e p="Helpers" t="Include">
           <e p="Exception" t="Include">
             <e p="ApiException.cs" t="Include" />
@@ -320,7 +330,7 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="BookSystem.AssemblyInfo.cs" t="Include" />
+              <e p="BookSystem.WebApi.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -352,24 +362,6 @@
         <e p="Startup.cs" t="Include" />
         <e p="yarn.lock" t="Include" />
       </e>
-      <e p="BookSystem.Entities" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Books.cs" t="Include" />
-        <e p="BookSystem.Entities.csproj" t="IncludeRecursive" />
-        <e p="BookSystemContext.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.2" t="Include">
-              <e p="BookSystem.Entities.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="RentLog.cs" t="Include" />
-        <e p="UserRequestBook.cs" t="Include" />
-        <e p="Users.cs" t="Include" />
-        <e p="UsersReviewsBooks.cs" t="Include" />
-      </e>
-      <e p="BookSystem.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>

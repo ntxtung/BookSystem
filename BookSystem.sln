@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem", "BookSystem\BookSystem.csproj", "{D6060509-1DB4-4B32-A321-955B4355FB1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem.WebApi", "BookSystem.WebApi\BookSystem.WebApi.csproj", "{D6060509-1DB4-4B32-A321-955B4355FB1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem.Entities", "BookSystem.Entities\BookSystem.Entities.csproj", "{AC536E35-8968-47DF-BA2C-7285C6F36F2C}"
 EndProject

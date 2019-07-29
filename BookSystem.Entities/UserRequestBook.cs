@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BookSystem.Entities
+﻿namespace BookSystem.Entities
 {
     public partial class UserRequestBook
     {
