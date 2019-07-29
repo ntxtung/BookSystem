@@ -24,8 +24,7 @@ namespace BookSystem {
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(
-                    options => options.SerializerSettings.ReferenceLoopHandling =
-                        Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                    options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
                 );
             // Add JWT Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -70,7 +69,6 @@ namespace BookSystem {
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
-                .AllowCredentials()
             );
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -80,7 +78,6 @@ namespace BookSystem {
 
             app.UseSpa(spa => {
 //                 spa.Options.SourcePath = "ClientApp";
-
 //                 if (env.IsDevelopment()) {
 //                     spa.UseReactDevelopmentServer("start");
 //                 }

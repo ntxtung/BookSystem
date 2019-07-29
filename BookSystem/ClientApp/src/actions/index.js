@@ -6,8 +6,7 @@ export const doAuthLogin = (userData) => async dispatch => {
   const response = await connectedHost({
     method: "POST",
     url: './auth/login',
-    headers: {},
-    params: {
+    data: {
       username: userData.username,
       password: userData.password
     }
@@ -20,7 +19,6 @@ export const doUserRegister = (userData) => async dispatch => {
   const response = await connectedHost({
     method: "POST",
     url: './users',
-    headers: {},
     data: {
       username: userData.username,
       firstname: userData.firstname,

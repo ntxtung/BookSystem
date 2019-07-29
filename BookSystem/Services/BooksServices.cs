@@ -14,18 +14,18 @@ namespace BookSystem.Services {
             _bookContext = _context.Books;
         }
         
-        public IQueryable GetBooks() {
-            return _bookContext.Select(books => new FullBooksDTO {
+        public IQueryable GetBooks(int? page=1, int? pageSize=10) {
+            return _bookContext.Select(books => new FullBooksDto {
                 Id = books.Id,
                 Title = books.Title,
                 Author = books.Author,
                 Image = books.Image
-            });
+            }).Skip((int) ((page - 1) * pageSize)).Take((int) pageSize);
         }
 
-        public FullBooksDTO GetBookById(int id) {
+        public FullBooksDto GetBookById(int id) {
             try {
-                return _bookContext.Select(book => new FullBooksDTO {
+                return _bookContext.Select(book => new FullBooksDto {
                     Id = book.Id,
                     Image = book.Image,
                     Title = book.Title
@@ -82,8 +82,7 @@ namespace BookSystem.Services {
         }
 
         public int DeleteBooks(int id) {
-            _bookContext.Remove(_bookContext.Single(book => book.Id == id));
-            return _context.SaveChanges();
+            throw new NotImplementedException();
         }
     }
 }
