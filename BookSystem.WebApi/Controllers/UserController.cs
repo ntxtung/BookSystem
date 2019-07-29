@@ -1,7 +1,8 @@
 using System;
-using BookSystem.Entities;
-using BookSystem.WebApi.Helpers.Exception;
-using BookSystem.WebApi.Services.Interface;
+using BookSystem.Application.Exception;
+using BookSystem.Application.Services.Interface;
+using BookSystem.Application.UseCase.Authentication;
+using BookSystem.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,7 +45,7 @@ namespace BookSystem.WebApi.Controllers {
                     return Ok(_userService.GetFullUserById(id));
                 return Ok(_userService.GetBasicUserById(id));
             }
-            catch (Exception e) {
+            catch (System.Exception e) {
                 return BadRequest(e.Message);
             }
         }
@@ -81,7 +82,7 @@ namespace BookSystem.WebApi.Controllers {
             catch (DuplicateEntryException) {
                 return BadRequest(new {message = "Duplicated Entry"});
             }
-            catch (Exception) {
+            catch (System.Exception) {
                 return BadRequest(new {message = "Unknown Error"});
             }
 

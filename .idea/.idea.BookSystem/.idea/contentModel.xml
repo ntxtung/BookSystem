@@ -5,22 +5,101 @@
     <e p="C:\Users\xuant\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
     <e p="E:\BigIn\BookSystem" t="IncludeFlat">
-      <e p="BookSystem.Entities" t="IncludeRecursive">
+      <e p="BookSystem.Application" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Books.cs" t="Include" />
-        <e p="BookSystem.Entities.csproj" t="IncludeRecursive" />
-        <e p="BookSystemContext.cs" t="Include" />
+        <e p="BookSystem.Application.csproj" t="IncludeRecursive" />
+        <e p="Dtos" t="Include">
+          <e p="BasicUsersDTO.cs" t="Include" />
+          <e p="FullBooksDTO.cs" t="Include" />
+          <e p="FullUsersDTO.cs" t="Include" />
+          <e p="LoginDto.cs" t="Include" />
+        </e>
+        <e p="Exception" t="Include">
+          <e p="DuplicateEntryException.cs" t="Include" />
+          <e p="InvalidEntry.cs" t="Include" />
+          <e p="UnknownException.cs" t="Include" />
+        </e>
+        <e p="Handler" t="Include">
+          <e p="DbUpdateExceptionHandler.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="BookHelper.cs" t="Include" />
+          <e p="UserHelper.cs" t="Include" />
+        </e>
+        <e p="models" t="Include">
+          <e p="PaginationModel.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="BookSystem.Entities.AssemblyInfo.cs" t="Include" />
+              <e p="BookSystem.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
-        <e p="RentLog.cs" t="Include" />
-        <e p="UserRequestBook.cs" t="Include" />
-        <e p="Users.cs" t="Include" />
-        <e p="UsersReviewsBooks.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="BooksServices.cs" t="Include" />
+          <e p="DoResearchServices.cs" t="Include" />
+          <e p="Interface" t="Include">
+            <e p="IBooksServices.cs" t="Include" />
+            <e p="IDoResearchServices.cs" t="Include" />
+            <e p="IRentServices.cs" t="Include" />
+            <e p="IRequestBookServices.cs" t="Include" />
+            <e p="IUsersServices.cs" t="Include" />
+          </e>
+          <e p="RentServices.cs" t="Include" />
+          <e p="RequestBookServices.cs" t="Include" />
+          <e p="UsersServices.cs" t="Include" />
+        </e>
+        <e p="UseCase" t="Include">
+          <e p="Authentication" t="Include">
+            <e p="AuthenticationServices.cs" t="Include" />
+            <e p="IAuthenticationServices.cs" t="Include" />
+          </e>
+          <e p="BookManagement" t="Include">
+            <e p="BookManagement.cs" t="Include" />
+            <e p="IBookManagement.cs" t="Include" />
+          </e>
+          <e p="BookReview" t="Include">
+            <e p="BookReviewServices.cs" t="Include" />
+            <e p="IBookReviewServices.cs" t="Include" />
+          </e>
+          <e p="FundBook" t="Include">
+            <e p="FundBookServices.cs" t="Include" />
+            <e p="IFundBookServices.cs" t="Include" />
+          </e>
+          <e p="RentBookManagement" t="Include">
+            <e p="IRentBookManagementServices.cs" t="Include" />
+            <e p="RentBookManagementServices.cs" t="Include" />
+          </e>
+          <e p="RequestBookManagement" t="Include">
+            <e p="IRequestBookManagementServices.cs" t="Include" />
+            <e p="RequestBookManagementServices.cs" t="Include" />
+          </e>
+          <e p="UserAccount" t="Include">
+            <e p="IUserAccountServices.cs" t="Include" />
+            <e p="UserAccountServices.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="BookSystem.Domain" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BookSystem.Domain.csproj" t="IncludeRecursive" />
+        <e p="Entities" t="Include">
+          <e p="Books.cs" t="Include" />
+          <e p="BookSystemContext.cs" t="Include" />
+          <e p="RentLog.cs" t="Include" />
+          <e p="UserRequestBook.cs" t="Include" />
+          <e p="Users.cs" t="Include" />
+          <e p="UsersReviewsBooks.cs" t="Include" />
+        </e>
+        <e p="Exceptions" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="BookSystem.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="BookSystem.sln" t="IncludeFlat" />
       <e p="BookSystem.WebApi" t="IncludeRecursive">
@@ -213,6 +292,10 @@
           <e p="tslint.json" t="Include" />
           <e p="yarn.lock" t="Include" />
         </e>
+        <e p="ApiPresenter" t="Include">
+          <e p="ApiResponse.cs" t="Include" />
+          <e p="ResponseMessageEnum.cs" t="Include" />
+        </e>
         <e p="app.config" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -306,26 +389,9 @@
           <e p="DoResearchController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
-        <e p="Dtos" t="Include">
-          <e p="BasicUsersDTO.cs" t="Include" />
-          <e p="FullBooksDTO.cs" t="Include" />
-          <e p="FullUsersDTO.cs" t="Include" />
-          <e p="LoginDto.cs" t="Include" />
-        </e>
-        <e p="Helpers" t="Include">
-          <e p="Exception" t="Include">
-            <e p="ApiException.cs" t="Include" />
-            <e p="ApiExceptionCodeEnum.cs" t="Include" />
-            <e p="DuplicateEntryException.cs" t="Include" />
-            <e p="InvalidEntry.cs" t="Include" />
-          </e>
-          <e p="ExceptionHandler" t="Include">
-            <e p="DbUpdateExceptionHandler.cs" t="Include" />
-          </e>
-          <e p="Response" t="Include">
-            <e p="ApiResponse.cs" t="Include" />
-            <e p="ResponseMessageEnum.cs" t="Include" />
-          </e>
+        <e p="Exception" t="Include">
+          <e p="ApiException.cs" t="Include" />
+          <e p="ApiExceptionCodeEnum.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -342,22 +408,6 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
-        </e>
-        <e p="Services" t="Include">
-          <e p="AuthenticationServices.cs" t="Include" />
-          <e p="BooksServices.cs" t="Include" />
-          <e p="DoResearchServices.cs" t="Include" />
-          <e p="Interface" t="Include">
-            <e p="IAuthenticationServices.cs" t="Include" />
-            <e p="IBooksServices.cs" t="Include" />
-            <e p="IDoResearchServices.cs" t="Include" />
-            <e p="IRentServices.cs" t="Include" />
-            <e p="IRequestBookServices.cs" t="Include" />
-            <e p="IUsersServices.cs" t="Include" />
-          </e>
-          <e p="RentServices.cs" t="Include" />
-          <e p="RequestBookServices.cs" t="Include" />
-          <e p="UsersServices.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="yarn.lock" t="Include" />

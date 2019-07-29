@@ -2,7 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem.WebApi", "BookSystem.WebApi\BookSystem.WebApi.csproj", "{D6060509-1DB4-4B32-A321-955B4355FB1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem.Entities", "BookSystem.Entities\BookSystem.Entities.csproj", "{AC536E35-8968-47DF-BA2C-7285C6F36F2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem.Domain", "BookSystem.Domain\BookSystem.Domain.csproj", "{AC536E35-8968-47DF-BA2C-7285C6F36F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSystem.Application", "BookSystem.Application\BookSystem.Application.csproj", "{42DFB50C-5A68-4177-AB1D-B9AF42EBABE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{AC536E35-8968-47DF-BA2C-7285C6F36F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC536E35-8968-47DF-BA2C-7285C6F36F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC536E35-8968-47DF-BA2C-7285C6F36F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DFB50C-5A68-4177-AB1D-B9AF42EBABE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DFB50C-5A68-4177-AB1D-B9AF42EBABE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DFB50C-5A68-4177-AB1D-B9AF42EBABE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DFB50C-5A68-4177-AB1D-B9AF42EBABE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

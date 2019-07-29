@@ -1,8 +1,9 @@
 using System;
-using BookSystem.Entities;
+using BookSystem.Application.Exception;
+using BookSystem.Application.Services.Interface;
+using BookSystem.Application.UseCase.Authentication;
+using BookSystem.Domain.Entities;
 using BookSystem.WebApi.Dtos;
-using BookSystem.WebApi.Helpers.Exception;
-using BookSystem.WebApi.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +39,7 @@ namespace BookSystem.WebApi.Controllers {
             try {
                 return Ok(_booksServices.GetBookById(bookId));
             }
-            catch (Exception) {
+            catch (System.Exception) {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
             }
         }
@@ -95,7 +96,7 @@ namespace BookSystem.WebApi.Controllers {
                     message = "Duplicated Entry"
                 });
             }
-            catch (Exception) {
+            catch (System.Exception) {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Unhandled Exception");
             }
             return StatusCode(StatusCodes.Status500InternalServerError, "Unknown Exception");

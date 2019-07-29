@@ -1,8 +1,9 @@
 using System;
-using BookSystem.Entities;
+using BookSystem.Domain.Entities;
+using BookSystem.Application.Exception;
+using BookSystem.Application.Services.Interface;
+using BookSystem.Application.UseCase.Authentication;
 using BookSystem.WebApi.Dtos;
-using BookSystem.WebApi.Helpers.Exception;
-using BookSystem.WebApi.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -46,7 +47,7 @@ namespace BookSystem.WebApi.Controllers {
                     message = "Duplicated Entry"
                 });
             }
-            catch (Exception) {
+            catch (System.Exception) {
                 return BadRequest(new {
                     message = "Unhandled Exception"
                 });

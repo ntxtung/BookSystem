@@ -1,6 +1,12 @@
 using System.Text;
-using BookSystem.WebApi.Services;
-using BookSystem.WebApi.Services.Interface;
+using BookSystem.Application.Services;
+using BookSystem.Application.Services.Interface;
+using BookSystem.Application.UseCase.Authentication;
+using BookSystem.Application.UseCase.BookManagement;
+using BookSystem.Application.UseCase.BookReview;
+using BookSystem.Application.UseCase.FundBook;
+using BookSystem.Application.UseCase.RentBookManagement;
+using BookSystem.Application.UseCase.UserAccount;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,12 +50,22 @@ namespace BookSystem.WebApi {
 //            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "AngularClientApp/dist"; });
 
             // Dependency Injection
+            // api v1.0
             services.AddScoped<IUserServices, UsersServices>();
             services.AddScoped<IBooksServices, BooksServices>();
             services.AddScoped<IRequestBookServices, RequestBookServices>();
             services.AddScoped<IRentServices, RentServices>();
             services.AddScoped<IDoResearchServices, DoResearchServices>();
+            
+            // api v2.0
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
+            services.AddScoped<IBookManagement, BookManagement>();
+            services.AddScoped<IBookReview, BookReviewServices>();
+            services.AddScoped<IFundBookServices, FundBookServices>();
+            services.AddScoped<IRentBookManagementServices, RentBookManagementServices>();
+            services.AddScoped<IRequestBookServices, RequestBookServices>();
+            services.AddScoped<IUserAccountServices, UserAccountServices>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
