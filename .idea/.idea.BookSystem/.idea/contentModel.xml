@@ -237,6 +237,7 @@
               </e>
               <e p="models" t="Include">
                 <e p="book-paging.model.ts" t="Include" />
+                <e p="book.model.ts" t="Include" />
                 <e p="user.model.ts" t="Include" />
               </e>
               <e p="Services" t="Include">
@@ -323,6 +324,26 @@
                   <e p="user.reducer.ts" t="Include" />
                 </e>
                 <e p="user-templates" t="Include">
+                  <e p="dashboard-book-add" t="Include">
+                    <e p="dashboard-book-add.component.css" t="Include" />
+                    <e p="dashboard-book-add.component.html" t="Include" />
+                    <e p="dashboard-book-add.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-book-card" t="Include">
+                    <e p="dashboard-book-card.component.css" t="Include" />
+                    <e p="dashboard-book-card.component.html" t="Include" />
+                    <e p="dashboard-book-card.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-book-edit" t="Include">
+                    <e p="dashboard-book-edit.component.css" t="Include" />
+                    <e p="dashboard-book-edit.component.html" t="Include" />
+                    <e p="dashboard-book-edit.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-book-list" t="Include">
+                    <e p="dashboard-book-list.component.css" t="Include" />
+                    <e p="dashboard-book-list.component.html" t="Include" />
+                    <e p="dashboard-book-list.component.ts" t="Include" />
+                  </e>
                   <e p="dashboard-content" t="Include">
                     <e p="dashboard-content.component.css" t="Include" />
                     <e p="dashboard-content.component.html" t="Include" />

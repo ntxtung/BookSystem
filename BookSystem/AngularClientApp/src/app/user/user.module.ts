@@ -18,8 +18,8 @@ import { DashboardContentComponent } from './user-templates/dashboard-content/da
 import { UserBooksComponent } from './user-books/user-books.component';
 import { DashboardBookCardComponent } from './user-templates/dashboard-book-card/dashboard-book-card.component';
 import { DashboardBookListComponent } from './user-templates/dashboard-book-list/dashboard-book-list.component';
-import { DashboardBookAddComponent } from './user-template/dashboard-book-add/dashboard-book-add.component';
-import { DashboardBookEditComponent } from './user-template/dashboard-book-edit/dashboard-book-edit.component';
+import { DashboardBookAddComponent } from './user-templates/dashboard-book-add/dashboard-book-add.component';
+import { DashboardBookEditComponent } from './user-templates/dashboard-book-edit/dashboard-book-edit.component';
 
 @NgModule({
     declarations: [
