@@ -149,21 +149,22 @@
           </e>
           <e p="karma.conf.js" t="Include" />
           <e p="node_modules\@angular\animations" t="IncludeRecursive" />
-          <e p="node_modules\@angular\cdk" t="IncludeRecursive" />
           <e p="node_modules\@angular\cli" t="IncludeRecursive" />
           <e p="node_modules\@angular\common" t="IncludeRecursive" />
           <e p="node_modules\@angular\compiler" t="IncludeRecursive" />
           <e p="node_modules\@angular\compiler-cli" t="IncludeRecursive" />
           <e p="node_modules\@angular\core" t="IncludeRecursive" />
           <e p="node_modules\@angular\forms" t="IncludeRecursive" />
-          <e p="node_modules\@angular\material" t="IncludeRecursive" />
           <e p="node_modules\@angular\platform-browser" t="IncludeRecursive" />
           <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
           <e p="node_modules\@angular\router" t="IncludeRecursive" />
           <e p="node_modules\@angular-devkit\build-angular" t="IncludeRecursive" />
           <e p="node_modules\@fortawesome\fontawesome-free" t="IncludeRecursive" />
           <e p="node_modules\@ngrx\effects" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\entity" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\router-store" t="IncludeRecursive" />
           <e p="node_modules\@ngrx\store" t="IncludeRecursive" />
+          <e p="node_modules\@ngrx\store-devtools" t="IncludeRecursive" />
           <e p="node_modules\@types" t="IncludeRecursive">
             <e p="events" t="IncludeRecursive" />
             <e p="jasmine" t="IncludeRecursive" />
@@ -175,7 +176,6 @@
           <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
           <e p="node_modules\font-awesome" t="IncludeRecursive" />
-          <e p="node_modules\hammerjs" t="IncludeRecursive" />
           <e p="node_modules\jasmine-core" t="IncludeRecursive" />
           <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
           <e p="node_modules\jquery" t="IncludeRecursive" />
@@ -184,6 +184,7 @@
           <e p="node_modules\karma-coverage-istanbul-reporter" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
+          <e p="node_modules\ngrx-store-localstorage" t="IncludeRecursive" />
           <e p="node_modules\popper.js" t="IncludeRecursive" />
           <e p="node_modules\protractor" t="IncludeRecursive" />
           <e p="node_modules\rxjs" t="IncludeRecursive" />
