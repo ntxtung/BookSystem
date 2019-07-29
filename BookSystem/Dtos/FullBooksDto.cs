@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using BookSystem.Entities;
 
-namespace BookSystem.Entities.DataTransferObject {
+namespace BookSystem.Dtos {
     public class FullBooksDto {
         public FullBooksDto() {
         }

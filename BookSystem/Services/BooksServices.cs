@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using BookSystem.Entities;
-using BookSystem.Entities.DataTransferObject;
+using BookSystem.Dtos;
 using BookSystem.Helpers.ExceptionHelper;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;

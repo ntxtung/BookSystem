@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using BookSystem.Entities;
-using BookSystem.Entities.DataTransferObject;
+using BookSystem.Dtos;
 using BookSystem.Helpers.ExceptionHandler;
 using Microsoft.EntityFrameworkCore;
 

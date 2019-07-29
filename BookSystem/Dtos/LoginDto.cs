@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BookSystem.Entities.DataTransferObject {
+namespace BookSystem.Dtos {
     public class LoginDto {
         [Required]
         public string Username { get; set; }

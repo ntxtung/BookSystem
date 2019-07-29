@@ -1,6 +1,6 @@
 using System;
 using BookSystem.Entities;
-using BookSystem.Entities.DataTransferObject;
+using BookSystem.Dtos;
 using BookSystem.Helpers.ExceptionHelper;
 using BookSystem.Services;
 using Microsoft.AspNetCore.Authorization;

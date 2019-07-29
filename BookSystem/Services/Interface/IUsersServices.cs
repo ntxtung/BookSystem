@@ -1,6 +1,6 @@
 using System.Linq;
 using BookSystem.Entities;
-using BookSystem.Entities.DataTransferObject;
+using BookSystem.Dtos;
 
 namespace BookSystem.Services {
     public interface IUserServices {
