@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserAuthorizationService } from '../user-services/user-authorization.service';
+import { Book } from 'src/app/models/book.model';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user.model';
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +12,11 @@ export class BookApiService {
     private BASE_URL = "http://localhost:5000"
     constructor(private httpClient: HttpClient, private userAuthorizationService: UserAuthorizationService) { }
 
-    getBooks(){
-        return this.httpClient.get(`${this.BASE_URL}/api/books`, { headers: this.userAuthorizationService.setHeader()});
+    getBooks(): Observable<Book[]> {
+        return this.httpClient.get<Book[]>(`${this.BASE_URL}/api/books`, { headers: this.userAuthorizationService.setHeader()});
+    }
+
+    getUserFundedBooks(user: User): Observable<Book[]> {
+        return this.httpClient.get<Book[]>(`${this.BASE_URL}/api/users/`+user.id+`/fund/books?page=1&pageSize=3`, { headers: this.userAuthorizationService.setHeader()})
     }
 }
