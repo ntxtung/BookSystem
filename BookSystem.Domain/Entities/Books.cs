@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BookSystem.Entities
+namespace BookSystem.Domain.Entities
 {
     public partial class Books
     {
