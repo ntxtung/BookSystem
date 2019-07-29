@@ -1,0 +1,20 @@
+<div class="book-list">
+    <div class="ui primary right floated button">Add book
+        <i class="plus icon"></i>
+    </div>
+    <div class="ui divided items">
+        <div class="item" *ngFor="let book of books">
+            <div class="ui tiny image">
+                <img src="assets/images/book-default-image.png">
+            </div>
+            <div class="middle aligned content book-info">
+                <div class="header">{{book.title}}</div>
+                <div class="meta">{{book.author}}</div>
+                <div class="extra">
+                    <div class="ui green button">Edit</div>
+                    <div class="ui red button">Delete</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

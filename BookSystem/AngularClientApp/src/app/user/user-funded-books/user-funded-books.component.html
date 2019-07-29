@@ -1,16 +1,3 @@
 <div>
-    <table>
-        <thead>
-            <tr>
-                <td>Tiltle</td>
-                <td>Author</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let book of books">
-                <td>{{book.title}}</td>
-                <td>{{book.author}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <user-dashboard-book-list [books]="books"></user-dashboard-book-list>
 </div>

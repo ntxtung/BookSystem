@@ -11,6 +11,7 @@ export const userRoutes : Routes = [
     {path: "login", component: LoginComponent},
     {path: "books", component: BooksListComponent},
     {path: "dashboard", component: UserDashboardComponent, children: [
+        {path: "", redirectTo: "profile", pathMatch: "full"},
         {path: "profile", component: UserProfileComponent},
         {path: "user-books", component: UserBooksComponent}
     ]}
