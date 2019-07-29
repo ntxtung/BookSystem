@@ -17,6 +17,7 @@ export class BooksListComponent implements OnInit {
             res => {
                 this.books = res;
             },
+            // 401 Unauthorized error
             err => {
                 this.router.navigate(["/login"])
             }
