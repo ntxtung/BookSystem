@@ -1,6 +1,7 @@
 <div class="book-list">
-    <button id="add-book" class="ui primary right floated button">Add book
+    <button id="add-book" class="ui primary right floated button">
         <i class="plus icon"></i>
+        Add book
     </button>
     <div class="ui divided items">
         <div class="item" *ngFor="let book of books">
@@ -19,31 +20,22 @@
     </div>
 </div>
 
-<div class="ui modal">
-
-    <i class="close icon"></i>
-    <div class="header">
-        Profile Picture
+<div class="ui basic modal">
+    <div class="ui icon header">
+        <i class="archive icon"></i>
+        Archive Old Messages
     </div>
-    <div class="image content">
-        <div class="ui medium image">
-            <img src="assets/images/book-default-image.png">
-        </div>
-        <div class="description">
-            <div class="ui header">We've auto-chosen a profile image for you.</div>
-            <p>We've grabbed the following image from the <a href="https://www.gravatar.com"
-                    target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-            <p>Is it okay to use this photo?</p>
-        </div>
+    <div class="content">
+        <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
     </div>
     <div class="actions">
-        <div class="ui black deny button">
-            Nope
+        <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            No
         </div>
-        <div class="ui positive right labeled icon button">
-            Yep, that's me
+        <div class="ui green ok inverted button">
             <i class="checkmark icon"></i>
+            Yes
         </div>
     </div>
-
 </div>

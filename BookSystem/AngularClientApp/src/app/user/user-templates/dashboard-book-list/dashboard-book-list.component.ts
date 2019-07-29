@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as $dollar from 'jquery';
+
+declare var $ : any;
 @Component({
     selector: 'user-dashboard-book-list',
     templateUrl: './dashboard-book-list.component.html',
@@ -13,10 +14,9 @@ export class DashboardBookListComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        $dollar(document).ready(function () {
-            $dollar("button").click(function () {
-                $dollar('.ui.modal').modal('show');
-                console.log("modal show: true")
+        $(document).ready(function () {
+            $("button").click(function () {
+                $('.ui.basic.modal').modal("show");
             });
         });
     }

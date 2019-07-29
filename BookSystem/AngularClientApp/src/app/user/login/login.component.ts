@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
                         this.loggedUser.token = res.token
                         localStorage.setItem('token', res.token)
 
-                        // value that is gonna saved in localStorage must be a string
+                        // value that is gonna be saved in localStorage must be a string
                         localStorage.setItem('user', JSON.stringify(res))
                         this.userAuthorizationService.checkAuthorization()
                         this.router.navigate(['/books'])
