@@ -2,13 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BookSystem.Entities {
-    public partial class BookSystemContext : DbContext {
-        public BookSystemContext() {
+namespace BookSystem.Entities
+{
+    public partial class BookSystemContext : DbContext
+    {
+        public BookSystemContext()
+        {
         }
 
         public BookSystemContext(DbContextOptions<BookSystemContext> options)
-            : base(options) {
+            : base(options)
+        {
         }
 
         public virtual DbSet<Books> Books { get; set; }
@@ -17,16 +21,19 @@ namespace BookSystem.Entities {
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UsersReviewsBooks> UsersReviewsBooks { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            if (!optionsBuilder.IsConfigured) {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql(
-                    "server=206.189.40.187;port=3307;user=root;password=xuantung98;database=BookSystem");
+                optionsBuilder.UseMySql("server=206.189.40.187;port=3307;user=root;password=xuantung98;database=BookSystem");
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.Entity<Books>(entity => {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Books>(entity =>
+            {
                 entity.HasIndex(e => e.UsersFundId)
                     .HasName("fk_Books_Users_FundId");
 
@@ -71,8 +78,9 @@ namespace BookSystem.Entities {
                     .HasConstraintName("fk_Books_Users_Rent");
             });
 
-            modelBuilder.Entity<RentLog>(entity => {
-                entity.HasKey(e => new {e.RentId, e.UserId, e.BookId})
+            modelBuilder.Entity<RentLog>(entity =>
+            {
+                entity.HasKey(e => new { e.RentId, e.UserId, e.BookId })
                     .HasName("PRIMARY");
 
                 entity.ToTable("Rent_Log");
@@ -117,8 +125,9 @@ namespace BookSystem.Entities {
                     .HasConstraintName("fk_RentHistory_User1");
             });
 
-            modelBuilder.Entity<UserRequestBook>(entity => {
-                entity.HasKey(e => new {e.UserId, e.BookId})
+            modelBuilder.Entity<UserRequestBook>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.BookId })
                     .HasName("PRIMARY");
 
                 entity.ToTable("User_Request_Book");
@@ -150,7 +159,8 @@ namespace BookSystem.Entities {
                     .HasConstraintName("fk_User_has_Book_User1");
             });
 
-            modelBuilder.Entity<Users>(entity => {
+            modelBuilder.Entity<Users>(entity =>
+            {
                 entity.HasIndex(e => e.Email)
                     .HasName("email_UNIQUE")
                     .IsUnique();
@@ -187,6 +197,11 @@ namespace BookSystem.Entities {
                     .HasColumnName("password")
                     .HasColumnType("varchar(45)");
 
+                entity.Property(e => e.Role)
+                    .HasColumnName("role")
+                    .HasColumnType("int(11)")
+                    .HasDefaultValueSql("'1'");
+
                 entity.Property(e => e.Token)
                     .HasColumnName("token")
                     .HasColumnType("varchar(45)");
@@ -197,8 +212,9 @@ namespace BookSystem.Entities {
                     .HasColumnType("varchar(45)");
             });
 
-            modelBuilder.Entity<UsersReviewsBooks>(entity => {
-                entity.HasKey(e => new {e.UsersId, e.BooksId})
+            modelBuilder.Entity<UsersReviewsBooks>(entity =>
+            {
+                entity.HasKey(e => new { e.UsersId, e.BooksId })
                     .HasName("PRIMARY");
 
                 entity.ToTable("Users_Reviews_Books");

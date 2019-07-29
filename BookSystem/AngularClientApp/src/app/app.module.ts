@@ -15,6 +15,10 @@ import { BookApiService } from './services/book-services/book-api-service.servic
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { UserAuthenticationService } from './services/user-services/user-authentication.service';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './store/effects/auth.effects';
+import { UserAuthorizationService } from './services/user-services/user-authorization.service';
 
 @NgModule({
     declarations: [
@@ -28,11 +32,14 @@ import { appRoutes } from './app.routes';
         TemplateModule,
         HttpClientModule,
         FormsModule,
+        // EffectsModule.forRoot([AuthEffects]),
         RouterModule.forRoot(appRoutes, {useHash: true})
     ],
     providers: [
         UserApiService,
-        BookApiService
+        BookApiService,
+        UserAuthenticationService,
+        UserAuthorizationService
     ],
     bootstrap: [AppComponent]
 })

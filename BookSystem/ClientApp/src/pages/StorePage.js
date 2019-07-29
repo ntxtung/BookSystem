@@ -15,10 +15,7 @@ class StorePage extends React.Component {
     }
   }
   componentDidMount = async () => {
-    let response = await localhost5000({
-      method: "GET",
-      url: './books'
-    })
+    let response = await localhost5000.get('./books')
     this.setState({ books: response.data })
   }
   render() {

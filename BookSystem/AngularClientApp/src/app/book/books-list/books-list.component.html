@@ -1,1 +1,5 @@
-<p>books-list works!</p>
+<div class="ui centered four cards">
+    <div *ngFor="let book of books" class="book-card">
+        <book-detail [book]="book"></book-detail>
+    </div>
+</div>
