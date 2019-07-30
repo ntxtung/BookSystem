@@ -27,7 +27,7 @@
           <e p="UserHelper.cs" t="Include" />
         </e>
         <e p="models" t="Include">
-          <e p="PaginationModel.cs" t="Include" />
+          <e p="PaginationQuery.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -36,28 +36,14 @@
             </e>
           </e>
         </e>
-        <e p="Services" t="Include">
-          <e p="BooksServices.cs" t="Include" />
-          <e p="DoResearchServices.cs" t="Include" />
-          <e p="Interface" t="Include">
-            <e p="IBooksServices.cs" t="Include" />
-            <e p="IDoResearchServices.cs" t="Include" />
-            <e p="IRentServices.cs" t="Include" />
-            <e p="IRequestBookServices.cs" t="Include" />
-            <e p="IUsersServices.cs" t="Include" />
-          </e>
-          <e p="RentServices.cs" t="Include" />
-          <e p="RequestBookServices.cs" t="Include" />
-          <e p="UsersServices.cs" t="Include" />
-        </e>
         <e p="UseCase" t="Include">
           <e p="Authentication" t="Include">
             <e p="AuthenticationServices.cs" t="Include" />
             <e p="IAuthenticationServices.cs" t="Include" />
           </e>
           <e p="BookManagement" t="Include">
-            <e p="BookManagement.cs" t="Include" />
-            <e p="IBookManagement.cs" t="Include" />
+            <e p="BookManagementServices.cs" t="Include" />
+            <e p="IBookManagementServices.cs" t="Include" />
           </e>
           <e p="BookReview" t="Include">
             <e p="BookReviewServices.cs" t="Include" />
@@ -386,7 +372,6 @@
         <e p="Controllers" t="Include">
           <e p="AuthController.cs" t="Include" />
           <e p="BookController.cs" t="Include" />
-          <e p="DoResearchController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Exception" t="Include">

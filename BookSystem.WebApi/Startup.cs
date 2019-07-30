@@ -1,11 +1,10 @@
 using System.Text;
-using BookSystem.Application.Services;
-using BookSystem.Application.Services.Interface;
 using BookSystem.Application.UseCase.Authentication;
 using BookSystem.Application.UseCase.BookManagement;
 using BookSystem.Application.UseCase.BookReview;
 using BookSystem.Application.UseCase.FundBook;
 using BookSystem.Application.UseCase.RentBookManagement;
+using BookSystem.Application.UseCase.RequestBookManagement;
 using BookSystem.Application.UseCase.UserAccount;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -50,20 +49,12 @@ namespace BookSystem.WebApi {
 //            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "AngularClientApp/dist"; });
 
             // Dependency Injection
-            // api v1.0
-            services.AddScoped<IUserServices, UsersServices>();
-            services.AddScoped<IBooksServices, BooksServices>();
-            services.AddScoped<IRequestBookServices, RequestBookServices>();
-            services.AddScoped<IRentServices, RentServices>();
-            services.AddScoped<IDoResearchServices, DoResearchServices>();
-            
-            // api v2.0
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
-            services.AddScoped<IBookManagement, BookManagement>();
+            services.AddScoped<IBookManagementServices, BookManagementServices>();
             services.AddScoped<IBookReview, BookReviewServices>();
             services.AddScoped<IFundBookServices, FundBookServices>();
             services.AddScoped<IRentBookManagementServices, RentBookManagementServices>();
-            services.AddScoped<IRequestBookServices, RequestBookServices>();
+            services.AddScoped<IRequestBookManagementServices, RequestBookManagementServices>();
             services.AddScoped<IUserAccountServices, UserAccountServices>();
             
         }

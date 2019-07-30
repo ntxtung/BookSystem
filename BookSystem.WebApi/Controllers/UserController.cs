@@ -1,7 +1,10 @@
 using System;
 using BookSystem.Application.Exception;
-using BookSystem.Application.Services.Interface;
 using BookSystem.Application.UseCase.Authentication;
+using BookSystem.Application.UseCase.FundBook;
+using BookSystem.Application.UseCase.RentBookManagement;
+using BookSystem.Application.UseCase.RequestBookManagement;
+using BookSystem.Application.UseCase.UserAccount;
 using BookSystem.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,19 +14,24 @@ namespace BookSystem.WebApi.Controllers {
     public class UserController : Controller {
         #region Properties
 
-        private readonly IUserServices _userService;
-        private readonly IRequestBookServices _requestBookServices;
-        private readonly IRentServices _rentServices;
+        private readonly IUserAccountServices _userAccountServices;
+        private readonly IRequestBookManagementServices _requestBookManagementServices;
+        private readonly IRentBookManagementServices _rentBookManagementServices;
         private readonly IAuthenticationServices _authenticationServices;
+        private readonly IFundBookServices _fundBookServices;
 
         #endregion
 
-        public UserController(IUserServices userServices, IRequestBookServices requestBookServices,
-            IRentServices rentServices, IAuthenticationServices authenticationServices) {
-            
-            _userService = userServices;
-            _requestBookServices = requestBookServices;
-            _rentServices = rentServices;
+        public UserController(IAuthenticationServices authenticationServices,
+            IUserAccountServices userAccountServices,
+            IRequestBookManagementServices requestBookManagementServices,
+            IRentBookManagementServices rentBookManagementServices,
+            IFundBookServices fundBookServices) {
+
+            _fundBookServices = fundBookServices;
+            _userAccountServices = userAccountServices;
+            _requestBookManagementServices = requestBookManagementServices;
+            _rentBookManagementServices = rentBookManagementServices;
             _authenticationServices = authenticationServices;
         }
 
@@ -34,7 +42,7 @@ namespace BookSystem.WebApi.Controllers {
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetUsers() {
-            return Ok(_userService.GetUsers());
+            return Ok(_userAccountServices.GetUsers());
         }
         
         [Authorize(Roles = "Admin, User")]
@@ -42,8 +50,8 @@ namespace BookSystem.WebApi.Controllers {
         public IActionResult GetUserById(int id) {
             try {
                 if (_authenticationServices.GetCurrentUserId(HttpContext) == id)
-                    return Ok(_userService.GetFullUserById(id));
-                return Ok(_userService.GetBasicUserById(id));
+                    return Ok(_userAccountServices.GetFullUserById(id));
+                return Ok(_userAccountServices.GetBasicUserById(id));
             }
             catch (System.Exception e) {
                 return BadRequest(e.Message);
@@ -57,7 +65,7 @@ namespace BookSystem.WebApi.Controllers {
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{id}/fund/books")]
         public IActionResult GetFundedBookOfUser([FromRoute] int id, [FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
-            return Ok(_userService.GetFundedBookOfUser(id, page, pageSize));
+            return Ok(_fundBookServices.GetFundedBookOfUser(id, page, pageSize));
         }
         
 
@@ -67,7 +75,7 @@ namespace BookSystem.WebApi.Controllers {
         [Authorize(Roles = "Admin, User")]
         [HttpGet("request/books")]
         public IActionResult GetRequestedBook([FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
-            return Ok(_requestBookServices.GetAllBooksUserDidRequest(_authenticationServices.GetCurrentUserId(HttpContext), page, pageSize));
+            return Ok(_requestBookManagementServices.GetAllBooksUserDidRequest(_authenticationServices.GetCurrentUserId(HttpContext), page, pageSize));
         }
         
         [Authorize(Roles = "Admin, User")]
@@ -75,7 +83,7 @@ namespace BookSystem.WebApi.Controllers {
         public IActionResult RequestBook([FromRoute] int bookId) {
             try {
                 var currentUserId = _authenticationServices.GetCurrentUserId(HttpContext);
-                if (_requestBookServices.DoRequest(currentUserId, bookId) > 0) {
+                if (_requestBookManagementServices.DoRequest(currentUserId, bookId) > 0) {
                     return Ok(new {message = "Request Successful"});
                 }
             }
@@ -98,7 +106,7 @@ namespace BookSystem.WebApi.Controllers {
         [Authorize(Roles = "Admin")]
         [HttpGet("{userId}/request/books")]
         public IActionResult GetAllBooksUserDidRequest([FromRoute] int userId) {
-            return Ok(_requestBookServices.GetAllBooksUserDidRequest(userId));
+            return Ok(_requestBookManagementServices.GetAllBooksUserDidRequest(userId));
         }
         
         [Authorize(Roles = "Admin, User")]
@@ -126,7 +134,7 @@ namespace BookSystem.WebApi.Controllers {
         [Authorize(Roles = "Admin, User")]
         [HttpGet("{userId}/rent/books")]
         public IActionResult GetRentedBookOfUser([FromRoute] int userId,[FromQuery(Name="page")] int page = 1, [FromQuery(Name="pageSize")] int pageSize = 5) {
-            return Ok(_userService.GetRentedBookOfUser(userId, page, pageSize));
+            return Ok(_rentBookManagementServices.GetRentedBookOfUser(userId, page, pageSize));
         }
 
         #endregion
