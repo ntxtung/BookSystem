@@ -237,6 +237,7 @@
               </e>
               <e p="models" t="Include">
                 <e p="book-paging.model.ts" t="Include" />
+                <e p="book.model.ts" t="Include" />
                 <e p="user.model.ts" t="Include" />
               </e>
               <e p="Services" t="Include">
@@ -294,8 +295,65 @@
                   <e p="register.component.html" t="Include" />
                   <e p="register.component.ts" t="Include" />
                 </e>
+                <e p="user-books" t="Include">
+                  <e p="user-books.component.css" t="Include" />
+                  <e p="user-books.component.html" t="Include" />
+                  <e p="user-books.component.ts" t="Include" />
+                </e>
+                <e p="user-dashboard" t="Include">
+                  <e p="user-dashboard.component.css" t="Include" />
+                  <e p="user-dashboard.component.html" t="Include" />
+                  <e p="user-dashboard.component.ts" t="Include" />
+                </e>
+                <e p="user-funded-books" t="Include">
+                  <e p="user-funded-books.component.css" t="Include" />
+                  <e p="user-funded-books.component.html" t="Include" />
+                  <e p="user-funded-books.component.ts" t="Include" />
+                </e>
+                <e p="user-profile" t="Include">
+                  <e p="user-profile.component.css" t="Include" />
+                  <e p="user-profile.component.html" t="Include" />
+                  <e p="user-profile.component.ts" t="Include" />
+                </e>
+                <e p="user-rented-books" t="Include">
+                  <e p="user-rented-books.component.css" t="Include" />
+                  <e p="user-rented-books.component.html" t="Include" />
+                  <e p="user-rented-books.component.ts" t="Include" />
+                </e>
                 <e p="user-state" t="Include">
                   <e p="user.reducer.ts" t="Include" />
+                </e>
+                <e p="user-templates" t="Include">
+                  <e p="dashboard-book-add" t="Include">
+                    <e p="dashboard-book-add.component.css" t="Include" />
+                    <e p="dashboard-book-add.component.html" t="Include" />
+                    <e p="dashboard-book-add.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-book-card" t="Include">
+                    <e p="dashboard-book-card.component.css" t="Include" />
+                    <e p="dashboard-book-card.component.html" t="Include" />
+                    <e p="dashboard-book-card.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-book-edit" t="Include">
+                    <e p="dashboard-book-edit.component.css" t="Include" />
+                    <e p="dashboard-book-edit.component.html" t="Include" />
+                    <e p="dashboard-book-edit.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-book-list" t="Include">
+                    <e p="dashboard-book-list.component.css" t="Include" />
+                    <e p="dashboard-book-list.component.html" t="Include" />
+                    <e p="dashboard-book-list.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-content" t="Include">
+                    <e p="dashboard-content.component.css" t="Include" />
+                    <e p="dashboard-content.component.html" t="Include" />
+                    <e p="dashboard-content.component.ts" t="Include" />
+                  </e>
+                  <e p="dashboard-menu" t="Include">
+                    <e p="dashboard-menu.component.css" t="Include" />
+                    <e p="dashboard-menu.component.html" t="Include" />
+                    <e p="dashboard-menu.component.ts" t="Include" />
+                  </e>
                 </e>
                 <e p="user.module.ts" t="Include" />
                 <e p="user.routes.ts" t="Include" />
@@ -307,6 +365,7 @@
                 <e p="bigin-logo-1.png" t="Include" />
                 <e p="bigin-logo.png" t="Include" />
                 <e p="book-default-image.png" t="Include" />
+                <e p="emoji.png" t="Include" />
                 <e p="login-background.jpg" t="Include" />
                 <e p="placeholder-book-cover-default.png" t="Include" />
               </e>
