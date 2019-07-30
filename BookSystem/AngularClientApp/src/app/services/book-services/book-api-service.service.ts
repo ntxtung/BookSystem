@@ -25,7 +25,7 @@ export class BookApiService {
         return this.httpClient.post<any>(`${this.BASE_URL}/api/books/`, book, { headers: this.userAuthorizationService.setHeader()})
     }
 
-    deleteBook(book){
+    deleteBook(id){
         
     }
 }

@@ -175,6 +175,7 @@
             <e p="node" t="IncludeRecursive" />
             <e p="source-list-map" t="IncludeRecursive" />
           </e>
+          <e p="node_modules\angular-bootstrap-md" t="IncludeRecursive" />
           <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
           <e p="node_modules\font-awesome" t="IncludeRecursive" />
