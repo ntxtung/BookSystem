@@ -8,19 +8,24 @@
                     <table align="center">
                         <tr>
                             <td><i class="fas fa-envelope"></i></td>
-                            <td><input [(ngModel)]="loginRegisterData.email" type="text" placeholder="Email"></td>
+                            <td><input [(ngModel)]="loginRegisterData.email" type="text" placeholder="Email" name="email" id=""></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-users"></i></td>
-                            <td><input [(ngModel)]="loginRegisterData.username" type="text" placeholder="Username"></td>
+                            <td><input [(ngModel)]="loginRegisterData.username" type="text" placeholder="Username" name="username" id=""></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-lock"></i></td>
-                            <td><input [(ngModel)]="loginRegisterData.password" type="password" placeholder="Password"></td>
+                            <td><input [(ngModel)]="loginRegisterData.password" type="password" placeholder="Password" name="password" id=""></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-unlock"></i></td>
-                            <td><input [(ngModel)]="loginRegisterData.repassword" type="password" placeholder="Confirm password"></td>
+                            <!-- <td><input [(ngModel)]="loginRegisterData.repassword" type="password" placeholder="Confirm password"></td> -->
+                            <td>
+                                <div [ngClass]="{'field error': !passwordMatching}">
+                                    <input [(ngModel)]="loginRegisterData.repassword" type="password" name="repassword" id="" placeholder="Confirm password" (keyup)="checkConfirmPassword()" required>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
