@@ -16,7 +16,7 @@ export class UserAuthorizationService {
             users => {
                 console.log("users-state: " + JSON.stringify(users))
                 if(users){
-                    this.token = users.user.token
+                    this.token = users.token
                     console.log(this.token)
                 }
             }
