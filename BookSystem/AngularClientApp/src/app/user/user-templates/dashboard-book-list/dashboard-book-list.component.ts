@@ -1,8 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ButtonsModule, WavesModule, CollapseModule } from 'angular-bootstrap-md'
+
 import { DashboardBookAddComponent } from '../dashboard-book-add/dashboard-book-add.component';
 
 declare var $ : any;
+
 @Component({
     selector: 'user-dashboard-book-list',
     templateUrl: './dashboard-book-list.component.html',

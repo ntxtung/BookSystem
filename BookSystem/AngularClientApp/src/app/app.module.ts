@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 
@@ -23,7 +24,6 @@ import { environment } from 'src/environments/environment';
 
 import * as fromRoot from "./state/app.state"
 import {metaReducers} from "./state/app.state"
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MaterialModule } from './material/material.module';
 
 @NgModule({
@@ -46,7 +46,8 @@ import { MaterialModule } from './material/material.module';
             logOnly: environment.production
         }),
         BrowserAnimationsModule,
-        MaterialModule
+        MaterialModule,
+        MDBBootstrapModule.forRoot()
     ],
     providers: [
         UserApiService,

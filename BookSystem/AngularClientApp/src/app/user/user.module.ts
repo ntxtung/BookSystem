@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms"
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule, MatInputModule, MatGridListModule } from '@angular/material';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -24,6 +21,7 @@ import { DashboardBookListComponent } from './user-templates/dashboard-book-list
 import { DashboardBookAddComponent } from './user-templates/dashboard-book-add/dashboard-book-add.component';
 import { DashboardBookEditComponent } from './user-templates/dashboard-book-edit/dashboard-book-edit.component';
 import { MaterialModule } from '../material/material.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
     declarations: [
@@ -48,6 +46,7 @@ import { MaterialModule } from '../material/material.module';
         RouterModule.forChild(userRoutes),
         StoreModule.forFeature("users", fromUser.userReducer),
         MaterialModule,
+        MDBBootstrapModule.forRoot()
     ],
 
     // entry components are the those that gonna be showed in modals

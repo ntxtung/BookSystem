@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store, select } from '@ngrx/store';
+import { ButtonsModule, WavesModule } from 'angular-bootstrap-md'
+
 import { BookApiService } from 'src/app/services/book-services/book-api-service.service';
 
 @Component({
