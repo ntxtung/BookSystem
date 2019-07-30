@@ -5,10 +5,10 @@ using BookSystem.WebApi.Dtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookSystem.Application.UseCase.BookManagement {
-    public class BookManagement : IBookManagement {
+    public class BookManagementServices : IBookManagementServices {
         private readonly BookSystemContext _context;
         
-        public BookManagement() {
+        public BookManagementServices() {
             _context = new BookSystemContext();
         }
 

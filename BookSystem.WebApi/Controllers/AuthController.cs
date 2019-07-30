@@ -1,8 +1,8 @@
 using System;
 using BookSystem.Domain.Entities;
 using BookSystem.Application.Exception;
-using BookSystem.Application.Services.Interface;
 using BookSystem.Application.UseCase.Authentication;
+using BookSystem.Application.UseCase.UserAccount;
 using BookSystem.WebApi.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,14 +14,14 @@ namespace BookSystem.WebApi.Controllers {
         #region Properties
 
         private readonly IConfiguration _configuration;
-        private readonly IUserServices _userServices;
+        private readonly IUserAccountServices _userAccountServices;
         private readonly IAuthenticationServices _authenticationServices;
 
         #endregion
 
-        public AuthController(IAuthenticationServices authenticationServices, IConfiguration configuration, IUserServices userServices) {
+        public AuthController(IAuthenticationServices authenticationServices, IConfiguration configuration, IUserAccountServices userAccountServices) {
             _configuration = configuration;
-            _userServices = userServices;
+            _userAccountServices = userAccountServices;
             _authenticationServices = authenticationServices;
         }
 
@@ -31,7 +31,7 @@ namespace BookSystem.WebApi.Controllers {
         [HttpPost("register")]
         public IActionResult RegisterNewUser([FromBody] Users userData) {
             try {
-                var result = _userServices.PostUser(userData);
+                var result = _userAccountServices.RegisterNewUser(userData);
                 if (result > 0) {
                     var loggedUser = _authenticationServices.FindUser(new LoginDto{Username = userData.Username, Password = userData.Password});
                     loggedUser.Token = _authenticationServices.GenerateJsonWebToken(loggedUser);

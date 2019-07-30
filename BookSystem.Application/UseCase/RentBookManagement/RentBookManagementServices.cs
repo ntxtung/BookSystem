@@ -16,5 +16,9 @@ namespace BookSystem.Application.UseCase.RentBookManagement {
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize);
         }
+        
+        public int DoReturn(int userId, int bookId) {
+            throw new System.NotImplementedException();
+        }
     }
 }
