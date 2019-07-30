@@ -9,7 +9,8 @@ import { User } from 'src/app/models/user.model';
     providedIn: 'root'
 })
 export class BookApiService {
-    private BASE_URL = "http://localhost:5000"
+    private BASE_URL = "http://localhost:5000";
+
     constructor(private httpClient: HttpClient, private userAuthorizationService: UserAuthorizationService) { }
 
     getBooks(): Observable<Book[]> {
@@ -17,6 +18,14 @@ export class BookApiService {
     }
 
     getUserFundedBooks(user: User): Observable<Book[]> {
-        return this.httpClient.get<Book[]>(`${this.BASE_URL}/api/users/`+user.id+`/fund/books?page=1&pageSize=3`, { headers: this.userAuthorizationService.setHeader()})
+        return this.httpClient.get<Book[]>(`${this.BASE_URL}/api/users/`+user.id+`/fund/books?pageSize=20`, { headers: this.userAuthorizationService.setHeader()})
+    }
+
+    postBook(book): Observable<Book>{
+        return this.httpClient.post<any>(`${this.BASE_URL}/api/books/`, book, { headers: this.userAuthorizationService.setHeader()})
+    }
+
+    deleteBook(book){
+        
     }
 }
