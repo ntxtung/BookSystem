@@ -1,19 +1,35 @@
-.login-form{
+.login-form {
     margin: auto;
     padding: 10px;
     width: 30%;
 }
 
-.login-button{
-    margin:auto;
-    display:block;
+.login-button {
+    margin: auto;
+    display: block;
 }
 
-.background {
-    background-image: url("/src/assets/images/login-background.jpg");
+/* .background {
+    background-image: url("../../../assets/images/login-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+} */
+
+.background-image {
+    background-image: url("../../../assets/images/login-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.background-text {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 50%;
 }
 
 .icon {

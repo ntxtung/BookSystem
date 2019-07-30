@@ -1,4 +1,5 @@
-<div>
+<div class="background-image"></div>
+<div class="background-text">
     <form>
         <div class="ui raised card register-form">
             <div class="content">
@@ -6,20 +7,20 @@
                 <div class="ui form">
                     <table align="center">
                         <tr>
-                            <td>Email</td>
-                            <td><input [(ngModel)]="loginRegisterData.email" type="text" name="email" id=""></td>
+                            <td><i class="fas fa-envelope"></i></td>
+                            <td><input [(ngModel)]="loginRegisterData.email" type="text" placeholder="Email"></td>
                         </tr>
                         <tr>
-                            <td>Username</td>
-                            <td><input [(ngModel)]="loginRegisterData.username" type="text" name="email" id=""></td>
+                            <td><i class="fas fa-users"></i></td>
+                            <td><input [(ngModel)]="loginRegisterData.username" type="text" placeholder="Username"></td>
                         </tr>
                         <tr>
-                            <td>Password</td>
-                            <td><input [(ngModel)]="loginRegisterData.password" type="password" name="password" id=""></td>
+                            <td><i class="fas fa-lock"></i></td>
+                            <td><input [(ngModel)]="loginRegisterData.password" type="password" placeholder="Password"></td>
                         </tr>
                         <tr>
-                            <td>Repassword</td>
-                            <td><input [(ngModel)]="loginRegisterData.repassword" type="password" name="password" id=""></td>
+                            <td><i class="fas fa-unlock"></i></td>
+                            <td><input [(ngModel)]="loginRegisterData.repassword" type="password" placeholder="Confirm password"></td>
                         </tr>
                     </table>
                 </div>
