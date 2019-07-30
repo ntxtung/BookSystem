@@ -26,7 +26,14 @@ export function userReducer(state=initialUserState, action): UserState {
                 token: action.payload.user.token
             };
         }
-        
+        case "LOGOUT": {
+            return {
+                ...state,
+                user: action.payload.user,
+                isLogged: action.payload.isLogged,
+                token: null
+            };
+        }
         default: {
             return state;
         }

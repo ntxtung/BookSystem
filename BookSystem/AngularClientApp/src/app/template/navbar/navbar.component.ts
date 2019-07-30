@@ -42,10 +42,9 @@ export class NavbarComponent implements OnInit {
         this.user = JSON.parse(localStorage.getItem("user"))
     }
 
-    async logout(){
-        // await this.userAuthenticationService.logout()
-        // this.isLogged = this.userAuthorizationService.checkAuthorization()
-        this.router.navigate(["/login"])
+    logout(){
+        this.userAuthenticationService.logout()
+        this.router.navigate(['/login'])
     }
 
 }

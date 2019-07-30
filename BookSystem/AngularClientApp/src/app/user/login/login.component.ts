@@ -42,11 +42,11 @@ export class LoginComponent implements OnInit {
         if(!this.nullUsername && !this.nullPassword){
             console.log(this.nullUsername+" - "+ this.nullPassword)
             this.userAuthenticationService.loginUserWithBody(this.loginUserData).subscribe(
-                async res => {
+                res => {
                     if(res.token){
                         this.isLogged = true;
                         this.loggedUser = res
-                        await this.stateStoring(this.loggedUser)
+                        this.stateStoring(this.loggedUser)
                         this.router.navigate(['/books'])
                     }
                 },

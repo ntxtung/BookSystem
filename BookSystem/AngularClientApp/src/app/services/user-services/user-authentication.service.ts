@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user.model';
+import { Store } from '@ngrx/store';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class UserAuthenticationService {
 
     private loginUrl = "http://localhost:5000/api/auth/login"
     private loginUrlWithParameters : string
-    constructor(private httpClient : HttpClient) { }
+    constructor(private httpClient : HttpClient, private store: Store<any>) { }
 
     loginUserWithParameters(user){
         this.loginUrlWithParameters = this.loginUrl+"?username="+user.email+"&password="+user.password
@@ -23,6 +24,12 @@ export class UserAuthenticationService {
     }
 
     logout(){
-        localStorage.removeItem("token")
+        this.store.dispatch({
+            type: "LOGOUT",
+            payload: {
+                user: null,
+                isLogged: false
+            }
+        })
     }
 }

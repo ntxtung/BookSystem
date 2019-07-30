@@ -20,6 +20,9 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from "@ngrx/store-devtools"
 import { environment } from 'src/environments/environment';
 
+import * as fromRoot from "./state/app.state"
+import {metaReducers} from "./state/app.state"
+
 @NgModule({
     declarations: [
         AppComponent
@@ -33,7 +36,7 @@ import { environment } from 'src/environments/environment';
         HttpClientModule,
         FormsModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
-        StoreModule.forRoot({}),
+        StoreModule.forRoot(fromRoot.reducers, {metaReducers}),
         StoreDevtoolsModule.instrument({
             name: "Book System App",
             maxAge: 25,
