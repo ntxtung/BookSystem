@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms"
 
 import { AppComponent } from './app.component';
-import { from } from 'rxjs';
 
 import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
@@ -16,9 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { UserAuthenticationService } from './services/user-services/user-authentication.service';
-import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './store/effects/auth.effects';
 import { UserAuthorizationService } from './services/user-services/user-authorization.service';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools"
+import { environment } from 'src/environments/environment';
 
 @NgModule({
     declarations: [
@@ -32,8 +32,13 @@ import { UserAuthorizationService } from './services/user-services/user-authoriz
         TemplateModule,
         HttpClientModule,
         FormsModule,
-        // EffectsModule.forRoot([AuthEffects]),
-        RouterModule.forRoot(appRoutes, {useHash: true})
+        RouterModule.forRoot(appRoutes, {useHash: true}),
+        StoreModule.forRoot({}),
+        StoreDevtoolsModule.instrument({
+            name: "Book System App",
+            maxAge: 25,
+            logOnly: environment.production
+        })
     ],
     providers: [
         UserApiService,

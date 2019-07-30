@@ -3,6 +3,7 @@ import { UserAuthenticationService } from 'src/app/services/user-services/user-a
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import { UserAuthorizationService } from 'src/app/services/user-services/user-authorization.service';
+import { Store, select } from "@ngrx/store"
 
 declare let toastr
 
@@ -25,7 +26,8 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private userAuthenticationService : UserAuthenticationService, 
-        private userAuthorizationService: UserAuthorizationService, 
+        private userAuthorizationService: UserAuthorizationService,
+        private store: Store<any>, 
         private router: Router
     ) { }
 
@@ -42,13 +44,13 @@ export class LoginComponent implements OnInit {
                 res => {
                     if(res.token){
                         this.isLogged = true;
-                        this.loggedUser.id = res.id
-                        this.loggedUser.token = res.token
-                        localStorage.setItem('token', res.token)
+                        this.loggedUser = res
+                        this.stateStoring(this.loggedUser)
+                        // localStorage.setItem('token', res.token)
 
                         // value that is gonna saved in localStorage must be a string
-                        localStorage.setItem('user', JSON.stringify(res))
-                        this.userAuthorizationService.checkAuthorization()
+                        // localStorage.setItem('user', JSON.stringify(res))
+                        // this.userAuthorizationService.checkAuthorization()
                         this.router.navigate(['/books'])
                     }
                 },
@@ -62,5 +64,15 @@ export class LoginComponent implements OnInit {
             console.log("username or password cannot be empty")
         }
         
+    }
+
+    stateStoring(user: User){
+        this.store.dispatch({
+            type: "LOGIN",
+            payload: {
+                user: user,
+                isLogged: true
+            }
+        })
     }
 }

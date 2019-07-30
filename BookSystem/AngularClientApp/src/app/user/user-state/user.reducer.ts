@@ -2,7 +2,7 @@ import { User } from 'src/app/models/user.model';
 import * as fromRoot from "../../state/app.state"
 export interface UserState {
     user: User;
-    loggedIn: boolean;
+    isLogged: boolean;
     token: string;
 }
 
@@ -12,18 +12,18 @@ export interface AppState extends fromRoot.AppState {
 
 export const initialUserState: UserState = {
     user: null,
-    loggedIn: false,
+    isLogged: false,
     token: null
 }
 
-export function UserReducer(state=initialUserState, action): UserState {
+export function userReducer(state=initialUserState, action): UserState {
     switch(action.type){
         case "LOGIN": {
             return {
                 ...state,
                 user: action.payload.user,
-                loggedIn: true,
-                token: action.payload.token
+                isLogged: true,
+                token: action.payload.user.token
             };
         }
         

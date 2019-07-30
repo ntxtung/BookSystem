@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import * as fromUser from './user-state/user.reducer';
 
 
 
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
         CommonModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forChild(userRoutes)
+        RouterModule.forChild(userRoutes),
+        StoreModule.forFeature("users", fromUser.userReducer)
     ]
 })
 export class UserModule { }
