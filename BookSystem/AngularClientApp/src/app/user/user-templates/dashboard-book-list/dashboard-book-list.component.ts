@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DashboardBookAddComponent } from '../dashboard-book-add/dashboard-book-add.component';
 
 declare var $ : any;
 @Component({
@@ -11,13 +13,16 @@ export class DashboardBookListComponent implements OnInit {
     @Input()
     books;
 
-    constructor() { }
+    constructor(private dialog: MatDialog) { }
 
     ngOnInit() {
-        $(document).ready(function () {
-            $("button").click(function () {
-                $('.ui.basic.modal').modal("show");
-            });
-        });
+    }
+
+    addBook(){
+        const dialogConfig = new MatDialogConfig();
+        //disableClose avoid closing modal by clicking outside
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+        this.dialog.open(DashboardBookAddComponent, dialogConfig)
     }
 }

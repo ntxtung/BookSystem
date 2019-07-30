@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms"
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -46,7 +47,14 @@ import { DashboardBookEditComponent } from './user-templates/dashboard-book-edit
         RouterModule.forChild(userRoutes),
         StoreModule.forFeature("users", fromUser.userReducer),
         MatTabsModule,
-        MatDialogModule
+        MatDialogModule,
+        MatFormFieldModule,
+        // MatInputModule
+    ],
+
+    // entry components are the those that gonna be showed in modals
+    entryComponents: [
+        DashboardBookAddComponent
     ]
 })
 export class UserModule { }

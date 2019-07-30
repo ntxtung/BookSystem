@@ -1,5 +1,5 @@
 <div class="book-list">
-    <button id="add-book" class="ui primary right floated button">
+    <button id="add-book" class="ui primary right floated button" mat-raised-button (click)="addBook()">
         <i class="plus icon"></i>
         Add book
     </button>
@@ -13,29 +13,9 @@
                 <div class="meta">{{book.author}}</div>
                 <div class="extra">
                     <div class="ui green button">Edit</div>
-                    <div class="ui red button">Delete</div>
+                    <div class="ui red button"><i class="far fa-trash-alt"></i></div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="ui basic modal">
-    <div class="ui icon header">
-        <i class="archive icon"></i>
-        Archive Old Messages
-    </div>
-    <div class="content">
-        <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
-    </div>
-    <div class="actions">
-        <div class="ui red basic cancel inverted button">
-            <i class="remove icon"></i>
-            No
-        </div>
-        <div class="ui green ok inverted button">
-            <i class="checkmark icon"></i>
-            Yes
         </div>
     </div>
 </div>

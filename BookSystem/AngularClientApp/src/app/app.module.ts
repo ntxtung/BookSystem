@@ -23,6 +23,8 @@ import { environment } from 'src/environments/environment';
 
 import * as fromRoot from "./state/app.state"
 import {metaReducers} from "./state/app.state"
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
     declarations: [
@@ -43,7 +45,8 @@ import {metaReducers} from "./state/app.state"
             maxAge: 25,
             logOnly: environment.production
         }),
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MaterialModule
     ],
     providers: [
         UserApiService,

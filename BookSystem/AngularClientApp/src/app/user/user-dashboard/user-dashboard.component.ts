@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookApiService } from 'src/app/services/book-services/book-api-service.service';
+import { UserAuthorizationService } from 'src/app/services/user-services/user-authorization.service';
 
 @Component({
     selector: 'user-dashboard',
@@ -9,10 +10,10 @@ import { BookApiService } from 'src/app/services/book-services/book-api-service.
 export class UserDashboardComponent implements OnInit {
 
 
-    constructor(private bookApiService: BookApiService) { }
+    constructor(private userAuthorizationService: UserAuthorizationService) { }
 
     ngOnInit() {
-        
+        this.userAuthorizationService.checkAuthorization();
     }
 
 }

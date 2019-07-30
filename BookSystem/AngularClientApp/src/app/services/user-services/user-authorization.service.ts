@@ -25,11 +25,13 @@ export class UserAuthorizationService {
         // this.token = this.currentUserState.token
     }
 
-    checkAuthorization(): any{
+    checkAuthorization(){
         this.store.pipe(select("users")).subscribe(
             users => {
                 if(users){
-                    return users
+                    if(users.isLogged === false){
+                        this.router.navigate(['/login'])
+                    }
                 }
             }
         )
