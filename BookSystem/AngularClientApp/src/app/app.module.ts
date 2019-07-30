@@ -16,8 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { UserAuthenticationService } from './services/user-services/user-authentication.service';
-
 import { UserAuthorizationService } from './services/user-services/user-authorization.service';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools"
+import { environment } from 'src/environments/environment';
+
+import * as fromRoot from "./state/app.state"
+import {metaReducers} from "./state/app.state"
 
 @NgModule({
     declarations: [
@@ -32,6 +37,12 @@ import { UserAuthorizationService } from './services/user-services/user-authoriz
         HttpClientModule,
         FormsModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
+        StoreModule.forRoot(fromRoot.reducers, {metaReducers}),
+        StoreDevtoolsModule.instrument({
+            name: "Book System App",
+            maxAge: 25,
+            logOnly: environment.production
+        }),
         BrowserAnimationsModule
     ],
     providers: [

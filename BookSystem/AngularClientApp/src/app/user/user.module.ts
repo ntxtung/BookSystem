@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import * as fromUser from './user-state/user.reducer';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserFundedBooksComponent } from './user-funded-books/user-funded-books.component';
@@ -42,6 +44,7 @@ import { DashboardBookEditComponent } from './user-templates/dashboard-book-edit
         FormsModule,
         HttpClientModule,
         RouterModule.forChild(userRoutes),
+        StoreModule.forFeature("users", fromUser.userReducer),
         MatTabsModule,
         MatDialogModule
     ]
