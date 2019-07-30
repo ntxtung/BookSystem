@@ -4,9 +4,6 @@ import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import { UserAuthorizationService } from 'src/app/services/user-services/user-authorization.service';
 import { Store, select } from "@ngrx/store"
-import { async } from '@angular/core/testing';
-
-declare let toastr
 
 @Component({
     selector: 'user-login',
@@ -33,6 +30,15 @@ export class LoginComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.store.pipe(select("users")).subscribe(
+            users => {
+                if(users){
+                    if(users.isLogged === true){
+                        this.router.navigate(['/books'])
+                    }
+                }
+            }
+        )
     }
 
     login(){
@@ -40,7 +46,6 @@ export class LoginComponent implements OnInit {
         this.nullPassword = (this.loginUserData.password === null)? true : false;
 
         if(!this.nullUsername && !this.nullPassword){
-            console.log(this.nullUsername+" - "+ this.nullPassword)
             this.userAuthenticationService.loginUserWithBody(this.loginUserData).subscribe(
                 res => {
                     if(res.token){

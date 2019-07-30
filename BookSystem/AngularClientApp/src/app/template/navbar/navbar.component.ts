@@ -25,21 +25,14 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        // this.isLogged = this.userAuthorizationService.checkAuthorization()
-        // this.getCurrentUser()
         this.store.pipe(select("users")).subscribe(
             users => {
                 if(users){
-                    console.log("users-state: "+users)
                     this.isLogged = users.isLogged
                     this.user = users.user
                 }
             }
         )
-    }
-    
-    getCurrentUser(){
-        this.user = JSON.parse(localStorage.getItem("user"))
     }
 
     logout(){

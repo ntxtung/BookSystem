@@ -15,7 +15,6 @@ export class UserAuthenticationService {
 
     loginUserWithParameters(user){
         this.loginUrlWithParameters = this.loginUrl+"?username="+user.email+"&password="+user.password
-        console.log(this.loginUrlWithParameters)
         return this.httpClient.post<any>(this.loginUrlWithParameters, null)
     }
     
