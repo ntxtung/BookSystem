@@ -395,7 +395,6 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="yarn.lock" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
