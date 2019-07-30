@@ -43,8 +43,8 @@ export class NavbarComponent implements OnInit {
     }
 
     async logout(){
-        await this.userAuthenticationService.logout()
-        this.isLogged = this.userAuthorizationService.checkAuthorization()
+        // await this.userAuthenticationService.logout()
+        // this.isLogged = this.userAuthorizationService.checkAuthorization()
         this.router.navigate(["/login"])
     }
 
