@@ -1,0 +1,9 @@
+.material-components {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+.material-components>* {
+    width: 100%;
+}

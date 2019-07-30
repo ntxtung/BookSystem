@@ -1,21 +1,28 @@
 <div>
     <i class="close icon" (click)="onClose()"></i>
     <h4>Add book</h4>
-    <mat-form-field>
-        <input matInput placeholder="Book Name">
-    </mat-form-field>
+    <mat-grid-list cols=2>
+        <mat-grid-tile>
+            <div class="material-components">
+                <mat-form-field>
+                    <input matInput placeholder="Book Name" [(ngModel)]="bookInsertData.title" required>
+                </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="Book Author">
-    </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Book Author" required>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="material-components">
+                <mat-form-field>
+                    <textarea matInput placeholder="Description" matTextareaAutosize matAutosizeMaxRows=20></textarea>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 
     <div class="actions">
-        <button class="ui black deny button" (click)="onSubmit()">
-            Nope
-        </button>
-        <div class="ui positive right labeled icon button">
-            Yep, that's me
-            <i class="checkmark icon"></i>
-        </div>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Add</button>
     </div>
 </div>

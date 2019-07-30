@@ -8,16 +8,21 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DashboardBookAddComponent implements OnInit {
 
+    bookInsertData = {
+        title: null,
+        author: null,
+        userFundId: null
+    }
     constructor(private dialogRef: MatDialogRef<DashboardBookAddComponent>) { }
 
     ngOnInit() {
     }
 
-    onSubmit(){
+    onSubmit() {
         this.onClose();
     }
 
-    onClose(){
+    onClose() {
         this.dialogRef.close();
     }
 

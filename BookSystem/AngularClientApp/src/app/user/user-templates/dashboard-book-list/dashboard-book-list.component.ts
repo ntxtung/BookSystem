@@ -23,6 +23,7 @@ export class DashboardBookListComponent implements OnInit {
         //disableClose avoid closing modal by clicking outside
         dialogConfig.disableClose = true;
         dialogConfig.autoFocus = true;
+        dialogConfig.width = "60%";
         this.dialog.open(DashboardBookAddComponent, dialogConfig)
     }
 }

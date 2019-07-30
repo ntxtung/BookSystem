@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms"
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatGridListModule } from '@angular/material';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -23,6 +23,7 @@ import { DashboardBookCardComponent } from './user-templates/dashboard-book-card
 import { DashboardBookListComponent } from './user-templates/dashboard-book-list/dashboard-book-list.component';
 import { DashboardBookAddComponent } from './user-templates/dashboard-book-add/dashboard-book-add.component';
 import { DashboardBookEditComponent } from './user-templates/dashboard-book-edit/dashboard-book-edit.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
     declarations: [
@@ -46,10 +47,7 @@ import { DashboardBookEditComponent } from './user-templates/dashboard-book-edit
         HttpClientModule,
         RouterModule.forChild(userRoutes),
         StoreModule.forFeature("users", fromUser.userReducer),
-        MatTabsModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        // MatInputModule
+        MaterialModule,
     ],
 
     // entry components are the those that gonna be showed in modals
