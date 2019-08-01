@@ -6,6 +6,7 @@
     <e p="C:\Users\xuant\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_BookSystem.-863097960.00" t="ExcludeRecursive" />
     <e p="E:\BigIn\BookSystem" t="IncludeFlat">
       <e p="BookSystem.Application" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="BookSystem.Application.csproj" t="IncludeRecursive" />
         <e p="Dtos" t="Include">
@@ -68,6 +69,7 @@
         </e>
       </e>
       <e p="BookSystem.Domain" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="BookSystem.Domain.csproj" t="IncludeRecursive" />
         <e p="Entities" t="Include">
@@ -78,7 +80,6 @@
           <e p="Users.cs" t="Include" />
           <e p="UsersReviewsBooks.cs" t="Include" />
         </e>
-        <e p="Exceptions" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -104,47 +105,6 @@
             <e p="tsconfig.json" t="Include" />
           </e>
           <e p="karma.conf.js" t="Include" />
-          <e p="node_modules\@angular\animations" t="IncludeRecursive" />
-          <e p="node_modules\@angular\cli" t="IncludeRecursive" />
-          <e p="node_modules\@angular\common" t="IncludeRecursive" />
-          <e p="node_modules\@angular\compiler" t="IncludeRecursive" />
-          <e p="node_modules\@angular\compiler-cli" t="IncludeRecursive" />
-          <e p="node_modules\@angular\core" t="IncludeRecursive" />
-          <e p="node_modules\@angular\forms" t="IncludeRecursive" />
-          <e p="node_modules\@angular\platform-browser" t="IncludeRecursive" />
-          <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
-          <e p="node_modules\@angular\router" t="IncludeRecursive" />
-          <e p="node_modules\@angular-devkit\build-angular" t="IncludeRecursive" />
-          <e p="node_modules\@ngrx\effects" t="IncludeRecursive" />
-          <e p="node_modules\@ngrx\store" t="IncludeRecursive" />
-          <e p="node_modules\@types" t="IncludeRecursive">
-            <e p="events" t="IncludeRecursive" />
-            <e p="jasmine" t="IncludeRecursive" />
-            <e p="jasminewd2" t="IncludeRecursive" />
-            <e p="minimatch" t="IncludeRecursive" />
-            <e p="node" t="IncludeRecursive" />
-            <e p="source-list-map" t="IncludeRecursive" />
-          </e>
-          <e p="node_modules\bootstrap" t="IncludeRecursive" />
-          <e p="node_modules\codelyzer" t="IncludeRecursive" />
-          <e p="node_modules\jasmine-core" t="IncludeRecursive" />
-          <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
-          <e p="node_modules\jquery" t="IncludeRecursive" />
-          <e p="node_modules\karma" t="IncludeRecursive" />
-          <e p="node_modules\karma-chrome-launcher" t="IncludeRecursive" />
-          <e p="node_modules\karma-coverage-istanbul-reporter" t="IncludeRecursive" />
-          <e p="node_modules\karma-jasmine" t="IncludeRecursive" />
-          <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
-          <e p="node_modules\popper.js" t="IncludeRecursive" />
-          <e p="node_modules\protractor" t="IncludeRecursive" />
-          <e p="node_modules\rxjs" t="IncludeRecursive" />
-          <e p="node_modules\semantic-ui-css" t="IncludeRecursive" />
-          <e p="node_modules\source-map" t="IncludeRecursive" />
-          <e p="node_modules\toastr" t="IncludeRecursive" />
-          <e p="node_modules\ts-node" t="IncludeRecursive" />
-          <e p="node_modules\tslib" t="IncludeRecursive" />
-          <e p="node_modules\tslint" t="IncludeRecursive" />
-          <e p="node_modules\zone.js" t="IncludeRecursive" />
           <e p="package.json" t="Include" />
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
